@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.angular/
+bin/
+obj/
+.tools/
+*.db*
+TestResults/
+artifacts/

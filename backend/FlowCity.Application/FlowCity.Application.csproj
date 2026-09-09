@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../FlowCity.Domain/FlowCity.Domain.csproj" /></ItemGroup></Project>
