@@ -1,0 +1,4 @@
+dataset,vertices,arestas,fluxo_maximo,caminhos_aumentantes,tempo_mediano_ms,tempo_min_ms,tempo_max_ms,repeticoes
+01-pequeno,6,10,23,3,0.015150,0.014600,0.026800,30
+02-medio,20,68,32,8,0.101700,0.092900,17.809600,30
+03-grande,100,401,32,13,0.321950,0.312500,7.954400,30
