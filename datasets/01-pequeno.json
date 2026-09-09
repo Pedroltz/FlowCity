@@ -1,0 +1,104 @@
+{
+  "name": "Centro · 6 cruzamentos",
+  "description": "Simulação didática de dois corredores urbanos com conexões transversais. Capacidades em veículos/minuto; origem S, destino T. Fluxo esperado: 23.",
+  "nodes": [
+    {
+      "id": "S",
+      "name": "Entrada norte",
+      "x": 80,
+      "y": 180
+    },
+    {
+      "id": "A",
+      "name": "Praça central",
+      "x": 250,
+      "y": 80
+    },
+    {
+      "id": "C",
+      "name": "Anel oeste",
+      "x": 250,
+      "y": 280
+    },
+    {
+      "id": "B",
+      "name": "Distrito comercial",
+      "x": 420,
+      "y": 80
+    },
+    {
+      "id": "D",
+      "name": "Terminal leste",
+      "x": 420,
+      "y": 280
+    },
+    {
+      "id": "T",
+      "name": "Saída sul",
+      "x": 590,
+      "y": 180
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "S",
+      "target": "A",
+      "capacity": 16
+    },
+    {
+      "id": "e2",
+      "source": "S",
+      "target": "C",
+      "capacity": 13
+    },
+    {
+      "id": "e3",
+      "source": "A",
+      "target": "C",
+      "capacity": 10
+    },
+    {
+      "id": "e4",
+      "source": "C",
+      "target": "A",
+      "capacity": 4
+    },
+    {
+      "id": "e5",
+      "source": "A",
+      "target": "B",
+      "capacity": 12
+    },
+    {
+      "id": "e6",
+      "source": "B",
+      "target": "C",
+      "capacity": 9
+    },
+    {
+      "id": "e7",
+      "source": "C",
+      "target": "D",
+      "capacity": 14
+    },
+    {
+      "id": "e8",
+      "source": "D",
+      "target": "B",
+      "capacity": 7
+    },
+    {
+      "id": "e9",
+      "source": "B",
+      "target": "T",
+      "capacity": 20
+    },
+    {
+      "id": "e10",
+      "source": "D",
+      "target": "T",
+      "capacity": 4
+    }
+  ]
+}
