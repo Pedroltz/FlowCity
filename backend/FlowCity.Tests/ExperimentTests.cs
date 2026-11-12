@@ -1,7 +1,9 @@
+using FluentValidation;
 using System.Text;
 using System.Text.Json;
 using FlowCity.Application;
 using FlowCity.Domain;
+using FlowCity.Domain.Graph;
 using Xunit;
 using Xunit.Abstractions;
 namespace FlowCity.Tests;
@@ -17,7 +19,7 @@ public class ExperimentTests(ITestOutputHelper output)
         {
             var graph = JsonSerializer.Deserialize<Graph>(File.ReadAllText(file),new JsonSerializerOptions(JsonSerializerDefaults.Web))!;
             var source = graph.Nodes[0].Id; var sink = graph.Nodes[^1].Id;
-            var algorithm = new FordFulkerson();
+            var algorithm = new FordFulkerson(new GraphValidator());
             for (var i=0;i<5;i++) algorithm.Calculate(graph,source,sink);
             var results = Enumerable.Range(0,30).Select(_ => algorithm.Calculate(graph,source,sink)).ToArray();
             var result = results[0];

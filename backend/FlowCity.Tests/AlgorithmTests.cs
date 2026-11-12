@@ -1,5 +1,7 @@
+using FluentValidation;
 using FlowCity.Application;
 using FlowCity.Domain;
+using FlowCity.Domain.Graph;
 using Xunit;
 namespace FlowCity.Tests;
 
@@ -27,7 +29,7 @@ public class AlgorithmTests
     [Theory, MemberData(nameof(Cases))]
     public void KnownFlowsAndInvariants(Graph graph, string source, string sink, long expected)
     {
-        var result = new FordFulkerson().Calculate(graph, source, sink);
+        var result = new FordFulkerson(new GraphValidator()).Calculate(graph, source, sink);
         Assert.Equal(expected, result.MaxFlow);
         Assert.Equal(expected, result.AugmentingPaths.Sum(p => p.AddedFlow));
         Assert.Equal(result.Iterations, result.AugmentingPaths.Count);
@@ -53,27 +55,27 @@ public class AlgorithmTests
     [Fact] public void ReverseArcCancelsEarlierFlow()
     {
         var graph = Make(("S","A",1),("S","B",1),("A","C",1),("A","D",1),("B","C",1),("C","T",1),("D","T",1));
-        var result = new FordFulkerson().Calculate(graph,"S","T");
+        var result = new FordFulkerson(new GraphValidator()).Calculate(graph,"S","T");
         Assert.Equal(2, result.MaxFlow);
         Assert.Contains(result.AugmentingPaths.SelectMany(p => p.Edges), e => e.IsReverse && e.Source == "C" && e.Target == "A");
         Assert.Equal(0, result.Edges.Single(e => e.Source == "A" && e.Target == "C").Flow);
     }
     [Fact] public void RejectsSameOrMissingEndpoints()
     {
-        var graph = Make(("A","B",1)); var algorithm = new FordFulkerson();
+        var graph = Make(("A","B",1)); var algorithm = new FordFulkerson(new GraphValidator());
         Assert.Throws<ArgumentException>(() => algorithm.Calculate(graph,"A","A"));
         Assert.Throws<ArgumentException>(() => algorithm.Calculate(graph,"A","Z"));
     }
     [Fact] public void RejectsInvalidGraph()
     {
         var graph = Make(("A","B",-1));
-        Assert.Throws<ArgumentException>(() => GraphValidator.Validate(graph));
+        Assert.Throws<ValidationException>(() => new GraphValidator().ValidateAndThrow(graph));
         graph.Edges[0].Capacity = 1; graph.Nodes.Add(new() { Id = "A", Name = "Duplicado" });
-        Assert.Throws<ArgumentException>(() => GraphValidator.Validate(graph));
+        Assert.Throws<ValidationException>(() => new GraphValidator().ValidateAndThrow(graph));
     }
     [Fact] public void IsolatedVertexHasZeroFlow()
     {
         var graph = Make(("A","B",1)); graph.Nodes.Add(new() { Id = "Z", Name = "Isolado" });
-        Assert.Equal(0, new FordFulkerson().Calculate(graph,"A","Z").MaxFlow);
+        Assert.Equal(0, new FordFulkerson(new GraphValidator()).Calculate(graph,"A","Z").MaxFlow);
     }
 }

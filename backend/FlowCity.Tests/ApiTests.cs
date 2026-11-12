@@ -2,6 +2,7 @@ using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
 using FlowCity.Domain;
+using FlowCity.Domain.Graph;
 using FlowCity.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -27,17 +28,33 @@ public class ApiTests : IClassFixture<ApiFactory>
     [Fact] public async Task FullDemoWorkflowPersistsChangesAndReturnsResidual()
     {
         var graph = AlgorithmTests.Make(("A","B",20),("B","C",15));
+        graph.Edges[0].Flow = 999;
         var response = await client.PostAsJsonAsync("/api/graphs",graph);
         Assert.Equal(HttpStatusCode.Created,response.StatusCode);
         var saved = (await response.Content.ReadFromJsonAsync<Graph>())!;
         Assert.NotEqual(Guid.Empty,saved.Id);
+        Assert.All(saved.Edges, edge => Assert.Equal(0, edge.Flow));
         Assert.NotNull(response.Headers.Location);
+        saved.Name = "Rede editada";
+        saved.Description = "Metadados atualizados";
+        var node = saved.Nodes.Single(n => n.Id == "B");
+        node.Name = "Cruzamento central";
+        node.X = 120;
+        node.Y = 80;
         saved.Edges[1].Capacity = 12;
+        saved.Edges[1].Flow = 999;
         Assert.Equal(HttpStatusCode.OK,(await client.PutAsJsonAsync($"/api/graphs/{saved.Id}",saved)).StatusCode);
         using (var scope = factory.Services.CreateScope())
         {
             var persisted = await scope.ServiceProvider.GetRequiredService<FlowCityDbContext>().Graphs.AsNoTracking().SingleAsync(g => g.Id == saved.Id);
             Assert.Equal(12,persisted.Edges.Single(e => e.Target == "C").Capacity);
+            Assert.Equal("Rede editada", persisted.Name);
+            Assert.Equal("Metadados atualizados", persisted.Description);
+            var persistedNode = persisted.Nodes.Single(n => n.Id == "B");
+            Assert.Equal("Cruzamento central", persistedNode.Name);
+            Assert.Equal(120, persistedNode.X);
+            Assert.Equal(80, persistedNode.Y);
+            Assert.All(persisted.Edges, edge => Assert.Equal(0, edge.Flow));
         }
         var calculation = await client.PostAsJsonAsync($"/api/graphs/{saved.Id}/max-flow",new { source="A",sink="C" });
         calculation.EnsureSuccessStatusCode();
@@ -72,6 +89,7 @@ public class ApiTests : IClassFixture<ApiFactory>
         var response = await client.PostAsync("/api/graphs",json); response.EnsureSuccessStatusCode();
         var graph = (await response.Content.ReadFromJsonAsync<Graph>())!;
         Assert.False(string.IsNullOrWhiteSpace(graph.Edges[0].Id));
+        Assert.Equal("", graph.Description);
         var calculation = await client.PostAsJsonAsync($"/api/graphs/{graph.Id}/max-flow",new { source="A",sink="B" });
         Assert.Equal(9,(await calculation.Content.ReadFromJsonAsync<MaxFlowResult>())!.MaxFlow);
     }
@@ -79,8 +97,18 @@ public class ApiTests : IClassFixture<ApiFactory>
     {
         var graphs = (await client.GetFromJsonAsync<JsonElement>("/api/graphs")).EnumerateArray().ToArray();
         Assert.Contains(graphs,g => g.GetProperty("nodeCount").GetInt32() == 100);
+        Assert.Contains(graphs, g => g.GetProperty("nodeCount").GetInt32() == 100
+            && g.GetProperty("edgeCount").GetInt32() == 401
+            && !string.IsNullOrWhiteSpace(g.GetProperty("name").GetString()));
         Assert.Contains(graphs,g => g.GetProperty("nodeCount").GetInt32() == 20);
         Assert.Contains(graphs,g => g.GetProperty("nodeCount").GetInt32() == 6);
-        (await client.GetAsync("/swagger/v1/swagger.json")).EnsureSuccessStatusCode();
+        Assert.All(graphs, graph => Assert.NotEqual(Guid.Empty, graph.GetProperty("id").GetGuid()));
+        var swagger = await client.GetFromJsonAsync<JsonElement>("/swagger/v1/swagger.json");
+        var schemas = swagger.GetProperty("components").GetProperty("schemas");
+        var edgeProperties = schemas.GetProperty("GraphEdgeRequestDTO").GetProperty("properties");
+        Assert.False(edgeProperties.TryGetProperty("flow", out _));
+        var graphProperties = schemas.GetProperty("GraphRequestDTO").GetProperty("properties");
+        Assert.EndsWith("/GraphNodeRequestDTO", graphProperties.GetProperty("nodes").GetProperty("items").GetProperty("$ref").GetString());
+        Assert.EndsWith("/GraphEdgeRequestDTO", graphProperties.GetProperty("edges").GetProperty("items").GetProperty("$ref").GetString());
     }
 }

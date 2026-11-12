@@ -7,3 +7,5 @@ obj/
 *.db*
 TestResults/
 artifacts/
+.runtime/
+tmp/

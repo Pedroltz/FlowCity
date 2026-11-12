@@ -5,6 +5,10 @@ Aplicação acadêmica de Teoria dos Grafos para calcular a quantidade máxima d
 ## Tecnologias e organização
 
 - Backend: .NET 10, ASP.NET Core Web API, C#, Entity Framework Core e SQLite; Swagger/OpenAPI em `/swagger`.
+- Mapster 7.4.0 para conversão dos contratos da API, projeção dos resumos e atualização de campos. Configuração em `backend/FlowCity.Api/Mappings/GraphMappingConfig.cs`; coleções rastreadas pelo EF são sincronizadas por ID para preservar suas identidades.
+- Fluxo da API: `GraphsController` → `IGraphService` / `GraphService` → `IGraphRepository` / `GraphRepository` → SQLite. O controller trata contratos HTTP; o service valida e coordena as operações; o repository concentra consultas EF e persistência. Os mapeamentos de domínio estão em `FlowCity.Application/Mappings/GraphMappingRegister.cs` e os contratos HTTP permanecem na API.
+- Injeção de dependência centralizada em `FlowCity.Api/Configuration/DependencyInjectionConfig.cs`, ativada por `AddFlowCity`. Services, repositories, validator, `IMaxFlowAlgorithm`, `IMapper` e inicializador do banco usam escopo por requisição; os perfis e a configuração compilada do Mapster são compartilhados como singletons. A carga inicial recebe suas dependências pelo construtor e é executada em um escopo na inicialização.
+- FluentValidation 12.1.1 para regras do grafo em `GraphValidator : AbstractValidator<Graph>`, compartilhadas pela API, carga inicial e algoritmo através de `IValidator<Graph>`. Falhas de validação retornam HTTP 400.
 - Frontend: Angular 21, TypeScript, Angular Material e Cytoscape.js.
 - Testes: xUnit, com testes numéricos, invariantes e integração HTTP usando SQLite temporário.
 
@@ -138,6 +142,16 @@ Preencher antes da entrega acadêmica, sem atribuições fictícias:
 | Nome | Matrícula | Contribuição |
 |---|---|---|
 | A preencher pelo grupo | A preencher | A preencher |
+
+## Relatório técnico e uso de IA
+
+O [relatório técnico em PDF](output/pdf/FlowCity-Relatorio-Tecnico.pdf) contém problema, modelagem, algoritmo, arquitetura, metodologia, resultados históricos, limitações, roteiro de demonstração, referências e declaração de uso do **Codex, da OpenAI**. O [original editável em HTML](docs/RELATORIO.html) permite preencher identificação e contribuições individuais antes de regenerar o PDF.
+
+O Codex auxiliou nesta revisão na inspeção dos arquivos, comparação com os requisitos, tentativa de execução e elaboração do relatório e da documentação. O grupo deve complementar o histórico de uso de IA, revisar os conteúdos e registrar sua validação efetiva. Não se atribuem contribuições ou revisões humanas sem confirmação.
+
+Para regenerar o PDF após editar o HTML, com as dependências do frontend instaladas e Microsoft Edge disponível: `node scripts/build-report.mjs`. O script também produz prévias em `tmp/pdfs/`.
+
+Consulte o [roteiro de entrega e apresentação](docs/ENTREGA.md). A revisão de 12/11/2026 não conseguiu iniciar a aplicação devido a falhas na instalação de dependências; os resultados em `docs/VALIDACAO.md` são registros anteriores e precisam ser reproduzidos pelo grupo.
 
 ## Limitações conhecidas
 

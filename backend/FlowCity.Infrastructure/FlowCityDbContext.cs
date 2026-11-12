@@ -1,4 +1,5 @@
 using FlowCity.Domain;
+using FlowCity.Domain.Graph;
 using Microsoft.EntityFrameworkCore;
 namespace FlowCity.Infrastructure;
 

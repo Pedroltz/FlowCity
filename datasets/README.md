@@ -4,6 +4,8 @@ Todos os dados são **sintéticos**, produzidos para este projeto pelo gerador d
 
 As capacidades são estimativas simuladas de **veículos por minuto**, em um único intervalo estacionário. Cada aresta é uma via direcionada; duas vias em sentidos contrários têm capacidades independentes. O modelo assume conservação de fluxo nos cruzamentos intermediários.
 
+O modelo é um **grafo direcionado e ponderado por capacidades**. Esses pesos limitam o fluxo; não representam distância nem custo de deslocamento.
+
 | Arquivo | Contexto | Vértices | Arestas | Origem → destino |
 |---|---|---:|---:|---|
 | `01-pequeno.json` | Dois corredores com conexões transversais | 6 | 10 | S → T |

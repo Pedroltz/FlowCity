@@ -1,1 +1,1 @@
-<Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../FlowCity.Domain/FlowCity.Domain.csproj" /></ItemGroup></Project>
+<Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../FlowCity.Domain/FlowCity.Domain.csproj" /><PackageReference Include="FluentValidation" Version="12.1.1" /><PackageReference Include="Mapster" Version="7.4.0"/></ItemGroup></Project>
