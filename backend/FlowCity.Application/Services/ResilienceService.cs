@@ -35,9 +35,24 @@ public sealed class ResilienceService(IMaxFlowAlgorithm algorithm)
         if (failed.Any(f => !links.Any(l => l.GetProperty("id").GetString() == f)))
             throw new ArgumentException("Enlace desconhecido.");
         var original = study.GetProperty("graph").Deserialize<Graph>(Options)!;
-        var modified = study.GetProperty("graph").Deserialize<Graph>(Options)!;
         var disabled = links.Where(l => failed.Contains(l.GetProperty("id").GetString()!))
-            .SelectMany(l => l.GetProperty("edgeIds").EnumerateArray().Select(e => e.GetString())).ToHashSet();
+            .SelectMany(l => l.GetProperty("edgeIds").EnumerateArray().Select(e => e.GetString()!)).ToHashSet();
+        return Analyze(original, request, disabled, ct);
+    }
+
+    public ResilienceResult Analyze(Graph graph, ResilienceRequest request, CancellationToken ct)
+    {
+        var failed = (request.FailedLinkIds ?? []).ToHashSet();
+        var edgeIds = graph.Edges.Select(edge => edge.Id).ToHashSet();
+        if (failed.Any(id => !edgeIds.Contains(id)))
+            throw new ArgumentException("Conexão desconhecida nesta rede.");
+        return Analyze(graph, request, failed, ct);
+    }
+
+    private ResilienceResult Analyze(Graph graph, ResilienceRequest request, HashSet<string> disabled, CancellationToken ct)
+    {
+        var original = Copy(graph);
+        var modified = Copy(graph);
         foreach (var edge in modified.Edges.Where(e => disabled.Contains(e.Id))) edge.Capacity = 0;
         var baseline = algorithm.Calculate(original, request.Source, request.Sink, ct);
         var scenario = algorithm.Calculate(modified, request.Source, request.Sink, ct);
@@ -45,6 +60,28 @@ public sealed class ResilienceService(IMaxFlowAlgorithm algorithm)
             baseline.MaxFlow - scenario.MaxFlow,
             baseline.MaxFlow == 0 ? null : 100.0 * (baseline.MaxFlow - scenario.MaxFlow) / baseline.MaxFlow);
     }
+
+    private static Graph Copy(Graph graph) => new()
+    {
+        Id = graph.Id,
+        Name = graph.Name,
+        Description = graph.Description,
+        Nodes = graph.Nodes.Select(node => new GraphNode
+        {
+            Id = node.Id,
+            Name = node.Name,
+            X = node.X,
+            Y = node.Y,
+        }).ToList(),
+        Edges = graph.Edges.Select(edge => new GraphEdge
+        {
+            Id = edge.Id,
+            Source = edge.Source,
+            Target = edge.Target,
+            Capacity = edge.Capacity,
+            Flow = 0,
+        }).ToList(),
+    };
 
     private static MinimumCut Cut(MaxFlowResult result, string source, CancellationToken ct)
     {

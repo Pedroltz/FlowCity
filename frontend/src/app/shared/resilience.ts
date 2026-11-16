@@ -1,6 +1,6 @@
 import { GraphApi } from "../graph-api.service";
 import { WorkspaceState } from "../workspace-state.service";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { Component, inject, OnInit } from "@angular/core";
 
 import { FormsModule } from "@angular/forms";
@@ -11,7 +11,7 @@ import { ResilienceComparison } from "./resilience-comparison";
 @Component({
   selector: "fc-resilience",
   standalone: true,
-  imports: [FormsModule, CommonModule, ResilienceComparison],
+  imports: [FormsModule, CommonModule, RouterLink, ResilienceComparison],
   template: ` <section class="panel maintenance-planner">
     <div class="planner-header">
       <div>
@@ -45,38 +45,73 @@ import { ResilienceComparison } from "./resilience-comparison";
         <div class="step-content">
           <h3>Escolha a rede</h3>
           <p class="muted">
-            Escolha uma das {{ state.studies().length }} topologias SNDlib. As
-            capacidades não representam medições atuais.
+            Use uma topologia SNDlib ou uma rede própria salva em “Minhas
+            redes”. A análise usa as capacidades cadastradas nessa rede.
           </p>
           <label
-            >Rede de exemplo<select
-              aria-label="Estudo"
-              [ngModel]="state.study()?.id ?? ''"
+            >Rede para analisar<select
+              aria-label="Rede para analisar"
+              [ngModel]="
+                state.study()
+                  ? state.study()!.sourceType + ':' + state.study()!.id
+                  : ''
+              "
               (ngModelChange)="state.choose($event)"
             >
               <option value="">Selecione uma rede</option>
-              @for (s of state.studies(); track s.id) {
-                <option [value]="s.id">
-                  {{ s.graph.name }} · {{ s.graph.nodes.length }} pontos
-                </option>
-              }
+              <optgroup label="Minhas redes">
+                @if (!state.networks().length) {
+                  <option disabled>Nenhuma rede própria salva</option>
+                }
+                @for (network of state.networks(); track network.id) {
+                  <option [value]="'custom:' + network.id">
+                    {{ network.name }} · {{ network.nodeCount }} pontos
+                  </option>
+                }
+              </optgroup>
+              <optgroup label="Topologias SNDlib">
+                @for (s of state.studies(); track s.id) {
+                  <option [value]="'sndlib:' + s.id">
+                    {{ s.graph.name }} · {{ s.graph.nodes.length }} pontos
+                  </option>
+                }
+              </optgroup>
             </select></label
           >
+          @if (!state.networks().length) {
+            <p class="muted">
+              Ainda não há redes próprias salvas.
+              <a routerLink="/networks">Criar ou salvar uma em Minhas redes</a>.
+            </p>
+          }
           @if (state.study(); as s) {
             <details class="source-details">
-              <summary>Sobre os dados desta rede</summary>
+              <summary>
+                {{
+                  s.sourceType === "custom"
+                    ? "Sobre minha rede"
+                    : "Sobre os dados desta rede"
+                }}
+              </summary>
               <p>{{ s.capacityPolicy }}</p>
-              <p>
-                Unidade: {{ s.unit }}.
-                <a [href]="s.sourceUrl" target="_blank" rel="noopener"
-                  >Consultar fonte</a
-                >
-              </p>
-              <p>Revisão: {{ s.revision }}</p>
-              <p>SHA-256: {{ s.sha256 }}</p>
-              <button class="button secondary" (click)="copy()">
-                Criar cópia editável
-              </button>
+              @if (s.sourceType === "sndlib") {
+                <p>
+                  Unidade: {{ s.unit }}.
+                  <a [href]="s.sourceUrl" target="_blank" rel="noopener"
+                    >Consultar fonte</a
+                  >
+                </p>
+                <p>Revisão: {{ s.revision }}</p>
+                <p>SHA-256: {{ s.sha256 }}</p>
+                <button class="button secondary" (click)="copy()">
+                  Criar cópia editável
+                </button>
+              } @else {
+                <p>
+                  Unidade: {{ s.unit }}. As capacidades vêm dos valores que você
+                  cadastrou no editor.
+                </p>
+              }
             </details>
           }
         </div>
@@ -148,8 +183,15 @@ import { ResilienceComparison } from "./resilience-comparison";
               <div>
                 <h3>Selecione as conexões em manutenção</h3>
                 <p class="muted">
-                  Cada seleção desativa o enlace no sentido indicado no
-                  benchmark. Rotas alternativas podem manter a capacidade total.
+                  @if (s.sourceType === "custom") {
+                    Cada seleção interrompe somente a conexão direcionada
+                    exibida. Se houver uma conexão de volta, selecione-a
+                    separadamente.
+                  } @else {
+                    Cada seleção desativa o enlace no sentido indicado no
+                    benchmark. Rotas alternativas podem manter a capacidade
+                    total.
+                  }
                 </p>
               </div>
               <span class="selection-count"
@@ -178,7 +220,12 @@ import { ResilienceComparison } from "./resilience-comparison";
                       ><strong
                         >{{ l.source }} {{ l.directed ? "→" : "↔" }}
                         {{ l.target }}</strong
-                      ><small>{{ l.id }}</small></span
+                      ><small>
+                        @if (l.capacity !== undefined) {
+                          Capacidade: {{ l.capacity }} ·
+                        }
+                        {{ l.id }}</small
+                      ></span
                     ></label
                   >
                 }

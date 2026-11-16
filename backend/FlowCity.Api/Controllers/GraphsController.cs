@@ -1,6 +1,7 @@
 using FlowCity.Api.Models;
 using FlowCity.Domain.Graph;
 using FlowCity.Domain.Interfaces;
+using FlowCity.Application.Services;
 using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -56,5 +57,22 @@ public class GraphsController : ControllerBase
     {
         var result = await service.CalculateAsync(id, request.Source, request.Sink, ct);
         return result is null ? NotFound() : Ok(result);
+    }
+
+    [HttpPost("{id:guid}/resilience")]
+    public async Task<IActionResult> AnalyzeResilience(Guid id, ResilienceService.ResilienceRequest request,
+        [FromServices] IGraphService graphs, [FromServices] ResilienceService resilience, CancellationToken ct)
+    {
+        var graph = await graphs.GetAsync(id, ct);
+        if (graph is null) return NotFound();
+
+        try
+        {
+            return Ok(resilience.Analyze(graph, request, ct));
+        }
+        catch (ArgumentException exception)
+        {
+            return BadRequest(new ProblemDetails { Title = "Não foi possível analisar a manutenção.", Detail = exception.Message });
+        }
     }
 }

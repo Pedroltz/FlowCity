@@ -1,9 +1,11 @@
 import { Injectable, inject, signal, computed } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { firstValueFrom } from "rxjs";
-import { Graph, GraphEdge, MaxFlowResult } from "./models";
+import { Graph, GraphEdge, GraphSummary, MaxFlowResult } from "./models";
+import { GraphApi } from "./graph-api.service";
 export interface Study {
   id: string;
+  sourceType: "sndlib" | "custom";
   unit: string;
   sourceUrl: string;
   revision: string;
@@ -16,6 +18,7 @@ export interface Study {
     target: string;
     edgeIds: string[];
     directed: boolean;
+    capacity?: number;
   }[];
 }
 export interface MinimumCut {
@@ -34,7 +37,9 @@ export interface Comparison {
 @Injectable({ providedIn: "root" })
 export class ResilienceState {
   private http = inject(HttpClient);
+  private graphApi = inject(GraphApi);
   studies = signal<Study[]>([]);
+  networks = signal<GraphSummary[]>([]);
   study = signal<Study | null>(null);
   result = signal<Comparison | null>(null);
   busy = signal(false);
@@ -62,7 +67,7 @@ export class ResilienceState {
       this.error.set(
         e instanceof HttpErrorResponse
           ? (e.error?.detail ??
-              "Não foi possível acessar os estudos. Tente novamente.")
+              "Não foi possível acessar as redes. Tente novamente.")
           : "Não foi possível concluir a operação.",
       );
     } finally {
@@ -71,14 +76,63 @@ export class ResilienceState {
   }
   load() {
     return this.perform(async () => {
+      const [studies, networks] = await Promise.all([
+        firstValueFrom(
+          this.http.get<Omit<Study, "sourceType">[]>("/api/case-studies"),
+        ),
+        this.graphApi.list(),
+      ]);
       this.studies.set(
-        await firstValueFrom(this.http.get<Study[]>("/api/case-studies")),
+        studies.map((study) => ({ ...study, sourceType: "sndlib" })),
       );
+      this.networks.set(networks);
     });
   }
-  choose(id: string) {
+  choose(value: string) {
     if (this.busy()) return;
+    if (value.startsWith("custom:")) {
+      void this.chooseNetwork(value.slice("custom:".length));
+      return;
+    }
+    const id = value.startsWith("sndlib:")
+      ? value.slice("sndlib:".length)
+      : value;
     const study = this.studies().find((s) => s.id === id) ?? null;
+    this.study.set(study);
+    this.requiredCapacity.set(null);
+    this.view.set("scenario");
+    this.mode.set("flow");
+    this.failed.set([]);
+    this.invalidate();
+    this.source = study?.graph.nodes[0]?.id ?? "";
+    this.sink = study?.graph.nodes.at(-1)?.id ?? "";
+  }
+  private chooseNetwork(id: string) {
+    return this.perform(async () => {
+      const graph = await this.graphApi.get(id);
+      const study: Study = {
+        id,
+        sourceType: "custom",
+        unit: "unidades de capacidade",
+        sourceUrl: "",
+        revision: "Rede própria salva no LinkPlan",
+        sha256: "",
+        capacityPolicy:
+          "As capacidades foram definidas por você na sua rede. O cenário de manutenção altera apenas uma cópia temporária para calcular o impacto.",
+        graph,
+        links: graph.edges.map((edge) => ({
+          id: edge.id,
+          source: edge.source,
+          target: edge.target,
+          edgeIds: [edge.id],
+          directed: true,
+          capacity: edge.capacity,
+        })),
+      };
+      this.setStudy(study);
+    });
+  }
+  private setStudy(study: Study | null) {
     this.study.set(study);
     this.requiredCapacity.set(null);
     this.view.set("scenario");
@@ -114,7 +168,9 @@ export class ResilienceState {
       this.result.set(
         await firstValueFrom(
           this.http.post<Comparison>(
-            `/api/case-studies/${study.id}/resilience`,
+            study.sourceType === "custom"
+              ? `/api/graphs/${study.id}/resilience`
+              : `/api/case-studies/${study.id}/resilience`,
             {
               source: this.source,
               sink: this.sink,
