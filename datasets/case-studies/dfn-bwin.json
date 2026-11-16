@@ -1,0 +1,1048 @@
+{
+  "id": "dfn-bwin",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/dfn-bwin/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "83eee1628f1fd9a8b099d92fa72d75ff57f751d5f6c3fe6f1b14698237d48cda",
+  "retrievedAt": "2026-11-16T18:32:42.153196+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "Berlin_Leipzig",
+      "edgeIds": ["Berlin_Leipzig:forward", "Berlin_Leipzig:backward"],
+      "source": "Leipzig",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "Koeln_Leipzig",
+      "edgeIds": ["Koeln_Leipzig:forward", "Koeln_Leipzig:backward"],
+      "source": "Leipzig",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "Leipzig_Muenchen",
+      "edgeIds": ["Leipzig_Muenchen:forward", "Leipzig_Muenchen:backward"],
+      "source": "Leipzig",
+      "target": "Muenchen",
+      "directed": false
+    },
+    {
+      "id": "Karlsruhe_Hamburg",
+      "edgeIds": ["Karlsruhe_Hamburg:forward", "Karlsruhe_Hamburg:backward"],
+      "source": "Hamburg",
+      "target": "Karlsruhe",
+      "directed": false
+    },
+    {
+      "id": "Berlin_Hamburg",
+      "edgeIds": ["Berlin_Hamburg:forward", "Berlin_Hamburg:backward"],
+      "source": "Hamburg",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "Nuernberg_Hamburg",
+      "edgeIds": ["Nuernberg_Hamburg:forward", "Nuernberg_Hamburg:backward"],
+      "source": "Hamburg",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "Hamburg_Stuttgart",
+      "edgeIds": ["Hamburg_Stuttgart:forward", "Hamburg_Stuttgart:backward"],
+      "source": "Hamburg",
+      "target": "Stuttgart",
+      "directed": false
+    },
+    {
+      "id": "Hamburg_Muenchen",
+      "edgeIds": ["Hamburg_Muenchen:forward", "Hamburg_Muenchen:backward"],
+      "source": "Hamburg",
+      "target": "Muenchen",
+      "directed": false
+    },
+    {
+      "id": "Frankfurt_Hannover",
+      "edgeIds": ["Frankfurt_Hannover:forward", "Frankfurt_Hannover:backward"],
+      "source": "Hannover",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "Karlsruhe_Hannover",
+      "edgeIds": ["Karlsruhe_Hannover:forward", "Karlsruhe_Hannover:backward"],
+      "source": "Hannover",
+      "target": "Karlsruhe",
+      "directed": false
+    },
+    {
+      "id": "Hannover_Koeln",
+      "edgeIds": ["Hannover_Koeln:forward", "Hannover_Koeln:backward"],
+      "source": "Hannover",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "Karlsruhe_Stuttgart",
+      "edgeIds": [
+        "Karlsruhe_Stuttgart:forward",
+        "Karlsruhe_Stuttgart:backward"
+      ],
+      "source": "Stuttgart",
+      "target": "Karlsruhe",
+      "directed": false
+    },
+    {
+      "id": "Nuernberg_Stuttgart",
+      "edgeIds": [
+        "Nuernberg_Stuttgart:forward",
+        "Nuernberg_Stuttgart:backward"
+      ],
+      "source": "Stuttgart",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "Koeln_Stuttgart",
+      "edgeIds": ["Koeln_Stuttgart:forward", "Koeln_Stuttgart:backward"],
+      "source": "Stuttgart",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "Karlsruhe_Muenchen",
+      "edgeIds": ["Karlsruhe_Muenchen:forward", "Karlsruhe_Muenchen:backward"],
+      "source": "Muenchen",
+      "target": "Karlsruhe",
+      "directed": false
+    },
+    {
+      "id": "Berlin_Muenchen",
+      "edgeIds": ["Berlin_Muenchen:forward", "Berlin_Muenchen:backward"],
+      "source": "Muenchen",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "Nuernberg_Muenchen",
+      "edgeIds": ["Nuernberg_Muenchen:forward", "Nuernberg_Muenchen:backward"],
+      "source": "Muenchen",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "Nuernberg_Koeln",
+      "edgeIds": ["Nuernberg_Koeln:forward", "Nuernberg_Koeln:backward"],
+      "source": "Koeln",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "Nuernberg_Frankfurt",
+      "edgeIds": [
+        "Nuernberg_Frankfurt:forward",
+        "Nuernberg_Frankfurt:backward"
+      ],
+      "source": "Nuernberg",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "Berlin_Karlsruhe",
+      "edgeIds": ["Berlin_Karlsruhe:forward", "Berlin_Karlsruhe:backward"],
+      "source": "Berlin",
+      "target": "Karlsruhe",
+      "directed": false
+    },
+    {
+      "id": "Karlsruhe_Leipzig",
+      "edgeIds": ["Karlsruhe_Leipzig:forward", "Karlsruhe_Leipzig:backward"],
+      "source": "Leipzig",
+      "target": "Karlsruhe",
+      "directed": false
+    },
+    {
+      "id": "Nuernberg_Leipzig",
+      "edgeIds": ["Nuernberg_Leipzig:forward", "Nuernberg_Leipzig:backward"],
+      "source": "Leipzig",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "Leipzig_Stuttgart",
+      "edgeIds": ["Leipzig_Stuttgart:forward", "Leipzig_Stuttgart:backward"],
+      "source": "Leipzig",
+      "target": "Stuttgart",
+      "directed": false
+    },
+    {
+      "id": "Hannover_Leipzig",
+      "edgeIds": ["Hannover_Leipzig:forward", "Hannover_Leipzig:backward"],
+      "source": "Leipzig",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "Hamburg_Leipzig",
+      "edgeIds": ["Hamburg_Leipzig:forward", "Hamburg_Leipzig:backward"],
+      "source": "Leipzig",
+      "target": "Hamburg",
+      "directed": false
+    },
+    {
+      "id": "Frankfurt_Leipzig",
+      "edgeIds": ["Frankfurt_Leipzig:forward", "Frankfurt_Leipzig:backward"],
+      "source": "Leipzig",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "Frankfurt_Hamburg",
+      "edgeIds": ["Frankfurt_Hamburg:forward", "Frankfurt_Hamburg:backward"],
+      "source": "Hamburg",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "Hamburg_Koeln",
+      "edgeIds": ["Hamburg_Koeln:forward", "Hamburg_Koeln:backward"],
+      "source": "Hamburg",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "Hamburg_Hannover",
+      "edgeIds": ["Hamburg_Hannover:forward", "Hamburg_Hannover:backward"],
+      "source": "Hamburg",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "Berlin_Hannover",
+      "edgeIds": ["Berlin_Hannover:forward", "Berlin_Hannover:backward"],
+      "source": "Hannover",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "Nuernberg_Hannover",
+      "edgeIds": ["Nuernberg_Hannover:forward", "Nuernberg_Hannover:backward"],
+      "source": "Hannover",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "Hannover_Muenchen",
+      "edgeIds": ["Hannover_Muenchen:forward", "Hannover_Muenchen:backward"],
+      "source": "Hannover",
+      "target": "Muenchen",
+      "directed": false
+    },
+    {
+      "id": "Hannover_Stuttgart",
+      "edgeIds": ["Hannover_Stuttgart:forward", "Hannover_Stuttgart:backward"],
+      "source": "Hannover",
+      "target": "Stuttgart",
+      "directed": false
+    },
+    {
+      "id": "Frankfurt_Stuttgart",
+      "edgeIds": [
+        "Frankfurt_Stuttgart:forward",
+        "Frankfurt_Stuttgart:backward"
+      ],
+      "source": "Stuttgart",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "Berlin_Stuttgart",
+      "edgeIds": ["Berlin_Stuttgart:forward", "Berlin_Stuttgart:backward"],
+      "source": "Stuttgart",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "Muenchen_Stuttgart",
+      "edgeIds": ["Muenchen_Stuttgart:forward", "Muenchen_Stuttgart:backward"],
+      "source": "Stuttgart",
+      "target": "Muenchen",
+      "directed": false
+    },
+    {
+      "id": "Frankfurt_Muenchen",
+      "edgeIds": ["Frankfurt_Muenchen:forward", "Frankfurt_Muenchen:backward"],
+      "source": "Muenchen",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "Koeln_Muenchen",
+      "edgeIds": ["Koeln_Muenchen:forward", "Koeln_Muenchen:backward"],
+      "source": "Muenchen",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "Frankfurt_Koeln",
+      "edgeIds": ["Frankfurt_Koeln:forward", "Frankfurt_Koeln:backward"],
+      "source": "Koeln",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "Karlsruhe_Koeln",
+      "edgeIds": ["Karlsruhe_Koeln:forward", "Karlsruhe_Koeln:backward"],
+      "source": "Koeln",
+      "target": "Karlsruhe",
+      "directed": false
+    },
+    {
+      "id": "Berlin_Koeln",
+      "edgeIds": ["Berlin_Koeln:forward", "Berlin_Koeln:backward"],
+      "source": "Koeln",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "Nuernberg_Karlsruhe",
+      "edgeIds": [
+        "Nuernberg_Karlsruhe:forward",
+        "Nuernberg_Karlsruhe:backward"
+      ],
+      "source": "Nuernberg",
+      "target": "Karlsruhe",
+      "directed": false
+    },
+    {
+      "id": "Berlin_Nuernberg",
+      "edgeIds": ["Berlin_Nuernberg:forward", "Berlin_Nuernberg:backward"],
+      "source": "Nuernberg",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "Berlin_Frankfurt",
+      "edgeIds": ["Berlin_Frankfurt:forward", "Berlin_Frankfurt:backward"],
+      "source": "Berlin",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "Karlsruhe_Frankfurt",
+      "edgeIds": [
+        "Karlsruhe_Frankfurt:forward",
+        "Karlsruhe_Frankfurt:backward"
+      ],
+      "source": "Karlsruhe",
+      "target": "Frankfurt",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "DFN-BWIN",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "Frankfurt",
+        "name": "Frankfurt",
+        "x": 281.483,
+        "y": 370.837
+      },
+      {
+        "id": "Koeln",
+        "name": "Koeln",
+        "x": 60.0,
+        "y": 323.308
+      },
+      {
+        "id": "Hamburg",
+        "name": "Hamburg",
+        "x": 477.549,
+        "y": 60.0
+      },
+      {
+        "id": "Hannover",
+        "name": "Hannover",
+        "x": 407.352,
+        "y": 165.513
+      },
+      {
+        "id": "Karlsruhe",
+        "name": "Karlsruhe",
+        "x": 262.118,
+        "y": 471.597
+      },
+      {
+        "id": "Stuttgart",
+        "name": "Stuttgart",
+        "x": 367.413,
+        "y": 522.928
+      },
+      {
+        "id": "Muenchen",
+        "name": "Muenchen",
+        "x": 637.307,
+        "y": 560.0
+      },
+      {
+        "id": "Nuernberg",
+        "name": "Nuernberg",
+        "x": 602.209,
+        "y": 446.882
+      },
+      {
+        "id": "Berlin",
+        "name": "Berlin",
+        "x": 860.0,
+        "y": 156.958
+      },
+      {
+        "id": "Leipzig",
+        "name": "Leipzig",
+        "x": 743.812,
+        "y": 262.471
+      }
+    ],
+    "edges": [
+      {
+        "id": "Berlin_Leipzig:forward",
+        "source": "Leipzig",
+        "target": "Berlin",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Leipzig:backward",
+        "source": "Berlin",
+        "target": "Leipzig",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Koeln_Leipzig:forward",
+        "source": "Leipzig",
+        "target": "Koeln",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Koeln_Leipzig:backward",
+        "source": "Koeln",
+        "target": "Leipzig",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Leipzig_Muenchen:forward",
+        "source": "Leipzig",
+        "target": "Muenchen",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Leipzig_Muenchen:backward",
+        "source": "Muenchen",
+        "target": "Leipzig",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Hamburg:forward",
+        "source": "Hamburg",
+        "target": "Karlsruhe",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Hamburg:backward",
+        "source": "Karlsruhe",
+        "target": "Hamburg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Hamburg:forward",
+        "source": "Hamburg",
+        "target": "Berlin",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Hamburg:backward",
+        "source": "Berlin",
+        "target": "Hamburg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Hamburg:forward",
+        "source": "Hamburg",
+        "target": "Nuernberg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Hamburg:backward",
+        "source": "Nuernberg",
+        "target": "Hamburg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Stuttgart:forward",
+        "source": "Hamburg",
+        "target": "Stuttgart",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Stuttgart:backward",
+        "source": "Stuttgart",
+        "target": "Hamburg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Muenchen:forward",
+        "source": "Hamburg",
+        "target": "Muenchen",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Muenchen:backward",
+        "source": "Muenchen",
+        "target": "Hamburg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Hannover:forward",
+        "source": "Hannover",
+        "target": "Frankfurt",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Hannover:backward",
+        "source": "Frankfurt",
+        "target": "Hannover",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Hannover:forward",
+        "source": "Hannover",
+        "target": "Karlsruhe",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Hannover:backward",
+        "source": "Karlsruhe",
+        "target": "Hannover",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hannover_Koeln:forward",
+        "source": "Hannover",
+        "target": "Koeln",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hannover_Koeln:backward",
+        "source": "Koeln",
+        "target": "Hannover",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Stuttgart:forward",
+        "source": "Stuttgart",
+        "target": "Karlsruhe",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Stuttgart:backward",
+        "source": "Karlsruhe",
+        "target": "Stuttgart",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Stuttgart:forward",
+        "source": "Stuttgart",
+        "target": "Nuernberg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Stuttgart:backward",
+        "source": "Nuernberg",
+        "target": "Stuttgart",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Koeln_Stuttgart:forward",
+        "source": "Stuttgart",
+        "target": "Koeln",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Koeln_Stuttgart:backward",
+        "source": "Koeln",
+        "target": "Stuttgart",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Muenchen:forward",
+        "source": "Muenchen",
+        "target": "Karlsruhe",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Muenchen:backward",
+        "source": "Karlsruhe",
+        "target": "Muenchen",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Muenchen:forward",
+        "source": "Muenchen",
+        "target": "Berlin",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Muenchen:backward",
+        "source": "Berlin",
+        "target": "Muenchen",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Muenchen:forward",
+        "source": "Muenchen",
+        "target": "Nuernberg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Muenchen:backward",
+        "source": "Nuernberg",
+        "target": "Muenchen",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Koeln:forward",
+        "source": "Koeln",
+        "target": "Nuernberg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Koeln:backward",
+        "source": "Nuernberg",
+        "target": "Koeln",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Frankfurt:forward",
+        "source": "Nuernberg",
+        "target": "Frankfurt",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Frankfurt:backward",
+        "source": "Frankfurt",
+        "target": "Nuernberg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Karlsruhe:forward",
+        "source": "Berlin",
+        "target": "Karlsruhe",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Karlsruhe:backward",
+        "source": "Karlsruhe",
+        "target": "Berlin",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Leipzig:forward",
+        "source": "Leipzig",
+        "target": "Karlsruhe",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Leipzig:backward",
+        "source": "Karlsruhe",
+        "target": "Leipzig",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Leipzig:forward",
+        "source": "Leipzig",
+        "target": "Nuernberg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Leipzig:backward",
+        "source": "Nuernberg",
+        "target": "Leipzig",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Leipzig_Stuttgart:forward",
+        "source": "Leipzig",
+        "target": "Stuttgart",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Leipzig_Stuttgart:backward",
+        "source": "Stuttgart",
+        "target": "Leipzig",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hannover_Leipzig:forward",
+        "source": "Leipzig",
+        "target": "Hannover",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hannover_Leipzig:backward",
+        "source": "Hannover",
+        "target": "Leipzig",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Leipzig:forward",
+        "source": "Leipzig",
+        "target": "Hamburg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Leipzig:backward",
+        "source": "Hamburg",
+        "target": "Leipzig",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Leipzig:forward",
+        "source": "Leipzig",
+        "target": "Frankfurt",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Leipzig:backward",
+        "source": "Frankfurt",
+        "target": "Leipzig",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Hamburg:forward",
+        "source": "Hamburg",
+        "target": "Frankfurt",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Hamburg:backward",
+        "source": "Frankfurt",
+        "target": "Hamburg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Koeln:forward",
+        "source": "Hamburg",
+        "target": "Koeln",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Koeln:backward",
+        "source": "Koeln",
+        "target": "Hamburg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Hannover:forward",
+        "source": "Hamburg",
+        "target": "Hannover",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hamburg_Hannover:backward",
+        "source": "Hannover",
+        "target": "Hamburg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Hannover:forward",
+        "source": "Hannover",
+        "target": "Berlin",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Hannover:backward",
+        "source": "Berlin",
+        "target": "Hannover",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Hannover:forward",
+        "source": "Hannover",
+        "target": "Nuernberg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Hannover:backward",
+        "source": "Nuernberg",
+        "target": "Hannover",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hannover_Muenchen:forward",
+        "source": "Hannover",
+        "target": "Muenchen",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hannover_Muenchen:backward",
+        "source": "Muenchen",
+        "target": "Hannover",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hannover_Stuttgart:forward",
+        "source": "Hannover",
+        "target": "Stuttgart",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Hannover_Stuttgart:backward",
+        "source": "Stuttgart",
+        "target": "Hannover",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Stuttgart:forward",
+        "source": "Stuttgart",
+        "target": "Frankfurt",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Stuttgart:backward",
+        "source": "Frankfurt",
+        "target": "Stuttgart",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Stuttgart:forward",
+        "source": "Stuttgart",
+        "target": "Berlin",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Stuttgart:backward",
+        "source": "Berlin",
+        "target": "Stuttgart",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Muenchen_Stuttgart:forward",
+        "source": "Stuttgart",
+        "target": "Muenchen",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Muenchen_Stuttgart:backward",
+        "source": "Muenchen",
+        "target": "Stuttgart",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Muenchen:forward",
+        "source": "Muenchen",
+        "target": "Frankfurt",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Muenchen:backward",
+        "source": "Frankfurt",
+        "target": "Muenchen",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Koeln_Muenchen:forward",
+        "source": "Muenchen",
+        "target": "Koeln",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Koeln_Muenchen:backward",
+        "source": "Koeln",
+        "target": "Muenchen",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Koeln:forward",
+        "source": "Koeln",
+        "target": "Frankfurt",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Frankfurt_Koeln:backward",
+        "source": "Frankfurt",
+        "target": "Koeln",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Koeln:forward",
+        "source": "Koeln",
+        "target": "Karlsruhe",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Koeln:backward",
+        "source": "Karlsruhe",
+        "target": "Koeln",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Koeln:forward",
+        "source": "Koeln",
+        "target": "Berlin",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Koeln:backward",
+        "source": "Berlin",
+        "target": "Koeln",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Karlsruhe:forward",
+        "source": "Nuernberg",
+        "target": "Karlsruhe",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Nuernberg_Karlsruhe:backward",
+        "source": "Karlsruhe",
+        "target": "Nuernberg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Nuernberg:forward",
+        "source": "Nuernberg",
+        "target": "Berlin",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Nuernberg:backward",
+        "source": "Berlin",
+        "target": "Nuernberg",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Frankfurt:forward",
+        "source": "Berlin",
+        "target": "Frankfurt",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Berlin_Frankfurt:backward",
+        "source": "Frankfurt",
+        "target": "Berlin",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Frankfurt:forward",
+        "source": "Karlsruhe",
+        "target": "Frankfurt",
+        "capacity": 80000,
+        "flow": 0
+      },
+      {
+        "id": "Karlsruhe_Frankfurt:backward",
+        "source": "Frankfurt",
+        "target": "Karlsruhe",
+        "capacity": 80000,
+        "flow": 0
+      }
+    ]
+  }
+}

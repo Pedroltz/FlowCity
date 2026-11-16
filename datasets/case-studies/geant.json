@@ -1,0 +1,913 @@
+{
+  "id": "geant",
+  "unit": "Mbit/s",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/geant/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "a1f0d42abb70481bc2e31e77453a1de43bd71513515824a5daefb0529c480034",
+  "retrievedAt": "2026-11-16T18:32:42.153698+00:00",
+  "sourceMetadata": {
+    "time": "2005",
+    "unit": "MBITPERSEC",
+    "origin": "Steve Uhlig, http://totem.info.ucl.ac.be/dataset.html, scaled directed peak matrix, period:4 month, total demand 3Tbps",
+    "granularity": "4month"
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "at1.at_ch1.ch",
+      "edgeIds": ["at1.at_ch1.ch:forward", "at1.at_ch1.ch:backward"],
+      "source": "at1.at",
+      "target": "ch1.ch",
+      "directed": false
+    },
+    {
+      "id": "at1.at_de1.de",
+      "edgeIds": ["at1.at_de1.de:forward", "at1.at_de1.de:backward"],
+      "source": "at1.at",
+      "target": "de1.de",
+      "directed": false
+    },
+    {
+      "id": "at1.at_hu1.hu",
+      "edgeIds": ["at1.at_hu1.hu:forward", "at1.at_hu1.hu:backward"],
+      "source": "at1.at",
+      "target": "hu1.hu",
+      "directed": false
+    },
+    {
+      "id": "at1.at_ny1.ny",
+      "edgeIds": ["at1.at_ny1.ny:forward", "at1.at_ny1.ny:backward"],
+      "source": "at1.at",
+      "target": "ny1.ny",
+      "directed": false
+    },
+    {
+      "id": "at1.at_si1.si",
+      "edgeIds": ["at1.at_si1.si:forward", "at1.at_si1.si:backward"],
+      "source": "at1.at",
+      "target": "si1.si",
+      "directed": false
+    },
+    {
+      "id": "be1.be_fr1.fr",
+      "edgeIds": ["be1.be_fr1.fr:forward", "be1.be_fr1.fr:backward"],
+      "source": "be1.be",
+      "target": "fr1.fr",
+      "directed": false
+    },
+    {
+      "id": "be1.be_lu1.lu",
+      "edgeIds": ["be1.be_lu1.lu:forward", "be1.be_lu1.lu:backward"],
+      "source": "be1.be",
+      "target": "lu1.lu",
+      "directed": false
+    },
+    {
+      "id": "be1.be_nl1.nl",
+      "edgeIds": ["be1.be_nl1.nl:forward", "be1.be_nl1.nl:backward"],
+      "source": "be1.be",
+      "target": "nl1.nl",
+      "directed": false
+    },
+    {
+      "id": "ch1.ch_fr1.fr",
+      "edgeIds": ["ch1.ch_fr1.fr:forward", "ch1.ch_fr1.fr:backward"],
+      "source": "ch1.ch",
+      "target": "fr1.fr",
+      "directed": false
+    },
+    {
+      "id": "ch1.ch_it1.it",
+      "edgeIds": ["ch1.ch_it1.it:forward", "ch1.ch_it1.it:backward"],
+      "source": "ch1.ch",
+      "target": "it1.it",
+      "directed": false
+    },
+    {
+      "id": "cz1.cz_de1.de",
+      "edgeIds": ["cz1.cz_de1.de:forward", "cz1.cz_de1.de:backward"],
+      "source": "cz1.cz",
+      "target": "de1.de",
+      "directed": false
+    },
+    {
+      "id": "cz1.cz_pl1.pl",
+      "edgeIds": ["cz1.cz_pl1.pl:forward", "cz1.cz_pl1.pl:backward"],
+      "source": "cz1.cz",
+      "target": "pl1.pl",
+      "directed": false
+    },
+    {
+      "id": "cz1.cz_sk1.sk",
+      "edgeIds": ["cz1.cz_sk1.sk:forward", "cz1.cz_sk1.sk:backward"],
+      "source": "cz1.cz",
+      "target": "sk1.sk",
+      "directed": false
+    },
+    {
+      "id": "de1.de_fr1.fr",
+      "edgeIds": ["de1.de_fr1.fr:forward", "de1.de_fr1.fr:backward"],
+      "source": "de1.de",
+      "target": "fr1.fr",
+      "directed": false
+    },
+    {
+      "id": "de1.de_gr1.gr",
+      "edgeIds": ["de1.de_gr1.gr:forward", "de1.de_gr1.gr:backward"],
+      "source": "de1.de",
+      "target": "gr1.gr",
+      "directed": false
+    },
+    {
+      "id": "de1.de_ie1.ie",
+      "edgeIds": ["de1.de_ie1.ie:forward", "de1.de_ie1.ie:backward"],
+      "source": "de1.de",
+      "target": "ie1.ie",
+      "directed": false
+    },
+    {
+      "id": "de1.de_it1.it",
+      "edgeIds": ["de1.de_it1.it:forward", "de1.de_it1.it:backward"],
+      "source": "de1.de",
+      "target": "it1.it",
+      "directed": false
+    },
+    {
+      "id": "de1.de_nl1.nl",
+      "edgeIds": ["de1.de_nl1.nl:forward", "de1.de_nl1.nl:backward"],
+      "source": "de1.de",
+      "target": "nl1.nl",
+      "directed": false
+    },
+    {
+      "id": "de1.de_se1.se",
+      "edgeIds": ["de1.de_se1.se:forward", "de1.de_se1.se:backward"],
+      "source": "de1.de",
+      "target": "se1.se",
+      "directed": false
+    },
+    {
+      "id": "es1.es_fr1.fr",
+      "edgeIds": ["es1.es_fr1.fr:forward", "es1.es_fr1.fr:backward"],
+      "source": "es1.es",
+      "target": "fr1.fr",
+      "directed": false
+    },
+    {
+      "id": "es1.es_it1.it",
+      "edgeIds": ["es1.es_it1.it:forward", "es1.es_it1.it:backward"],
+      "source": "es1.es",
+      "target": "it1.it",
+      "directed": false
+    },
+    {
+      "id": "es1.es_pt1.pt",
+      "edgeIds": ["es1.es_pt1.pt:forward", "es1.es_pt1.pt:backward"],
+      "source": "es1.es",
+      "target": "pt1.pt",
+      "directed": false
+    },
+    {
+      "id": "fr1.fr_lu1.lu",
+      "edgeIds": ["fr1.fr_lu1.lu:forward", "fr1.fr_lu1.lu:backward"],
+      "source": "fr1.fr",
+      "target": "lu1.lu",
+      "directed": false
+    },
+    {
+      "id": "fr1.fr_uk1.uk",
+      "edgeIds": ["fr1.fr_uk1.uk:forward", "fr1.fr_uk1.uk:backward"],
+      "source": "fr1.fr",
+      "target": "uk1.uk",
+      "directed": false
+    },
+    {
+      "id": "gr1.gr_it1.it",
+      "edgeIds": ["gr1.gr_it1.it:forward", "gr1.gr_it1.it:backward"],
+      "source": "gr1.gr",
+      "target": "it1.it",
+      "directed": false
+    },
+    {
+      "id": "hr1.hr_hu1.hu",
+      "edgeIds": ["hr1.hr_hu1.hu:forward", "hr1.hr_hu1.hu:backward"],
+      "source": "hr1.hr",
+      "target": "hu1.hu",
+      "directed": false
+    },
+    {
+      "id": "hr1.hr_si1.si",
+      "edgeIds": ["hr1.hr_si1.si:forward", "hr1.hr_si1.si:backward"],
+      "source": "hr1.hr",
+      "target": "si1.si",
+      "directed": false
+    },
+    {
+      "id": "hu1.hu_sk1.sk",
+      "edgeIds": ["hu1.hu_sk1.sk:forward", "hu1.hu_sk1.sk:backward"],
+      "source": "hu1.hu",
+      "target": "sk1.sk",
+      "directed": false
+    },
+    {
+      "id": "ie1.ie_uk1.uk",
+      "edgeIds": ["ie1.ie_uk1.uk:forward", "ie1.ie_uk1.uk:backward"],
+      "source": "ie1.ie",
+      "target": "uk1.uk",
+      "directed": false
+    },
+    {
+      "id": "il1.il_it1.it",
+      "edgeIds": ["il1.il_it1.it:forward", "il1.il_it1.it:backward"],
+      "source": "il1.il",
+      "target": "it1.it",
+      "directed": false
+    },
+    {
+      "id": "il1.il_nl1.nl",
+      "edgeIds": ["il1.il_nl1.nl:forward", "il1.il_nl1.nl:backward"],
+      "source": "il1.il",
+      "target": "nl1.nl",
+      "directed": false
+    },
+    {
+      "id": "nl1.nl_uk1.uk",
+      "edgeIds": ["nl1.nl_uk1.uk:forward", "nl1.nl_uk1.uk:backward"],
+      "source": "nl1.nl",
+      "target": "uk1.uk",
+      "directed": false
+    },
+    {
+      "id": "ny1.ny_uk1.uk",
+      "edgeIds": ["ny1.ny_uk1.uk:forward", "ny1.ny_uk1.uk:backward"],
+      "source": "ny1.ny",
+      "target": "uk1.uk",
+      "directed": false
+    },
+    {
+      "id": "pl1.pl_se1.se",
+      "edgeIds": ["pl1.pl_se1.se:forward", "pl1.pl_se1.se:backward"],
+      "source": "pl1.pl",
+      "target": "se1.se",
+      "directed": false
+    },
+    {
+      "id": "pt1.pt_uk1.uk",
+      "edgeIds": ["pt1.pt_uk1.uk:forward", "pt1.pt_uk1.uk:backward"],
+      "source": "pt1.pt",
+      "target": "uk1.uk",
+      "directed": false
+    },
+    {
+      "id": "se1.se_uk1.uk",
+      "edgeIds": ["se1.se_uk1.uk:forward", "se1.se_uk1.uk:backward"],
+      "source": "se1.se",
+      "target": "uk1.uk",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "GEANT",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "at1.at",
+        "name": "at1.at",
+        "x": 724.377,
+        "y": 264.333
+      },
+      {
+        "id": "be1.be",
+        "name": "be1.be",
+        "x": 635.949,
+        "y": 216.004
+      },
+      {
+        "id": "ch1.ch",
+        "name": "ch1.ch",
+        "x": 649.103,
+        "y": 301.073
+      },
+      {
+        "id": "cz1.cz",
+        "name": "cz1.cz",
+        "x": 710.176,
+        "y": 230.082
+      },
+      {
+        "id": "de1.de",
+        "name": "de1.de",
+        "x": 667.819,
+        "y": 229.465
+      },
+      {
+        "id": "es1.es",
+        "name": "es1.es",
+        "x": 576.695,
+        "y": 407.101
+      },
+      {
+        "id": "fr1.fr",
+        "name": "fr1.fr",
+        "x": 621.231,
+        "y": 252.469
+      },
+      {
+        "id": "gr1.gr",
+        "name": "gr1.gr",
+        "x": 777.399,
+        "y": 451.786
+      },
+      {
+        "id": "hr1.hr",
+        "name": "hr1.hr",
+        "x": 721.372,
+        "y": 308.341
+      },
+      {
+        "id": "hu1.hu",
+        "name": "hu1.hu",
+        "x": 744.391,
+        "y": 277.368
+      },
+      {
+        "id": "ie1.ie",
+        "name": "ie1.ie",
+        "x": 557.908,
+        "y": 170.297
+      },
+      {
+        "id": "il1.il",
+        "name": "il1.il",
+        "x": 860.0,
+        "y": 560.0
+      },
+      {
+        "id": "it1.it",
+        "name": "it1.it",
+        "x": 671.539,
+        "y": 314.623
+      },
+      {
+        "id": "lu1.lu",
+        "name": "lu1.lu",
+        "x": 649.027,
+        "y": 238.644
+      },
+      {
+        "id": "nl1.nl",
+        "name": "nl1.nl",
+        "x": 640.281,
+        "y": 188.949
+      },
+      {
+        "id": "ny1.ny",
+        "name": "ny1.ny",
+        "x": 60.0,
+        "y": 402.464
+      },
+      {
+        "id": "pl1.pl",
+        "name": "pl1.pl",
+        "x": 728.162,
+        "y": 187.617
+      },
+      {
+        "id": "pt1.pt",
+        "name": "pt1.pt",
+        "x": 536.73,
+        "y": 438.42
+      },
+      {
+        "id": "se1.se",
+        "name": "se1.se",
+        "x": 735.421,
+        "y": 60.0
+      },
+      {
+        "id": "si1.si",
+        "name": "si1.si",
+        "x": 710.709,
+        "y": 303.755
+      },
+      {
+        "id": "sk1.sk",
+        "name": "sk1.sk",
+        "x": 729.944,
+        "y": 265.359
+      },
+      {
+        "id": "uk1.uk",
+        "name": "uk1.uk",
+        "x": 603.007,
+        "y": 203.881
+      }
+    ],
+    "edges": [
+      {
+        "id": "at1.at_ch1.ch:forward",
+        "source": "at1.at",
+        "target": "ch1.ch",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "at1.at_ch1.ch:backward",
+        "source": "ch1.ch",
+        "target": "at1.at",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "at1.at_de1.de:forward",
+        "source": "at1.at",
+        "target": "de1.de",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "at1.at_de1.de:backward",
+        "source": "de1.de",
+        "target": "at1.at",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "at1.at_hu1.hu:forward",
+        "source": "at1.at",
+        "target": "hu1.hu",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "at1.at_hu1.hu:backward",
+        "source": "hu1.hu",
+        "target": "at1.at",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "at1.at_ny1.ny:forward",
+        "source": "at1.at",
+        "target": "ny1.ny",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "at1.at_ny1.ny:backward",
+        "source": "ny1.ny",
+        "target": "at1.at",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "at1.at_si1.si:forward",
+        "source": "at1.at",
+        "target": "si1.si",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "at1.at_si1.si:backward",
+        "source": "si1.si",
+        "target": "at1.at",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "be1.be_fr1.fr:forward",
+        "source": "be1.be",
+        "target": "fr1.fr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "be1.be_fr1.fr:backward",
+        "source": "fr1.fr",
+        "target": "be1.be",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "be1.be_lu1.lu:forward",
+        "source": "be1.be",
+        "target": "lu1.lu",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "be1.be_lu1.lu:backward",
+        "source": "lu1.lu",
+        "target": "be1.be",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "be1.be_nl1.nl:forward",
+        "source": "be1.be",
+        "target": "nl1.nl",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "be1.be_nl1.nl:backward",
+        "source": "nl1.nl",
+        "target": "be1.be",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "ch1.ch_fr1.fr:forward",
+        "source": "ch1.ch",
+        "target": "fr1.fr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "ch1.ch_fr1.fr:backward",
+        "source": "fr1.fr",
+        "target": "ch1.ch",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "ch1.ch_it1.it:forward",
+        "source": "ch1.ch",
+        "target": "it1.it",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "ch1.ch_it1.it:backward",
+        "source": "it1.it",
+        "target": "ch1.ch",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "cz1.cz_de1.de:forward",
+        "source": "cz1.cz",
+        "target": "de1.de",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "cz1.cz_de1.de:backward",
+        "source": "de1.de",
+        "target": "cz1.cz",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "cz1.cz_pl1.pl:forward",
+        "source": "cz1.cz",
+        "target": "pl1.pl",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "cz1.cz_pl1.pl:backward",
+        "source": "pl1.pl",
+        "target": "cz1.cz",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "cz1.cz_sk1.sk:forward",
+        "source": "cz1.cz",
+        "target": "sk1.sk",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "cz1.cz_sk1.sk:backward",
+        "source": "sk1.sk",
+        "target": "cz1.cz",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_fr1.fr:forward",
+        "source": "de1.de",
+        "target": "fr1.fr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_fr1.fr:backward",
+        "source": "fr1.fr",
+        "target": "de1.de",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_gr1.gr:forward",
+        "source": "de1.de",
+        "target": "gr1.gr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_gr1.gr:backward",
+        "source": "gr1.gr",
+        "target": "de1.de",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_ie1.ie:forward",
+        "source": "de1.de",
+        "target": "ie1.ie",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_ie1.ie:backward",
+        "source": "ie1.ie",
+        "target": "de1.de",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_it1.it:forward",
+        "source": "de1.de",
+        "target": "it1.it",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_it1.it:backward",
+        "source": "it1.it",
+        "target": "de1.de",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_nl1.nl:forward",
+        "source": "de1.de",
+        "target": "nl1.nl",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_nl1.nl:backward",
+        "source": "nl1.nl",
+        "target": "de1.de",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_se1.se:forward",
+        "source": "de1.de",
+        "target": "se1.se",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "de1.de_se1.se:backward",
+        "source": "se1.se",
+        "target": "de1.de",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "es1.es_fr1.fr:forward",
+        "source": "es1.es",
+        "target": "fr1.fr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "es1.es_fr1.fr:backward",
+        "source": "fr1.fr",
+        "target": "es1.es",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "es1.es_it1.it:forward",
+        "source": "es1.es",
+        "target": "it1.it",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "es1.es_it1.it:backward",
+        "source": "it1.it",
+        "target": "es1.es",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "es1.es_pt1.pt:forward",
+        "source": "es1.es",
+        "target": "pt1.pt",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "es1.es_pt1.pt:backward",
+        "source": "pt1.pt",
+        "target": "es1.es",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "fr1.fr_lu1.lu:forward",
+        "source": "fr1.fr",
+        "target": "lu1.lu",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "fr1.fr_lu1.lu:backward",
+        "source": "lu1.lu",
+        "target": "fr1.fr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "fr1.fr_uk1.uk:forward",
+        "source": "fr1.fr",
+        "target": "uk1.uk",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "fr1.fr_uk1.uk:backward",
+        "source": "uk1.uk",
+        "target": "fr1.fr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "gr1.gr_it1.it:forward",
+        "source": "gr1.gr",
+        "target": "it1.it",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "gr1.gr_it1.it:backward",
+        "source": "it1.it",
+        "target": "gr1.gr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "hr1.hr_hu1.hu:forward",
+        "source": "hr1.hr",
+        "target": "hu1.hu",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "hr1.hr_hu1.hu:backward",
+        "source": "hu1.hu",
+        "target": "hr1.hr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "hr1.hr_si1.si:forward",
+        "source": "hr1.hr",
+        "target": "si1.si",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "hr1.hr_si1.si:backward",
+        "source": "si1.si",
+        "target": "hr1.hr",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "hu1.hu_sk1.sk:forward",
+        "source": "hu1.hu",
+        "target": "sk1.sk",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "hu1.hu_sk1.sk:backward",
+        "source": "sk1.sk",
+        "target": "hu1.hu",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "ie1.ie_uk1.uk:forward",
+        "source": "ie1.ie",
+        "target": "uk1.uk",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "ie1.ie_uk1.uk:backward",
+        "source": "uk1.uk",
+        "target": "ie1.ie",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "il1.il_it1.it:forward",
+        "source": "il1.il",
+        "target": "it1.it",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "il1.il_it1.it:backward",
+        "source": "it1.it",
+        "target": "il1.il",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "il1.il_nl1.nl:forward",
+        "source": "il1.il",
+        "target": "nl1.nl",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "il1.il_nl1.nl:backward",
+        "source": "nl1.nl",
+        "target": "il1.il",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "nl1.nl_uk1.uk:forward",
+        "source": "nl1.nl",
+        "target": "uk1.uk",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "nl1.nl_uk1.uk:backward",
+        "source": "uk1.uk",
+        "target": "nl1.nl",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "ny1.ny_uk1.uk:forward",
+        "source": "ny1.ny",
+        "target": "uk1.uk",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "ny1.ny_uk1.uk:backward",
+        "source": "uk1.uk",
+        "target": "ny1.ny",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "pl1.pl_se1.se:forward",
+        "source": "pl1.pl",
+        "target": "se1.se",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "pl1.pl_se1.se:backward",
+        "source": "se1.se",
+        "target": "pl1.pl",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "pt1.pt_uk1.uk:forward",
+        "source": "pt1.pt",
+        "target": "uk1.uk",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "pt1.pt_uk1.uk:backward",
+        "source": "uk1.uk",
+        "target": "pt1.pt",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "se1.se_uk1.uk:forward",
+        "source": "se1.se",
+        "target": "uk1.uk",
+        "capacity": 40000,
+        "flow": 0
+      },
+      {
+        "id": "se1.se_uk1.uk:backward",
+        "source": "uk1.uk",
+        "target": "se1.se",
+        "capacity": 40000,
+        "flow": 0
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
-# Datasets FlowCity
+# Datasets LinkPlan
 
-Todos os dados são **sintéticos**, produzidos para este projeto pelo gerador determinístico `scripts/generate-datasets.mjs`. Não foram coletados de sensores, mapas ou órgãos públicos e não correspondem a uma cidade real. Os nomes descrevem situações plausíveis para ajudar a interpretar o grafo.
+Os três exemplos urbanos JSON desta pasta são **sintéticos**, produzidos para este projeto pelo gerador determinístico `scripts/generate-datasets.mjs`. Não foram coletados de sensores, mapas ou órgãos públicos e não correspondem a uma cidade real. Os nomes descrevem situações plausíveis para ajudar a interpretar o grafo.
 
 As capacidades são estimativas simuladas de **veículos por minuto**, em um único intervalo estacionário. Cada aresta é uma via direcionada; duas vias em sentidos contrários têm capacidades independentes. O modelo assume conservação de fluxo nos cruzamentos intermediários.
 
@@ -37,3 +37,7 @@ Campos obrigatórios: `name`, `nodes` e `edges`. Cada vértice contém `id` e `n
 O modelo não inclui semáforos, tempo de viagem, filas, conversões proibidas, limites de armazenamento, demanda variável ou capacidade de vértices. Fluxo máximo é um limite da rede capacitada, **não uma previsão de trânsito nem uma simulação temporal**. Arestas residuais reversas representam cancelamento algorítmico de fluxo; não autorizam tráfego na contramão.
 
 Os endpoints externos dessas malhas têm grau limitado. Por isso, aumentar vértices e arestas não implica aumentar proporcionalmente o fluxo máximo, nem obter tempos monotônicos em entradas tão rápidas. Compare número de aumentos e gargalos além do tamanho. Use a rotina experimental documentada no README e relate hardware, runtime e dispersão dos tempos. Não extrapole três instâncias para uma prova empírica da complexidade assintótica.
+
+## Estudos principais de telecomunicações
+
+Os benchmarks históricos SNDlib ficam em [case-studies](case-studies/README.md), com arquivos originais, políticas de capacidade, revisão da fonte e checksums. Não são gerados pelo gerador de malhas urbanas.

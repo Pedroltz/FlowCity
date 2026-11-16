@@ -1,0 +1,412 @@
+{
+  "id": "abilene",
+  "unit": "Mbit/s",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/abilene/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "a5793e17bb72ff13fed5e7d80e9a46c6af2041c4cc2e6381906bd06da8936fe3",
+  "retrievedAt": "2026-11-16T15:05:26.854945+00:00",
+  "sourceMetadata": {
+    "time": "2004",
+    "unit": "MBITPERSEC",
+    "origin": "Yin Zhang, http://userweb.cs.utexas.edu/~yzhang/research/AbileneTM, scaled directed peak matrix, period:6 month, total demand 3Tbps",
+    "granularity": "6month"
+  },
+  "capacityPolicy": "Capacidade pré-instalada; ausência representa zero.",
+  "links": [
+    {
+      "id": "ATLAM5_ATLAng",
+      "edgeIds": ["ATLAM5_ATLAng:forward", "ATLAM5_ATLAng:backward"],
+      "source": "ATLAng",
+      "target": "ATLAM5",
+      "directed": false
+    },
+    {
+      "id": "ATLAng_HSTNng",
+      "edgeIds": ["ATLAng_HSTNng:forward", "ATLAng_HSTNng:backward"],
+      "source": "HSTNng",
+      "target": "ATLAng",
+      "directed": false
+    },
+    {
+      "id": "ATLAng_IPLSng",
+      "edgeIds": ["ATLAng_IPLSng:forward", "ATLAng_IPLSng:backward"],
+      "source": "IPLSng",
+      "target": "ATLAng",
+      "directed": false
+    },
+    {
+      "id": "ATLAng_WASHng",
+      "edgeIds": ["ATLAng_WASHng:forward", "ATLAng_WASHng:backward"],
+      "source": "WASHng",
+      "target": "ATLAng",
+      "directed": false
+    },
+    {
+      "id": "CHINng_IPLSng",
+      "edgeIds": ["CHINng_IPLSng:forward", "CHINng_IPLSng:backward"],
+      "source": "IPLSng",
+      "target": "CHINng",
+      "directed": false
+    },
+    {
+      "id": "CHINng_NYCMng",
+      "edgeIds": ["CHINng_NYCMng:forward", "CHINng_NYCMng:backward"],
+      "source": "NYCMng",
+      "target": "CHINng",
+      "directed": false
+    },
+    {
+      "id": "DNVRng_KSCYng",
+      "edgeIds": ["DNVRng_KSCYng:forward", "DNVRng_KSCYng:backward"],
+      "source": "KSCYng",
+      "target": "DNVRng",
+      "directed": false
+    },
+    {
+      "id": "DNVRng_SNVAng",
+      "edgeIds": ["DNVRng_SNVAng:forward", "DNVRng_SNVAng:backward"],
+      "source": "SNVAng",
+      "target": "DNVRng",
+      "directed": false
+    },
+    {
+      "id": "DNVRng_STTLng",
+      "edgeIds": ["DNVRng_STTLng:forward", "DNVRng_STTLng:backward"],
+      "source": "STTLng",
+      "target": "DNVRng",
+      "directed": false
+    },
+    {
+      "id": "HSTNng_KSCYng",
+      "edgeIds": ["HSTNng_KSCYng:forward", "HSTNng_KSCYng:backward"],
+      "source": "KSCYng",
+      "target": "HSTNng",
+      "directed": false
+    },
+    {
+      "id": "HSTNng_LOSAng",
+      "edgeIds": ["HSTNng_LOSAng:forward", "HSTNng_LOSAng:backward"],
+      "source": "LOSAng",
+      "target": "HSTNng",
+      "directed": false
+    },
+    {
+      "id": "IPLSng_KSCYng",
+      "edgeIds": ["IPLSng_KSCYng:forward", "IPLSng_KSCYng:backward"],
+      "source": "KSCYng",
+      "target": "IPLSng",
+      "directed": false
+    },
+    {
+      "id": "LOSAng_SNVAng",
+      "edgeIds": ["LOSAng_SNVAng:forward", "LOSAng_SNVAng:backward"],
+      "source": "SNVAng",
+      "target": "LOSAng",
+      "directed": false
+    },
+    {
+      "id": "NYCMng_WASHng",
+      "edgeIds": ["NYCMng_WASHng:forward", "NYCMng_WASHng:backward"],
+      "source": "WASHng",
+      "target": "NYCMng",
+      "directed": false
+    },
+    {
+      "id": "SNVAng_STTLng",
+      "edgeIds": ["SNVAng_STTLng:forward", "SNVAng_STTLng:backward"],
+      "source": "STTLng",
+      "target": "SNVAng",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "ABILENE",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "ATLAM5",
+        "name": "ATLAM5",
+        "x": 687.587,
+        "y": 448.391
+      },
+      {
+        "id": "ATLAng",
+        "name": "ATLAng",
+        "x": 669.104,
+        "y": 427.359
+      },
+      {
+        "id": "CHINng",
+        "name": "CHINng",
+        "x": 634.069,
+        "y": 221.714
+      },
+      {
+        "id": "DNVRng",
+        "name": "DNVRng",
+        "x": 346.345,
+        "y": 252.092
+      },
+      {
+        "id": "HSTNng",
+        "name": "HSTNng",
+        "x": 503.299,
+        "y": 560.0
+      },
+      {
+        "id": "IPLSng",
+        "name": "IPLSng",
+        "x": 658.187,
+        "y": 279.276
+      },
+      {
+        "id": "KSCYng",
+        "name": "KSCYng",
+        "x": 485.434,
+        "y": 302.241
+      },
+      {
+        "id": "LOSAng",
+        "name": "LOSAng",
+        "x": 127.035,
+        "y": 439.978
+      },
+      {
+        "id": "NYCMng",
+        "name": "NYCMng",
+        "x": 860.0,
+        "y": 251.158
+      },
+      {
+        "id": "SNVAng",
+        "name": "SNVAng",
+        "x": 64.543,
+        "y": 346.435
+      },
+      {
+        "id": "STTLng",
+        "name": "STTLng",
+        "x": 60.0,
+        "y": 60.0
+      },
+      {
+        "id": "WASHng",
+        "name": "WASHng",
+        "x": 809.349,
+        "y": 304.047
+      }
+    ],
+    "edges": [
+      {
+        "id": "ATLAM5_ATLAng:forward",
+        "source": "ATLAng",
+        "target": "ATLAM5",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "ATLAM5_ATLAng:backward",
+        "source": "ATLAM5",
+        "target": "ATLAng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "ATLAng_HSTNng:forward",
+        "source": "HSTNng",
+        "target": "ATLAng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "ATLAng_HSTNng:backward",
+        "source": "ATLAng",
+        "target": "HSTNng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "ATLAng_IPLSng:forward",
+        "source": "IPLSng",
+        "target": "ATLAng",
+        "capacity": 2480,
+        "flow": 0
+      },
+      {
+        "id": "ATLAng_IPLSng:backward",
+        "source": "ATLAng",
+        "target": "IPLSng",
+        "capacity": 2480,
+        "flow": 0
+      },
+      {
+        "id": "ATLAng_WASHng:forward",
+        "source": "WASHng",
+        "target": "ATLAng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "ATLAng_WASHng:backward",
+        "source": "ATLAng",
+        "target": "WASHng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "CHINng_IPLSng:forward",
+        "source": "IPLSng",
+        "target": "CHINng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "CHINng_IPLSng:backward",
+        "source": "CHINng",
+        "target": "IPLSng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "CHINng_NYCMng:forward",
+        "source": "NYCMng",
+        "target": "CHINng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "CHINng_NYCMng:backward",
+        "source": "CHINng",
+        "target": "NYCMng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "DNVRng_KSCYng:forward",
+        "source": "KSCYng",
+        "target": "DNVRng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "DNVRng_KSCYng:backward",
+        "source": "DNVRng",
+        "target": "KSCYng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "DNVRng_SNVAng:forward",
+        "source": "SNVAng",
+        "target": "DNVRng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "DNVRng_SNVAng:backward",
+        "source": "DNVRng",
+        "target": "SNVAng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "DNVRng_STTLng:forward",
+        "source": "STTLng",
+        "target": "DNVRng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "DNVRng_STTLng:backward",
+        "source": "DNVRng",
+        "target": "STTLng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "HSTNng_KSCYng:forward",
+        "source": "KSCYng",
+        "target": "HSTNng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "HSTNng_KSCYng:backward",
+        "source": "HSTNng",
+        "target": "KSCYng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "HSTNng_LOSAng:forward",
+        "source": "LOSAng",
+        "target": "HSTNng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "HSTNng_LOSAng:backward",
+        "source": "HSTNng",
+        "target": "LOSAng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "IPLSng_KSCYng:forward",
+        "source": "KSCYng",
+        "target": "IPLSng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "IPLSng_KSCYng:backward",
+        "source": "IPLSng",
+        "target": "KSCYng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "LOSAng_SNVAng:forward",
+        "source": "SNVAng",
+        "target": "LOSAng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "LOSAng_SNVAng:backward",
+        "source": "LOSAng",
+        "target": "SNVAng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "NYCMng_WASHng:forward",
+        "source": "WASHng",
+        "target": "NYCMng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "NYCMng_WASHng:backward",
+        "source": "NYCMng",
+        "target": "WASHng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "SNVAng_STTLng:forward",
+        "source": "STTLng",
+        "target": "SNVAng",
+        "capacity": 9920,
+        "flow": 0
+      },
+      {
+        "id": "SNVAng_STTLng:backward",
+        "source": "SNVAng",
+        "target": "STTLng",
+        "capacity": 9920,
+        "flow": 0
+      }
+    ]
+  }
+}

@@ -14,6 +14,16 @@ import { NetworkActions } from "../shared/network-actions";
       </div>
       <fc-network-actions />
     </div>
+    <section class="panel padded case-library">
+      <span class="eyebrow">ESTUDOS DE CASO · SNDLIB</span>
+      <h2>Redes de telecomunicações</h2>
+      <p>
+        Abilene, Atlanta e TA2: topologias documentadas, capacidades e hipóteses
+        explícitas. Os originais são imutáveis; crie cópias editáveis em
+        Simulações.
+      </p>
+      <a class="button" routerLink="/simulacoes">Explorar benchmarks</a>
+    </section>
     <div class="section-heading">
       <label class="search-field"
         >Buscar redes<input

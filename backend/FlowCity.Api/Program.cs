@@ -5,7 +5,12 @@ using FluentValidation;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options => options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+{
+    Title = "LinkPlan API",
+    Version = "v1",
+    Description = "Planejamento de capacidade e manutenção de redes."
+}));
 builder.Services.AddFlowCity(builder.Configuration);
 var app = builder.Build();
 app.Use(async (context, next) =>
@@ -27,7 +32,11 @@ app.Use(async (context, next) =>
         await context.Response.WriteAsJsonAsync(new { title = "Dados inválidos", detail = ex.Message, status = 400 });
     }
 });
-app.UseSwagger(); app.UseSwaggerUI(); app.MapControllers();
+app.UseSwagger(); app.UseSwaggerUI(options =>
+{
+    options.DocumentTitle = "LinkPlan API";
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "LinkPlan API v1");
+}); app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
     await scope.ServiceProvider.GetRequiredService<DatabaseInitializer>().InitializeAsync();

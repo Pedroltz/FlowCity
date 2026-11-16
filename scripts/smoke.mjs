@@ -16,7 +16,12 @@ const errors = [],
 const origin = process.env.FLOWCITY_URL || "http://localhost:4200";
 page.on("pageerror", (e) => errors.push(e.message));
 page.on("dialog", (d) => d.accept());
-const click = (name) => page.getByRole("button", { name, exact: true }).click();
+const click = async (name) => {
+  const button = page.getByRole("button", { name, exact: true });
+  if (name === "Calcular capacidade disponível" && !(await button.isVisible()))
+    await page.locator(".editor-calculation > summary").click();
+  await button.click();
+};
 const heading = (name) =>
   page.getByRole("heading", { name, exact: true }).waitFor();
 const idle = () =>
@@ -28,7 +33,7 @@ async function navigate(path) {
   await page.waitForURL(`**${path}`);
   const headings = {
     "/redes": "Minhas redes",
-    "/simulacoes": "Simulações",
+    "/simulacoes": "Planejamento",
     "/resultados": "Resultados",
   };
   if (headings[path]) await heading(headings[path]);
@@ -107,35 +112,33 @@ try {
   const saved = await importDocument(document);
   await navigate("/editor");
   await heading(saved.name);
-  await click("Calcular fluxo máximo");
+  await click("Calcular capacidade disponível");
   await result(23);
   report.push("Importação isolada e fluxo máximo 23");
   await navigate("/editor");
-  await page.locator(".graph-canvas").evaluate((el) =>
+  await page.locator(".graph-canvas").evaluate((el) => {
     el._cyreg.cy
       .edges()
       .filter((e) => e.data("originalId") === "e10")
-      .emit("tap"),
-  );
+      .emit("tap");
+  });
   await page
-    .locator("fc-editor-tools mat-expansion-panel")
-    .filter({ hasText: "Propriedades da seleção" })
-    .getByLabel("Capacidade (veíc./min)", { exact: true })
+    .locator("fc-editor-tools .selection-editor")
+    .getByLabel("Capacidade da conexão selecionada", { exact: true })
     .fill("1");
-  await click("Aplicar alteração");
+  await click("Aplicar à rede");
   await navigate("/resultados");
   await heading("Seu próximo resultado começa com uma simulação.");
   await navigate("/editor");
-  await click("Calcular fluxo máximo");
+  await click("Calcular capacidade disponível");
   await result(20);
   await navigate("/editor");
   await page
-    .locator("fc-editor-tools mat-expansion-panel")
-    .filter({ hasText: "Propriedades da seleção" })
-    .getByLabel("Capacidade (veíc./min)", { exact: true })
+    .locator("fc-editor-tools .selection-editor")
+    .getByLabel("Capacidade da conexão selecionada", { exact: true })
     .fill("4");
-  await click("Aplicar alteração");
-  await click("Calcular fluxo máximo");
+  await click("Aplicar à rede");
+  await click("Calcular capacidade disponível");
   await result(23);
   report.push(
     "Edição repetida, invalidação e estado entre rotas: 23 → 20 → 23",
@@ -201,7 +204,7 @@ try {
     doc.name = `Smoke ${size} · ${Date.now()}`;
     const clone = await importDocument(doc);
     await navigate("/simulacoes");
-    await click("Calcular fluxo máximo");
+    await click("Calcular capacidade disponível");
     await result();
     const value = (
       await page.locator(".primary-metric strong").textContent()
@@ -242,7 +245,7 @@ try {
     })),
   });
   await navigate("/simulacoes");
-  await click("Calcular fluxo máximo");
+  await click("Calcular capacidade disponível");
   await result(2);
   await navigate("/simulacoes");
   await page.locator(".path-chip").last().click();
@@ -269,62 +272,55 @@ try {
     edges: [{ source: "A", target: "B", capacity: 9 }],
   });
   await navigate("/simulacoes");
-  await click("Calcular fluxo máximo");
+  await click("Calcular capacidade disponível");
   await result(9);
   report.push("Importação mínima, layout automático e fluxo 9");
   await navigate("/editor");
-  await page.getByRole("button", { name: "Adicionar vértices e vias" }).click();
-  await page.getByLabel("ID do vértice", { exact: true }).fill("C");
+  await click("Adicionar ponto");
   await page
-    .getByLabel("Nome do cruzamento", { exact: true })
-    .fill("Intermediário");
-  await click("Adicionar vértice");
+    .getByText("Identificador avançado (opcional)", { exact: true })
+    .click();
+  await page.getByLabel("Identificador do ponto", { exact: true }).fill("C");
+  await page.getByLabel("Nome do ponto", { exact: true }).fill("Intermediário");
+  await click("Adicionar este ponto");
+  await click("Editar itens");
   await page
-    .locator("summary")
-    .filter({ hasText: "Selecionar vértice" })
+    .locator(".editor-item")
+    .filter({ hasText: "Intermediário" })
     .click();
   await page
-    .getByRole("button", { name: "C · Intermediário", exact: true })
-    .click();
-  await page.getByLabel("Nome", { exact: true }).fill("Renomeado");
-  await click("Aplicar alteração");
+    .getByLabel("Nome do ponto selecionado", { exact: true })
+    .fill("Renomeado");
+  await click("Aplicar à rede");
+  await page.locator(".editor-item").filter({ hasText: "Renomeado" }).waitFor();
+  await click("Excluir ponto");
   await page
-    .getByRole("button", { name: "C · Renomeado", exact: true })
-    .waitFor();
-  await click("Remover seleção");
-  await page
-    .getByRole("button", { name: "C · Renomeado", exact: true })
+    .locator(".editor-item")
+    .filter({ hasText: "Renomeado" })
     .waitFor({ state: "detached" });
-  assert.equal(
-    await page
-      .getByRole("button", { name: "C · Renomeado", exact: true })
-      .count(),
-    0,
-  );
-  await page.getByLabel("Via: origem", { exact: true }).click();
-  await page.getByRole("option", { name: "A · Entrada", exact: true }).click();
-  await page.getByLabel("Via: destino", { exact: true }).click();
-  await page.getByRole("option", { name: "B · Saída", exact: true }).click();
+  await click("Criar conexão");
+  await page.getByLabel("De onde sai", { exact: true }).selectOption("A");
+  await page.getByLabel("Onde chega", { exact: true }).selectOption("B");
+  await page.getByLabel("Capacidade da conexão", { exact: true }).fill("5");
+  await click("Criar esta conexão");
+  await click("Editar itens");
   await page
-    .getByLabel("Capacidade (veíc./min)", { exact: true })
-    .first()
-    .fill("5");
-  await click("Adicionar via");
-  await page
-    .getByRole("button", { name: "A → B · capacidade 5", exact: true })
+    .locator(".editor-item")
+    .filter({ hasText: "Entrada → Saída" })
+    .filter({ hasText: "Capacidade 5" })
     .click();
   await page
-    .locator("fc-editor-tools mat-expansion-panel")
-    .filter({ hasText: "Propriedades da seleção" })
-    .getByLabel("Capacidade (veíc./min)", { exact: true })
+    .getByLabel("Capacidade da conexão selecionada", { exact: true })
     .fill("3");
-  await click("Aplicar alteração");
+  await click("Aplicar à rede");
   await page
-    .getByRole("button", { name: "A → B · capacidade 3", exact: true })
+    .locator(".editor-item")
+    .filter({ hasText: "Capacidade 3" })
     .waitFor();
-  await click("Remover seleção");
+  await click("Excluir conexão");
   await page
-    .getByRole("button", { name: "A → B · capacidade 3", exact: true })
+    .locator(".editor-item")
+    .filter({ hasText: "Capacidade 3" })
     .waitFor({ state: "detached" });
   await click("Salvar rede");
   await idle();
@@ -385,7 +381,7 @@ try {
   await idle();
   report.push("JSON inválido e falha de API com recuperação");
   await page.goto(`${origin}/editor`);
-  await heading(small.name);
+  await heading(summaries[0].name);
   await idle();
   assert.deepEqual(errors, []);
   report.push("Acesso direto à rota; nenhum erro JavaScript");

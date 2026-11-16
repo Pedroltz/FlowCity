@@ -1,0 +1,475 @@
+{
+  "id": "polska",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/polska/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "af3652b8d0a060af9ac5dd3021d3e6724153b096c3b001c4e24e7de77f71e43d",
+  "retrievedAt": "2026-11-16T18:32:42.160358+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "Link_0_10",
+      "edgeIds": ["Link_0_10:forward", "Link_0_10:backward"],
+      "source": "Gdansk",
+      "target": "Warsaw",
+      "directed": false
+    },
+    {
+      "id": "Link_0_2",
+      "edgeIds": ["Link_0_2:forward", "Link_0_2:backward"],
+      "source": "Gdansk",
+      "target": "Kolobrzeg",
+      "directed": false
+    },
+    {
+      "id": "Link_1_2",
+      "edgeIds": ["Link_1_2:forward", "Link_1_2:backward"],
+      "source": "Bydgoszcz",
+      "target": "Kolobrzeg",
+      "directed": false
+    },
+    {
+      "id": "Link_1_7",
+      "edgeIds": ["Link_1_7:forward", "Link_1_7:backward"],
+      "source": "Bydgoszcz",
+      "target": "Poznan",
+      "directed": false
+    },
+    {
+      "id": "Link_1_10",
+      "edgeIds": ["Link_1_10:forward", "Link_1_10:backward"],
+      "source": "Bydgoszcz",
+      "target": "Warsaw",
+      "directed": false
+    },
+    {
+      "id": "Link_2_9",
+      "edgeIds": ["Link_2_9:forward", "Link_2_9:backward"],
+      "source": "Kolobrzeg",
+      "target": "Szczecin",
+      "directed": false
+    },
+    {
+      "id": "Link_3_4",
+      "edgeIds": ["Link_3_4:forward", "Link_3_4:backward"],
+      "source": "Katowice",
+      "target": "Krakow",
+      "directed": false
+    },
+    {
+      "id": "Link_3_6",
+      "edgeIds": ["Link_3_6:forward", "Link_3_6:backward"],
+      "source": "Katowice",
+      "target": "Lodz",
+      "directed": false
+    },
+    {
+      "id": "Link_3_11",
+      "edgeIds": ["Link_3_11:forward", "Link_3_11:backward"],
+      "source": "Katowice",
+      "target": "Wroclaw",
+      "directed": false
+    },
+    {
+      "id": "Link_4_8",
+      "edgeIds": ["Link_4_8:forward", "Link_4_8:backward"],
+      "source": "Krakow",
+      "target": "Rzeszow",
+      "directed": false
+    },
+    {
+      "id": "Link_4_10",
+      "edgeIds": ["Link_4_10:forward", "Link_4_10:backward"],
+      "source": "Krakow",
+      "target": "Warsaw",
+      "directed": false
+    },
+    {
+      "id": "Link_5_8",
+      "edgeIds": ["Link_5_8:forward", "Link_5_8:backward"],
+      "source": "Bialystok",
+      "target": "Rzeszow",
+      "directed": false
+    },
+    {
+      "id": "Link_5_10",
+      "edgeIds": ["Link_5_10:forward", "Link_5_10:backward"],
+      "source": "Bialystok",
+      "target": "Warsaw",
+      "directed": false
+    },
+    {
+      "id": "Link_6_10",
+      "edgeIds": ["Link_6_10:forward", "Link_6_10:backward"],
+      "source": "Lodz",
+      "target": "Warsaw",
+      "directed": false
+    },
+    {
+      "id": "Link_6_11",
+      "edgeIds": ["Link_6_11:forward", "Link_6_11:backward"],
+      "source": "Lodz",
+      "target": "Wroclaw",
+      "directed": false
+    },
+    {
+      "id": "Link_7_9",
+      "edgeIds": ["Link_7_9:forward", "Link_7_9:backward"],
+      "source": "Poznan",
+      "target": "Szczecin",
+      "directed": false
+    },
+    {
+      "id": "Link_7_11",
+      "edgeIds": ["Link_7_11:forward", "Link_7_11:backward"],
+      "source": "Poznan",
+      "target": "Wroclaw",
+      "directed": false
+    },
+    {
+      "id": "Link_0_5",
+      "edgeIds": ["Link_0_5:forward", "Link_0_5:backward"],
+      "source": "Gdansk",
+      "target": "Bialystok",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "POLSKA",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "Gdansk",
+        "name": "Gdansk",
+        "x": 441.395,
+        "y": 60.0
+      },
+      {
+        "id": "Bydgoszcz",
+        "name": "Bydgoszcz",
+        "x": 376.279,
+        "y": 190.952
+      },
+      {
+        "id": "Kolobrzeg",
+        "name": "Kolobrzeg",
+        "x": 208.837,
+        "y": 60.0
+      },
+      {
+        "id": "Katowice",
+        "name": "Katowice",
+        "x": 460.0,
+        "y": 524.286
+      },
+      {
+        "id": "Krakow",
+        "name": "Krakow",
+        "x": 553.023,
+        "y": 560.0
+      },
+      {
+        "id": "Bialystok",
+        "name": "Bialystok",
+        "x": 860.0,
+        "y": 190.952
+      },
+      {
+        "id": "Lodz",
+        "name": "Lodz",
+        "x": 515.814,
+        "y": 357.619
+      },
+      {
+        "id": "Poznan",
+        "name": "Poznan",
+        "x": 273.953,
+        "y": 274.286
+      },
+      {
+        "id": "Rzeszow",
+        "name": "Rzeszow",
+        "x": 748.372,
+        "y": 560.0
+      },
+      {
+        "id": "Szczecin",
+        "name": "Szczecin",
+        "x": 60.0,
+        "y": 155.238
+      },
+      {
+        "id": "Warsaw",
+        "name": "Warsaw",
+        "x": 664.651,
+        "y": 298.095
+      },
+      {
+        "id": "Wroclaw",
+        "name": "Wroclaw",
+        "x": 283.256,
+        "y": 429.048
+      }
+    ],
+    "edges": [
+      {
+        "id": "Link_0_10:forward",
+        "source": "Gdansk",
+        "target": "Warsaw",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_0_10:backward",
+        "source": "Warsaw",
+        "target": "Gdansk",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_0_2:forward",
+        "source": "Gdansk",
+        "target": "Kolobrzeg",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_0_2:backward",
+        "source": "Kolobrzeg",
+        "target": "Gdansk",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_1_2:forward",
+        "source": "Bydgoszcz",
+        "target": "Kolobrzeg",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_1_2:backward",
+        "source": "Kolobrzeg",
+        "target": "Bydgoszcz",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_1_7:forward",
+        "source": "Bydgoszcz",
+        "target": "Poznan",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_1_7:backward",
+        "source": "Poznan",
+        "target": "Bydgoszcz",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_1_10:forward",
+        "source": "Bydgoszcz",
+        "target": "Warsaw",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_1_10:backward",
+        "source": "Warsaw",
+        "target": "Bydgoszcz",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_2_9:forward",
+        "source": "Kolobrzeg",
+        "target": "Szczecin",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_2_9:backward",
+        "source": "Szczecin",
+        "target": "Kolobrzeg",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_3_4:forward",
+        "source": "Katowice",
+        "target": "Krakow",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_3_4:backward",
+        "source": "Krakow",
+        "target": "Katowice",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_3_6:forward",
+        "source": "Katowice",
+        "target": "Lodz",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_3_6:backward",
+        "source": "Lodz",
+        "target": "Katowice",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_3_11:forward",
+        "source": "Katowice",
+        "target": "Wroclaw",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_3_11:backward",
+        "source": "Wroclaw",
+        "target": "Katowice",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_4_8:forward",
+        "source": "Krakow",
+        "target": "Rzeszow",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_4_8:backward",
+        "source": "Rzeszow",
+        "target": "Krakow",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_4_10:forward",
+        "source": "Krakow",
+        "target": "Warsaw",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_4_10:backward",
+        "source": "Warsaw",
+        "target": "Krakow",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_5_8:forward",
+        "source": "Bialystok",
+        "target": "Rzeszow",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_5_8:backward",
+        "source": "Rzeszow",
+        "target": "Bialystok",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_5_10:forward",
+        "source": "Bialystok",
+        "target": "Warsaw",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_5_10:backward",
+        "source": "Warsaw",
+        "target": "Bialystok",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_6_10:forward",
+        "source": "Lodz",
+        "target": "Warsaw",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_6_10:backward",
+        "source": "Warsaw",
+        "target": "Lodz",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_6_11:forward",
+        "source": "Lodz",
+        "target": "Wroclaw",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_6_11:backward",
+        "source": "Wroclaw",
+        "target": "Lodz",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_7_9:forward",
+        "source": "Poznan",
+        "target": "Szczecin",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_7_9:backward",
+        "source": "Szczecin",
+        "target": "Poznan",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_7_11:forward",
+        "source": "Poznan",
+        "target": "Wroclaw",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_7_11:backward",
+        "source": "Wroclaw",
+        "target": "Poznan",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_0_5:forward",
+        "source": "Gdansk",
+        "target": "Bialystok",
+        "capacity": 155,
+        "flow": 0
+      },
+      {
+        "id": "Link_0_5:backward",
+        "source": "Bialystok",
+        "target": "Gdansk",
+        "capacity": 155,
+        "flow": 0
+      }
+    ]
+  }
+}

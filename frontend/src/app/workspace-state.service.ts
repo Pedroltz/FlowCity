@@ -1,4 +1,6 @@
-import { Injectable, signal, inject } from "@angular/core";
+import { ThemeService } from "./theme.service";
+import { applyGraphTheme } from "./shared/graph-theme";
+import { Injectable, signal, inject, effect } from "@angular/core";
 import { HttpErrorResponse } from "@angular/common/http";
 import cytoscape, { Core, ElementDefinition } from "cytoscape";
 import {
@@ -12,8 +14,13 @@ import { GraphApi } from "./graph-api.service";
 
 @Injectable({ providedIn: "root" })
 export class WorkspaceState {
+  private theme = inject(ThemeService);
+  constructor() {
+    effect(() => applyGraphTheme(this.cy, this.theme.dark()));
+  }
   private api = inject(GraphApi);
   private cy?: Core;
+  private simpleLabels = false;
   private resizeObserver?: ResizeObserver;
   networks = signal<GraphSummary[]>([]);
   networksLoaded = signal(false);
@@ -41,7 +48,8 @@ export class WorkspaceState {
   selectedEdge = signal<GraphEdge | null>(null);
   editName = "";
   editCapacity = 0;
-  attachCanvas(container: HTMLDivElement) {
+  attachCanvas(container: HTMLDivElement, simpleLabels = false) {
+    this.simpleLabels = simpleLabels;
     this.detachCanvas();
     this.cy = cytoscape({
       container,
@@ -120,22 +128,13 @@ export class WorkspaceState {
         },
       ],
     });
-    this.cy.on("tap", "node", (event) => {
-      const n = this.graph().nodes.find(
-        (n) => n.id === event.target.data("originalId"),
-      )!;
-      this.selectedNode.set(n);
-      this.selectedEdge.set(null);
-      this.editName = n.name;
-    });
-    this.cy.on("tap", "edge", (event) => {
-      const e = this.graph().edges.find(
-        (e) => e.id === event.target.data("originalId"),
-      )!;
-      this.selectedEdge.set(e);
-      this.selectedNode.set(null);
-      this.editCapacity = e.capacity;
-    });
+    applyGraphTheme(this.cy, this.theme.dark());
+    this.cy.on("tap", "node", (event) =>
+      this.selectNode(event.target.data("originalId")),
+    );
+    this.cy.on("tap", "edge", (event) =>
+      this.selectEdge(event.target.data("originalId")),
+    );
     this.cy.on("dragfree", "node", (event) => {
       const n = this.graph().nodes.find(
         (n) => n.id === event.target.data("originalId"),
@@ -273,7 +272,7 @@ export class WorkspaceState {
       !this.nodeName.trim() ||
       this.graph().nodes.some((n) => n.id === id)
     ) {
-      this.error.set("Informe um ID único e um nome para o vértice.");
+      this.error.set("Informe um nome para o ponto e um identificador único.");
       return;
     }
     this.graph().nodes.push({
@@ -297,7 +296,7 @@ export class WorkspaceState {
       !this.validCapacity(this.capacity)
     ) {
       this.error.set(
-        "Escolha os extremos e uma capacidade inteira entre 0 e 2147483647.",
+        "Escolha os dois pontos e informe uma capacidade inteira entre 0 e 2147483647.",
       );
       return;
     }
@@ -316,14 +315,14 @@ export class WorkspaceState {
       edge = this.selectedEdge();
     if (node) {
       if (!this.editName.trim()) {
-        this.error.set("Informe o nome do vértice.");
+        this.error.set("Informe um nome para o ponto.");
         return;
       }
       node.name = this.editName.trim();
     }
     if (edge) {
       if (!this.validCapacity(this.editCapacity)) {
-        this.error.set("Capacidade inteira inválida.");
+        this.error.set("Informe uma capacidade inteira entre 0 e 2147483647.");
         return;
       }
       edge.capacity = this.editCapacity;
@@ -334,7 +333,17 @@ export class WorkspaceState {
   removeSelection() {
     const n = this.selectedNode(),
       e = this.selectedEdge();
-    if (n && !confirm("Remover o vértice e todas as vias incidentes?")) return;
+    if (n) {
+      const count = this.graph().edges.filter(
+        (edge) => edge.source === n.id || edge.target === n.id,
+      ).length;
+      if (!confirm(`Excluir o ponto “${n.name}” e suas ${count} conexões?`))
+        return;
+      if (this.source === n.id) this.source = "";
+      if (this.sink === n.id) this.sink = "";
+      if (this.edgeSource === n.id) this.edgeSource = "";
+      if (this.edgeTarget === n.id) this.edgeTarget = "";
+    }
     if (n) {
       this.graph().nodes = this.graph().nodes.filter((x) => x.id !== n.id);
       this.graph().edges = this.graph().edges.filter(
@@ -370,17 +379,26 @@ export class WorkspaceState {
   }
   selectNode(id: string) {
     const node = this.graph().nodes.find((n) => n.id === id);
-    if (!node) return;
+    if (!node || this.selectedNode()?.id === id) return;
     this.selectedNode.set(node);
     this.selectedEdge.set(null);
     this.editName = node.name;
+    this.highlightSelection();
   }
   selectEdge(id: string) {
     const edge = this.graph().edges.find((e) => e.id === id);
-    if (!edge) return;
+    if (!edge || this.selectedEdge()?.id === id) return;
     this.selectedEdge.set(edge);
     this.selectedNode.set(null);
     this.editCapacity = edge.capacity;
+    this.highlightSelection();
+  }
+  private highlightSelection() {
+    this.cy?.elements().unselect();
+    const node = this.selectedNode(),
+      edge = this.selectedEdge();
+    if (node) this.cy?.getElementById(`n:${node.id}`).select();
+    if (edge) this.cy?.getElementById(`e:${edge.id}`).select();
   }
   endpointsChanged() {
     this.result.set(null);
@@ -392,8 +410,19 @@ export class WorkspaceState {
     if (!this.cy) return;
     const g = this.graph(),
       result = this.result();
+    const nameCounts = new Map<string, number>();
+    for (const node of g.nodes)
+      nameCounts.set(node.name, (nameCounts.get(node.name) ?? 0) + 1);
     const elements: ElementDefinition[] = g.nodes.map((n) => ({
-      data: { id: `n:${n.id}`, originalId: n.id, label: `${n.id} · ${n.name}` },
+      data: {
+        id: `n:${n.id}`,
+        originalId: n.id,
+        label: this.simpleLabels
+          ? (nameCounts.get(n.name) ?? 0) > 1
+            ? `${n.name} (${n.id})`
+            : n.name
+          : `${n.id} · ${n.name}`,
+      },
       position: { x: n.x, y: n.y },
       classes: n.id === this.source || n.id === this.sink ? "endpoint" : "",
     }));
@@ -460,6 +489,7 @@ export class WorkspaceState {
           })),
       );
     }
+    this.highlightSelection();
     if (fit) {
       const positions = new Set(g.nodes.map((n) => `${n.x},${n.y}`));
       if (positions.size < 2 && g.nodes.length > 1) this.layout();
@@ -495,7 +525,7 @@ export class WorkspaceState {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "flowcity-rede.json";
+    a.download = "linkplan-rede.json";
     a.click();
     URL.revokeObjectURL(url);
   }

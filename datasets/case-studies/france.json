@@ -1,0 +1,1120 @@
+{
+  "id": "france",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/france/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "ae506fd42bcb64b60e9840096810999965bd56b32866b9d09a16198cfa21c73e",
+  "retrievedAt": "2026-11-16T18:32:42.153573+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "LinkN01_N02",
+      "edgeIds": ["LinkN01_N02:forward", "LinkN01_N02:backward"],
+      "source": "N01",
+      "target": "N02",
+      "directed": false
+    },
+    {
+      "id": "LinkN03_N07",
+      "edgeIds": ["LinkN03_N07:forward", "LinkN03_N07:backward"],
+      "source": "N03",
+      "target": "N07",
+      "directed": false
+    },
+    {
+      "id": "LinkN03_N09",
+      "edgeIds": ["LinkN03_N09:forward", "LinkN03_N09:backward"],
+      "source": "N03",
+      "target": "N09",
+      "directed": false
+    },
+    {
+      "id": "LinkN03_N10",
+      "edgeIds": ["LinkN03_N10:forward", "LinkN03_N10:backward"],
+      "source": "N03",
+      "target": "N10",
+      "directed": false
+    },
+    {
+      "id": "LinkN05_N04",
+      "edgeIds": ["LinkN05_N04:forward", "LinkN05_N04:backward"],
+      "source": "N05",
+      "target": "N04",
+      "directed": false
+    },
+    {
+      "id": "LinkN06_N04",
+      "edgeIds": ["LinkN06_N04:forward", "LinkN06_N04:backward"],
+      "source": "N06",
+      "target": "N04",
+      "directed": false
+    },
+    {
+      "id": "LinkN06_N05",
+      "edgeIds": ["LinkN06_N05:forward", "LinkN06_N05:backward"],
+      "source": "N06",
+      "target": "N05",
+      "directed": false
+    },
+    {
+      "id": "LinkN06_N07",
+      "edgeIds": ["LinkN06_N07:forward", "LinkN06_N07:backward"],
+      "source": "N06",
+      "target": "N07",
+      "directed": false
+    },
+    {
+      "id": "LinkN06_N08",
+      "edgeIds": ["LinkN06_N08:forward", "LinkN06_N08:backward"],
+      "source": "N06",
+      "target": "N08",
+      "directed": false
+    },
+    {
+      "id": "LinkN08_N07",
+      "edgeIds": ["LinkN08_N07:forward", "LinkN08_N07:backward"],
+      "source": "N08",
+      "target": "N07",
+      "directed": false
+    },
+    {
+      "id": "LinkN08_N09",
+      "edgeIds": ["LinkN08_N09:forward", "LinkN08_N09:backward"],
+      "source": "N08",
+      "target": "N09",
+      "directed": false
+    },
+    {
+      "id": "LinkN10_N12",
+      "edgeIds": ["LinkN10_N12:forward", "LinkN10_N12:backward"],
+      "source": "N10",
+      "target": "N12",
+      "directed": false
+    },
+    {
+      "id": "LinkN11_N10",
+      "edgeIds": ["LinkN11_N10:forward", "LinkN11_N10:backward"],
+      "source": "N11",
+      "target": "N10",
+      "directed": false
+    },
+    {
+      "id": "LinkN11_N12",
+      "edgeIds": ["LinkN11_N12:forward", "LinkN11_N12:backward"],
+      "source": "N11",
+      "target": "N12",
+      "directed": false
+    },
+    {
+      "id": "LinkN13_N14",
+      "edgeIds": ["LinkN13_N14:forward", "LinkN13_N14:backward"],
+      "source": "N13",
+      "target": "N14",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N09",
+      "edgeIds": ["LinkN15_N09:forward", "LinkN15_N09:backward"],
+      "source": "N15",
+      "target": "N09",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N11",
+      "edgeIds": ["LinkN15_N11:forward", "LinkN15_N11:backward"],
+      "source": "N15",
+      "target": "N11",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N13",
+      "edgeIds": ["LinkN15_N13:forward", "LinkN15_N13:backward"],
+      "source": "N15",
+      "target": "N13",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N14",
+      "edgeIds": ["LinkN15_N14:forward", "LinkN15_N14:backward"],
+      "source": "N15",
+      "target": "N14",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N16",
+      "edgeIds": ["LinkN15_N16:forward", "LinkN15_N16:backward"],
+      "source": "N15",
+      "target": "N16",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N18",
+      "edgeIds": ["LinkN15_N18:forward", "LinkN15_N18:backward"],
+      "source": "N15",
+      "target": "N18",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N20",
+      "edgeIds": ["LinkN15_N20:forward", "LinkN15_N20:backward"],
+      "source": "N15",
+      "target": "N20",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N21",
+      "edgeIds": ["LinkN15_N21:forward", "LinkN15_N21:backward"],
+      "source": "N15",
+      "target": "N21",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N22",
+      "edgeIds": ["LinkN15_N22:forward", "LinkN15_N22:backward"],
+      "source": "N15",
+      "target": "N22",
+      "directed": false
+    },
+    {
+      "id": "LinkN15_N25",
+      "edgeIds": ["LinkN15_N25:forward", "LinkN15_N25:backward"],
+      "source": "N15",
+      "target": "N25",
+      "directed": false
+    },
+    {
+      "id": "LinkN16_N09",
+      "edgeIds": ["LinkN16_N09:forward", "LinkN16_N09:backward"],
+      "source": "N16",
+      "target": "N09",
+      "directed": false
+    },
+    {
+      "id": "LinkN16_N10",
+      "edgeIds": ["LinkN16_N10:forward", "LinkN16_N10:backward"],
+      "source": "N16",
+      "target": "N10",
+      "directed": false
+    },
+    {
+      "id": "LinkN16_N11",
+      "edgeIds": ["LinkN16_N11:forward", "LinkN16_N11:backward"],
+      "source": "N16",
+      "target": "N11",
+      "directed": false
+    },
+    {
+      "id": "LinkN16_N12",
+      "edgeIds": ["LinkN16_N12:forward", "LinkN16_N12:backward"],
+      "source": "N16",
+      "target": "N12",
+      "directed": false
+    },
+    {
+      "id": "LinkN17_N10",
+      "edgeIds": ["LinkN17_N10:forward", "LinkN17_N10:backward"],
+      "source": "N17",
+      "target": "N10",
+      "directed": false
+    },
+    {
+      "id": "LinkN17_N16",
+      "edgeIds": ["LinkN17_N16:forward", "LinkN17_N16:backward"],
+      "source": "N17",
+      "target": "N16",
+      "directed": false
+    },
+    {
+      "id": "LinkN18_N19",
+      "edgeIds": ["LinkN18_N19:forward", "LinkN18_N19:backward"],
+      "source": "N18",
+      "target": "N19",
+      "directed": false
+    },
+    {
+      "id": "LinkN20_N19",
+      "edgeIds": ["LinkN20_N19:forward", "LinkN20_N19:backward"],
+      "source": "N20",
+      "target": "N19",
+      "directed": false
+    },
+    {
+      "id": "LinkN20_N21",
+      "edgeIds": ["LinkN20_N21:forward", "LinkN20_N21:backward"],
+      "source": "N20",
+      "target": "N21",
+      "directed": false
+    },
+    {
+      "id": "LinkN20_N24",
+      "edgeIds": ["LinkN20_N24:forward", "LinkN20_N24:backward"],
+      "source": "N20",
+      "target": "N24",
+      "directed": false
+    },
+    {
+      "id": "LinkN22_N09",
+      "edgeIds": ["LinkN22_N09:forward", "LinkN22_N09:backward"],
+      "source": "N22",
+      "target": "N09",
+      "directed": false
+    },
+    {
+      "id": "LinkN22_N20",
+      "edgeIds": ["LinkN22_N20:forward", "LinkN22_N20:backward"],
+      "source": "N22",
+      "target": "N20",
+      "directed": false
+    },
+    {
+      "id": "LinkN22_N23",
+      "edgeIds": ["LinkN22_N23:forward", "LinkN22_N23:backward"],
+      "source": "N22",
+      "target": "N23",
+      "directed": false
+    },
+    {
+      "id": "LinkN22_N24",
+      "edgeIds": ["LinkN22_N24:forward", "LinkN22_N24:backward"],
+      "source": "N22",
+      "target": "N24",
+      "directed": false
+    },
+    {
+      "id": "LinkN24_N23",
+      "edgeIds": ["LinkN24_N23:forward", "LinkN24_N23:backward"],
+      "source": "N24",
+      "target": "N23",
+      "directed": false
+    },
+    {
+      "id": "LinkN25_N01",
+      "edgeIds": ["LinkN25_N01:forward", "LinkN25_N01:backward"],
+      "source": "N25",
+      "target": "N01",
+      "directed": false
+    },
+    {
+      "id": "LinkN25_N02",
+      "edgeIds": ["LinkN25_N02:forward", "LinkN25_N02:backward"],
+      "source": "N25",
+      "target": "N02",
+      "directed": false
+    },
+    {
+      "id": "LinkN25_N03",
+      "edgeIds": ["LinkN25_N03:forward", "LinkN25_N03:backward"],
+      "source": "N25",
+      "target": "N03",
+      "directed": false
+    },
+    {
+      "id": "LinkN25_N04",
+      "edgeIds": ["LinkN25_N04:forward", "LinkN25_N04:backward"],
+      "source": "N25",
+      "target": "N04",
+      "directed": false
+    },
+    {
+      "id": "LinkN25_N09",
+      "edgeIds": ["LinkN25_N09:forward", "LinkN25_N09:backward"],
+      "source": "N25",
+      "target": "N09",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "FRANCE",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "N01",
+        "name": "N01",
+        "x": 359.778,
+        "y": 354.974
+      },
+      {
+        "id": "N02",
+        "name": "N02",
+        "x": 365.1,
+        "y": 464.762
+      },
+      {
+        "id": "N03",
+        "name": "N03",
+        "x": 482.173,
+        "y": 560.0
+      },
+      {
+        "id": "N04",
+        "name": "N04",
+        "x": 514.102,
+        "y": 377.46
+      },
+      {
+        "id": "N05",
+        "name": "N05",
+        "x": 519.424,
+        "y": 434.339
+      },
+      {
+        "id": "N06",
+        "name": "N06",
+        "x": 656.009,
+        "y": 388.042
+      },
+      {
+        "id": "N07",
+        "name": "N07",
+        "x": 551.353,
+        "y": 493.862
+      },
+      {
+        "id": "N08",
+        "name": "N08",
+        "x": 709.224,
+        "y": 413.175
+      },
+      {
+        "id": "N09",
+        "name": "N09",
+        "x": 860.0,
+        "y": 405.238
+      },
+      {
+        "id": "N10",
+        "name": "N10",
+        "x": 107.894,
+        "y": 436.984
+      },
+      {
+        "id": "N11",
+        "name": "N11",
+        "x": 77.738,
+        "y": 257.09
+      },
+      {
+        "id": "N12",
+        "name": "N12",
+        "x": 168.204,
+        "y": 316.614
+      },
+      {
+        "id": "N13",
+        "name": "N13",
+        "x": 680.843,
+        "y": 255.767
+      },
+      {
+        "id": "N14",
+        "name": "N14",
+        "x": 675.521,
+        "y": 193.598
+      },
+      {
+        "id": "N15",
+        "name": "N15",
+        "x": 460.887,
+        "y": 185.661
+      },
+      {
+        "id": "N16",
+        "name": "N16",
+        "x": 331.397,
+        "y": 258.413
+      },
+      {
+        "id": "N17",
+        "name": "N17",
+        "x": 235.61,
+        "y": 430.37
+      },
+      {
+        "id": "N18",
+        "name": "N18",
+        "x": 109.667,
+        "y": 198.889
+      },
+      {
+        "id": "N19",
+        "name": "N19",
+        "x": 60.0,
+        "y": 119.524
+      },
+      {
+        "id": "N20",
+        "name": "N20",
+        "x": 317.206,
+        "y": 65.291
+      },
+      {
+        "id": "N21",
+        "name": "N21",
+        "x": 244.479,
+        "y": 145.979
+      },
+      {
+        "id": "N22",
+        "name": "N22",
+        "x": 737.605,
+        "y": 151.27
+      },
+      {
+        "id": "N23",
+        "name": "N23",
+        "x": 640.044,
+        "y": 65.291
+      },
+      {
+        "id": "N24",
+        "name": "N24",
+        "x": 480.399,
+        "y": 60.0
+      },
+      {
+        "id": "N25",
+        "name": "N25",
+        "x": 421.863,
+        "y": 337.778
+      }
+    ],
+    "edges": [
+      {
+        "id": "LinkN01_N02:forward",
+        "source": "N01",
+        "target": "N02",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN01_N02:backward",
+        "source": "N02",
+        "target": "N01",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN03_N07:forward",
+        "source": "N03",
+        "target": "N07",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN03_N07:backward",
+        "source": "N07",
+        "target": "N03",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN03_N09:forward",
+        "source": "N03",
+        "target": "N09",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN03_N09:backward",
+        "source": "N09",
+        "target": "N03",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN03_N10:forward",
+        "source": "N03",
+        "target": "N10",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN03_N10:backward",
+        "source": "N10",
+        "target": "N03",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN05_N04:forward",
+        "source": "N05",
+        "target": "N04",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN05_N04:backward",
+        "source": "N04",
+        "target": "N05",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN06_N04:forward",
+        "source": "N06",
+        "target": "N04",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN06_N04:backward",
+        "source": "N04",
+        "target": "N06",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN06_N05:forward",
+        "source": "N06",
+        "target": "N05",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN06_N05:backward",
+        "source": "N05",
+        "target": "N06",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN06_N07:forward",
+        "source": "N06",
+        "target": "N07",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN06_N07:backward",
+        "source": "N07",
+        "target": "N06",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN06_N08:forward",
+        "source": "N06",
+        "target": "N08",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN06_N08:backward",
+        "source": "N08",
+        "target": "N06",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN08_N07:forward",
+        "source": "N08",
+        "target": "N07",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN08_N07:backward",
+        "source": "N07",
+        "target": "N08",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN08_N09:forward",
+        "source": "N08",
+        "target": "N09",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN08_N09:backward",
+        "source": "N09",
+        "target": "N08",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN10_N12:forward",
+        "source": "N10",
+        "target": "N12",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN10_N12:backward",
+        "source": "N12",
+        "target": "N10",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN11_N10:forward",
+        "source": "N11",
+        "target": "N10",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN11_N10:backward",
+        "source": "N10",
+        "target": "N11",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN11_N12:forward",
+        "source": "N11",
+        "target": "N12",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN11_N12:backward",
+        "source": "N12",
+        "target": "N11",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN13_N14:forward",
+        "source": "N13",
+        "target": "N14",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN13_N14:backward",
+        "source": "N14",
+        "target": "N13",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N09:forward",
+        "source": "N15",
+        "target": "N09",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N09:backward",
+        "source": "N09",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N11:forward",
+        "source": "N15",
+        "target": "N11",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N11:backward",
+        "source": "N11",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N13:forward",
+        "source": "N15",
+        "target": "N13",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N13:backward",
+        "source": "N13",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N14:forward",
+        "source": "N15",
+        "target": "N14",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N14:backward",
+        "source": "N14",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N16:forward",
+        "source": "N15",
+        "target": "N16",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N16:backward",
+        "source": "N16",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N18:forward",
+        "source": "N15",
+        "target": "N18",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N18:backward",
+        "source": "N18",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N20:forward",
+        "source": "N15",
+        "target": "N20",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N20:backward",
+        "source": "N20",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N21:forward",
+        "source": "N15",
+        "target": "N21",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N21:backward",
+        "source": "N21",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N22:forward",
+        "source": "N15",
+        "target": "N22",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N22:backward",
+        "source": "N22",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N25:forward",
+        "source": "N15",
+        "target": "N25",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN15_N25:backward",
+        "source": "N25",
+        "target": "N15",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN16_N09:forward",
+        "source": "N16",
+        "target": "N09",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN16_N09:backward",
+        "source": "N09",
+        "target": "N16",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN16_N10:forward",
+        "source": "N16",
+        "target": "N10",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN16_N10:backward",
+        "source": "N10",
+        "target": "N16",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN16_N11:forward",
+        "source": "N16",
+        "target": "N11",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN16_N11:backward",
+        "source": "N11",
+        "target": "N16",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN16_N12:forward",
+        "source": "N16",
+        "target": "N12",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN16_N12:backward",
+        "source": "N12",
+        "target": "N16",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN17_N10:forward",
+        "source": "N17",
+        "target": "N10",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN17_N10:backward",
+        "source": "N10",
+        "target": "N17",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN17_N16:forward",
+        "source": "N17",
+        "target": "N16",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN17_N16:backward",
+        "source": "N16",
+        "target": "N17",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN18_N19:forward",
+        "source": "N18",
+        "target": "N19",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN18_N19:backward",
+        "source": "N19",
+        "target": "N18",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN20_N19:forward",
+        "source": "N20",
+        "target": "N19",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN20_N19:backward",
+        "source": "N19",
+        "target": "N20",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN20_N21:forward",
+        "source": "N20",
+        "target": "N21",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN20_N21:backward",
+        "source": "N21",
+        "target": "N20",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN20_N24:forward",
+        "source": "N20",
+        "target": "N24",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN20_N24:backward",
+        "source": "N24",
+        "target": "N20",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN22_N09:forward",
+        "source": "N22",
+        "target": "N09",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN22_N09:backward",
+        "source": "N09",
+        "target": "N22",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN22_N20:forward",
+        "source": "N22",
+        "target": "N20",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN22_N20:backward",
+        "source": "N20",
+        "target": "N22",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN22_N23:forward",
+        "source": "N22",
+        "target": "N23",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN22_N23:backward",
+        "source": "N23",
+        "target": "N22",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN22_N24:forward",
+        "source": "N22",
+        "target": "N24",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN22_N24:backward",
+        "source": "N24",
+        "target": "N22",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN24_N23:forward",
+        "source": "N24",
+        "target": "N23",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN24_N23:backward",
+        "source": "N23",
+        "target": "N24",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N01:forward",
+        "source": "N25",
+        "target": "N01",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N01:backward",
+        "source": "N01",
+        "target": "N25",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N02:forward",
+        "source": "N25",
+        "target": "N02",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N02:backward",
+        "source": "N02",
+        "target": "N25",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N03:forward",
+        "source": "N25",
+        "target": "N03",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N03:backward",
+        "source": "N03",
+        "target": "N25",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N04:forward",
+        "source": "N25",
+        "target": "N04",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N04:backward",
+        "source": "N04",
+        "target": "N25",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N09:forward",
+        "source": "N25",
+        "target": "N09",
+        "capacity": 2500,
+        "flow": 0
+      },
+      {
+        "id": "LinkN25_N09:backward",
+        "source": "N09",
+        "target": "N25",
+        "capacity": 2500,
+        "flow": 0
+      }
+    ]
+  }
+}

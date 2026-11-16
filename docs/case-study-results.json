@@ -1,0 +1,48 @@
+{
+  "executedAt": "2026-11-16T16:38:36.548841+00:00",
+  "method": "Original plus each single physical-link failure; retain largest absolute loss, ties follow source-file order. This is an offline experiment, not an automatic product ranking.",
+  "cases": [
+    {
+      "study": "abilene",
+      "source": "ATLAM5",
+      "sink": "WASHng",
+      "unit": "unidades de capacidade do benchmark",
+      "baseline": 9920,
+      "failedLinkIds": ["ATLAM5_ATLAng"],
+      "remaining": 0,
+      "lost": 9920,
+      "lossPercent": 100,
+      "baselineCut": 9920,
+      "scenarioCut": 0,
+      "examinedSingleFailures": 15
+    },
+    {
+      "study": "atlanta",
+      "source": "N1",
+      "sink": "N15",
+      "unit": "unidades de capacidade do benchmark",
+      "baseline": 4000,
+      "failedLinkIds": ["L15"],
+      "remaining": 1000,
+      "lost": 3000,
+      "lossPercent": 75,
+      "baselineCut": 4000,
+      "scenarioCut": 1000,
+      "examinedSingleFailures": 22
+    },
+    {
+      "study": "ta2",
+      "source": "N1",
+      "sink": "N65",
+      "unit": "unidades de capacidade do benchmark",
+      "baseline": 1512000,
+      "failedLinkIds": ["L1_N1_N31"],
+      "remaining": 1008000,
+      "lost": 504000,
+      "lossPercent": 33.333333333333336,
+      "baselineCut": 1512000,
+      "scenarioCut": 1008000,
+      "examinedSingleFailures": 108
+    }
+  ]
+}

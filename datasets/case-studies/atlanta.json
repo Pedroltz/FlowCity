@@ -1,0 +1,577 @@
+{
+  "id": "atlanta",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/atlanta/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "13a36ce2ddb5466aa94d9f291ea6b8259de9563e2d72117e8813308d846cfa7b",
+  "retrievedAt": "2026-11-16T15:05:27.469666+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Capacidade pré-instalada; ausência representa zero.",
+  "links": [
+    {
+      "id": "L1",
+      "edgeIds": ["L1:forward", "L1:backward"],
+      "source": "N1",
+      "target": "N6",
+      "directed": false
+    },
+    {
+      "id": "L2",
+      "edgeIds": ["L2:forward", "L2:backward"],
+      "source": "N1",
+      "target": "N7",
+      "directed": false
+    },
+    {
+      "id": "L3",
+      "edgeIds": ["L3:forward", "L3:backward"],
+      "source": "N1",
+      "target": "N8",
+      "directed": false
+    },
+    {
+      "id": "L4",
+      "edgeIds": ["L4:forward", "L4:backward"],
+      "source": "N2",
+      "target": "N3",
+      "directed": false
+    },
+    {
+      "id": "L5",
+      "edgeIds": ["L5:forward", "L5:backward"],
+      "source": "N2",
+      "target": "N5",
+      "directed": false
+    },
+    {
+      "id": "L6",
+      "edgeIds": ["L6:forward", "L6:backward"],
+      "source": "N2",
+      "target": "N6",
+      "directed": false
+    },
+    {
+      "id": "L7",
+      "edgeIds": ["L7:forward", "L7:backward"],
+      "source": "N3",
+      "target": "N5",
+      "directed": false
+    },
+    {
+      "id": "L8",
+      "edgeIds": ["L8:forward", "L8:backward"],
+      "source": "N3",
+      "target": "N8",
+      "directed": false
+    },
+    {
+      "id": "L9",
+      "edgeIds": ["L9:forward", "L9:backward"],
+      "source": "N4",
+      "target": "N5",
+      "directed": false
+    },
+    {
+      "id": "L10",
+      "edgeIds": ["L10:forward", "L10:backward"],
+      "source": "N4",
+      "target": "N6",
+      "directed": false
+    },
+    {
+      "id": "L11",
+      "edgeIds": ["L11:forward", "L11:backward"],
+      "source": "N6",
+      "target": "N13",
+      "directed": false
+    },
+    {
+      "id": "L12",
+      "edgeIds": ["L12:forward", "L12:backward"],
+      "source": "N7",
+      "target": "N10",
+      "directed": false
+    },
+    {
+      "id": "L13",
+      "edgeIds": ["L13:forward", "L13:backward"],
+      "source": "N7",
+      "target": "N14",
+      "directed": false
+    },
+    {
+      "id": "L14",
+      "edgeIds": ["L14:forward", "L14:backward"],
+      "source": "N8",
+      "target": "N9",
+      "directed": false
+    },
+    {
+      "id": "L15",
+      "edgeIds": ["L15:forward", "L15:backward"],
+      "source": "N8",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L16",
+      "edgeIds": ["L16:forward", "L16:backward"],
+      "source": "N9",
+      "target": "N10",
+      "directed": false
+    },
+    {
+      "id": "L17",
+      "edgeIds": ["L17:forward", "L17:backward"],
+      "source": "N9",
+      "target": "N12",
+      "directed": false
+    },
+    {
+      "id": "L18",
+      "edgeIds": ["L18:forward", "L18:backward"],
+      "source": "N9",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L19",
+      "edgeIds": ["L19:forward", "L19:backward"],
+      "source": "N10",
+      "target": "N12",
+      "directed": false
+    },
+    {
+      "id": "L20",
+      "edgeIds": ["L20:forward", "L20:backward"],
+      "source": "N11",
+      "target": "N13",
+      "directed": false
+    },
+    {
+      "id": "L21",
+      "edgeIds": ["L21:forward", "L21:backward"],
+      "source": "N11",
+      "target": "N14",
+      "directed": false
+    },
+    {
+      "id": "L22",
+      "edgeIds": ["L22:forward", "L22:backward"],
+      "source": "N13",
+      "target": "N14",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "ATLANTA",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "N1",
+        "name": "N1",
+        "x": 454.783,
+        "y": 310.575
+      },
+      {
+        "id": "N2",
+        "name": "N2",
+        "x": 746.957,
+        "y": 364.598
+      },
+      {
+        "id": "N3",
+        "name": "N3",
+        "x": 860.0,
+        "y": 331.264
+      },
+      {
+        "id": "N4",
+        "name": "N4",
+        "x": 526.087,
+        "y": 546.207
+      },
+      {
+        "id": "N5",
+        "name": "N5",
+        "x": 760.87,
+        "y": 560.0
+      },
+      {
+        "id": "N6",
+        "name": "N6",
+        "x": 552.174,
+        "y": 422.069
+      },
+      {
+        "id": "N7",
+        "name": "N7",
+        "x": 284.348,
+        "y": 224.368
+      },
+      {
+        "id": "N8",
+        "name": "N8",
+        "x": 630.435,
+        "y": 253.103
+      },
+      {
+        "id": "N9",
+        "name": "N9",
+        "x": 515.652,
+        "y": 189.885
+      },
+      {
+        "id": "N10",
+        "name": "N10",
+        "x": 218.261,
+        "y": 132.414
+      },
+      {
+        "id": "N11",
+        "name": "N11",
+        "x": 60.0,
+        "y": 443.908
+      },
+      {
+        "id": "N12",
+        "name": "N12",
+        "x": 402.609,
+        "y": 60.0
+      },
+      {
+        "id": "N13",
+        "name": "N13",
+        "x": 338.261,
+        "y": 527.816
+      },
+      {
+        "id": "N14",
+        "name": "N14",
+        "x": 131.304,
+        "y": 345.057
+      },
+      {
+        "id": "N15",
+        "name": "N15",
+        "x": 767.826,
+        "y": 100.23
+      }
+    ],
+    "edges": [
+      {
+        "id": "L1:forward",
+        "source": "N1",
+        "target": "N6",
+        "capacity": 11000,
+        "flow": 0
+      },
+      {
+        "id": "L1:backward",
+        "source": "N6",
+        "target": "N1",
+        "capacity": 11000,
+        "flow": 0
+      },
+      {
+        "id": "L2:forward",
+        "source": "N1",
+        "target": "N7",
+        "capacity": 7000,
+        "flow": 0
+      },
+      {
+        "id": "L2:backward",
+        "source": "N7",
+        "target": "N1",
+        "capacity": 7000,
+        "flow": 0
+      },
+      {
+        "id": "L3:forward",
+        "source": "N1",
+        "target": "N8",
+        "capacity": 4000,
+        "flow": 0
+      },
+      {
+        "id": "L3:backward",
+        "source": "N8",
+        "target": "N1",
+        "capacity": 4000,
+        "flow": 0
+      },
+      {
+        "id": "L4:forward",
+        "source": "N2",
+        "target": "N3",
+        "capacity": 8000,
+        "flow": 0
+      },
+      {
+        "id": "L4:backward",
+        "source": "N3",
+        "target": "N2",
+        "capacity": 8000,
+        "flow": 0
+      },
+      {
+        "id": "L5:forward",
+        "source": "N2",
+        "target": "N5",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L5:backward",
+        "source": "N5",
+        "target": "N2",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L6:forward",
+        "source": "N2",
+        "target": "N6",
+        "capacity": 15000,
+        "flow": 0
+      },
+      {
+        "id": "L6:backward",
+        "source": "N6",
+        "target": "N2",
+        "capacity": 15000,
+        "flow": 0
+      },
+      {
+        "id": "L7:forward",
+        "source": "N3",
+        "target": "N5",
+        "capacity": 0,
+        "flow": 0
+      },
+      {
+        "id": "L7:backward",
+        "source": "N5",
+        "target": "N3",
+        "capacity": 0,
+        "flow": 0
+      },
+      {
+        "id": "L8:forward",
+        "source": "N3",
+        "target": "N8",
+        "capacity": 8000,
+        "flow": 0
+      },
+      {
+        "id": "L8:backward",
+        "source": "N8",
+        "target": "N3",
+        "capacity": 8000,
+        "flow": 0
+      },
+      {
+        "id": "L9:forward",
+        "source": "N4",
+        "target": "N5",
+        "capacity": 0,
+        "flow": 0
+      },
+      {
+        "id": "L9:backward",
+        "source": "N5",
+        "target": "N4",
+        "capacity": 0,
+        "flow": 0
+      },
+      {
+        "id": "L10:forward",
+        "source": "N4",
+        "target": "N6",
+        "capacity": 4000,
+        "flow": 0
+      },
+      {
+        "id": "L10:backward",
+        "source": "N6",
+        "target": "N4",
+        "capacity": 4000,
+        "flow": 0
+      },
+      {
+        "id": "L11:forward",
+        "source": "N6",
+        "target": "N13",
+        "capacity": 2000,
+        "flow": 0
+      },
+      {
+        "id": "L11:backward",
+        "source": "N13",
+        "target": "N6",
+        "capacity": 2000,
+        "flow": 0
+      },
+      {
+        "id": "L12:forward",
+        "source": "N7",
+        "target": "N10",
+        "capacity": 5000,
+        "flow": 0
+      },
+      {
+        "id": "L12:backward",
+        "source": "N10",
+        "target": "N7",
+        "capacity": 5000,
+        "flow": 0
+      },
+      {
+        "id": "L13:forward",
+        "source": "N7",
+        "target": "N14",
+        "capacity": 5000,
+        "flow": 0
+      },
+      {
+        "id": "L13:backward",
+        "source": "N14",
+        "target": "N7",
+        "capacity": 5000,
+        "flow": 0
+      },
+      {
+        "id": "L14:forward",
+        "source": "N8",
+        "target": "N9",
+        "capacity": 3000,
+        "flow": 0
+      },
+      {
+        "id": "L14:backward",
+        "source": "N9",
+        "target": "N8",
+        "capacity": 3000,
+        "flow": 0
+      },
+      {
+        "id": "L15:forward",
+        "source": "N8",
+        "target": "N15",
+        "capacity": 3000,
+        "flow": 0
+      },
+      {
+        "id": "L15:backward",
+        "source": "N15",
+        "target": "N8",
+        "capacity": 3000,
+        "flow": 0
+      },
+      {
+        "id": "L16:forward",
+        "source": "N9",
+        "target": "N10",
+        "capacity": 2000,
+        "flow": 0
+      },
+      {
+        "id": "L16:backward",
+        "source": "N10",
+        "target": "N9",
+        "capacity": 2000,
+        "flow": 0
+      },
+      {
+        "id": "L17:forward",
+        "source": "N9",
+        "target": "N12",
+        "capacity": 3000,
+        "flow": 0
+      },
+      {
+        "id": "L17:backward",
+        "source": "N12",
+        "target": "N9",
+        "capacity": 3000,
+        "flow": 0
+      },
+      {
+        "id": "L18:forward",
+        "source": "N9",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L18:backward",
+        "source": "N15",
+        "target": "N9",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L19:forward",
+        "source": "N10",
+        "target": "N12",
+        "capacity": 0,
+        "flow": 0
+      },
+      {
+        "id": "L19:backward",
+        "source": "N12",
+        "target": "N10",
+        "capacity": 0,
+        "flow": 0
+      },
+      {
+        "id": "L20:forward",
+        "source": "N11",
+        "target": "N13",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L20:backward",
+        "source": "N13",
+        "target": "N11",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L21:forward",
+        "source": "N11",
+        "target": "N14",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L21:backward",
+        "source": "N14",
+        "target": "N11",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L22:forward",
+        "source": "N13",
+        "target": "N14",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L22:backward",
+        "source": "N14",
+        "target": "N13",
+        "capacity": 1000,
+        "flow": 0
+      }
+    ]
+  }
+}

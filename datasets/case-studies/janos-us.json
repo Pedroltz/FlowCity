@@ -1,0 +1,1357 @@
+{
+  "id": "janos-us",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/janos-us/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "3220f6a3c4332ec285d1715d1e9a2a25dd3dd7584d6fe13b64395bf969d504e4",
+  "retrievedAt": "2026-11-16T18:32:42.154864+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "L0",
+      "edgeIds": ["L0:forward"],
+      "source": "Seattle",
+      "target": "SanFrancisco",
+      "directed": true
+    },
+    {
+      "id": "L1",
+      "edgeIds": ["L1:forward"],
+      "source": "Seattle",
+      "target": "SaltLakeCity",
+      "directed": true
+    },
+    {
+      "id": "L2",
+      "edgeIds": ["L2:forward"],
+      "source": "LosAngeles",
+      "target": "SanFrancisco",
+      "directed": true
+    },
+    {
+      "id": "L3",
+      "edgeIds": ["L3:forward"],
+      "source": "LosAngeles",
+      "target": "LasVegas",
+      "directed": true
+    },
+    {
+      "id": "L4",
+      "edgeIds": ["L4:forward"],
+      "source": "LosAngeles",
+      "target": "ElPaso",
+      "directed": true
+    },
+    {
+      "id": "L5",
+      "edgeIds": ["L5:forward"],
+      "source": "SanFrancisco",
+      "target": "Seattle",
+      "directed": true
+    },
+    {
+      "id": "L6",
+      "edgeIds": ["L6:forward"],
+      "source": "SanFrancisco",
+      "target": "LosAngeles",
+      "directed": true
+    },
+    {
+      "id": "L7",
+      "edgeIds": ["L7:forward"],
+      "source": "SanFrancisco",
+      "target": "SaltLakeCity",
+      "directed": true
+    },
+    {
+      "id": "L8",
+      "edgeIds": ["L8:forward"],
+      "source": "LasVegas",
+      "target": "LosAngeles",
+      "directed": true
+    },
+    {
+      "id": "L9",
+      "edgeIds": ["L9:forward"],
+      "source": "LasVegas",
+      "target": "SaltLakeCity",
+      "directed": true
+    },
+    {
+      "id": "L10",
+      "edgeIds": ["L10:forward"],
+      "source": "LasVegas",
+      "target": "ElPaso",
+      "directed": true
+    },
+    {
+      "id": "L11",
+      "edgeIds": ["L11:forward"],
+      "source": "SaltLakeCity",
+      "target": "Seattle",
+      "directed": true
+    },
+    {
+      "id": "L12",
+      "edgeIds": ["L12:forward"],
+      "source": "SaltLakeCity",
+      "target": "SanFrancisco",
+      "directed": true
+    },
+    {
+      "id": "L13",
+      "edgeIds": ["L13:forward"],
+      "source": "SaltLakeCity",
+      "target": "LasVegas",
+      "directed": true
+    },
+    {
+      "id": "L14",
+      "edgeIds": ["L14:forward"],
+      "source": "SaltLakeCity",
+      "target": "Denver",
+      "directed": true
+    },
+    {
+      "id": "L15",
+      "edgeIds": ["L15:forward"],
+      "source": "ElPaso",
+      "target": "LosAngeles",
+      "directed": true
+    },
+    {
+      "id": "L16",
+      "edgeIds": ["L16:forward"],
+      "source": "ElPaso",
+      "target": "LasVegas",
+      "directed": true
+    },
+    {
+      "id": "L17",
+      "edgeIds": ["L17:forward"],
+      "source": "ElPaso",
+      "target": "Dallas",
+      "directed": true
+    },
+    {
+      "id": "L18",
+      "edgeIds": ["L18:forward"],
+      "source": "ElPaso",
+      "target": "Houston",
+      "directed": true
+    },
+    {
+      "id": "L19",
+      "edgeIds": ["L19:forward"],
+      "source": "Dallas",
+      "target": "ElPaso",
+      "directed": true
+    },
+    {
+      "id": "L20",
+      "edgeIds": ["L20:forward"],
+      "source": "Dallas",
+      "target": "Houston",
+      "directed": true
+    },
+    {
+      "id": "L21",
+      "edgeIds": ["L21:forward"],
+      "source": "Dallas",
+      "target": "Tulsa",
+      "directed": true
+    },
+    {
+      "id": "L22",
+      "edgeIds": ["L22:forward"],
+      "source": "Dallas",
+      "target": "Denver",
+      "directed": true
+    },
+    {
+      "id": "L23",
+      "edgeIds": ["L23:forward"],
+      "source": "Dallas",
+      "target": "Nashville",
+      "directed": true
+    },
+    {
+      "id": "L24",
+      "edgeIds": ["L24:forward"],
+      "source": "Houston",
+      "target": "ElPaso",
+      "directed": true
+    },
+    {
+      "id": "L25",
+      "edgeIds": ["L25:forward"],
+      "source": "Houston",
+      "target": "Dallas",
+      "directed": true
+    },
+    {
+      "id": "L26",
+      "edgeIds": ["L26:forward"],
+      "source": "Houston",
+      "target": "NewOrleans",
+      "directed": true
+    },
+    {
+      "id": "L27",
+      "edgeIds": ["L27:forward"],
+      "source": "Tulsa",
+      "target": "Dallas",
+      "directed": true
+    },
+    {
+      "id": "L28",
+      "edgeIds": ["L28:forward"],
+      "source": "Tulsa",
+      "target": "KansasCity",
+      "directed": true
+    },
+    {
+      "id": "L29",
+      "edgeIds": ["L29:forward"],
+      "source": "Tulsa",
+      "target": "StLouis",
+      "directed": true
+    },
+    {
+      "id": "L30",
+      "edgeIds": ["L30:forward"],
+      "source": "Minneapolis",
+      "target": "KansasCity",
+      "directed": true
+    },
+    {
+      "id": "L31",
+      "edgeIds": ["L31:forward"],
+      "source": "Minneapolis",
+      "target": "Chicago",
+      "directed": true
+    },
+    {
+      "id": "L32",
+      "edgeIds": ["L32:forward"],
+      "source": "KansasCity",
+      "target": "Tulsa",
+      "directed": true
+    },
+    {
+      "id": "L33",
+      "edgeIds": ["L33:forward"],
+      "source": "KansasCity",
+      "target": "Minneapolis",
+      "directed": true
+    },
+    {
+      "id": "L34",
+      "edgeIds": ["L34:forward"],
+      "source": "KansasCity",
+      "target": "Denver",
+      "directed": true
+    },
+    {
+      "id": "L35",
+      "edgeIds": ["L35:forward"],
+      "source": "KansasCity",
+      "target": "StLouis",
+      "directed": true
+    },
+    {
+      "id": "L36",
+      "edgeIds": ["L36:forward"],
+      "source": "Denver",
+      "target": "SaltLakeCity",
+      "directed": true
+    },
+    {
+      "id": "L37",
+      "edgeIds": ["L37:forward"],
+      "source": "Denver",
+      "target": "Dallas",
+      "directed": true
+    },
+    {
+      "id": "L38",
+      "edgeIds": ["L38:forward"],
+      "source": "Denver",
+      "target": "KansasCity",
+      "directed": true
+    },
+    {
+      "id": "L39",
+      "edgeIds": ["L39:forward"],
+      "source": "Chicago",
+      "target": "Minneapolis",
+      "directed": true
+    },
+    {
+      "id": "L40",
+      "edgeIds": ["L40:forward"],
+      "source": "Chicago",
+      "target": "Indianapolis",
+      "directed": true
+    },
+    {
+      "id": "L41",
+      "edgeIds": ["L41:forward"],
+      "source": "Chicago",
+      "target": "Detroit",
+      "directed": true
+    },
+    {
+      "id": "L42",
+      "edgeIds": ["L42:forward"],
+      "source": "Chicago",
+      "target": "StLouis",
+      "directed": true
+    },
+    {
+      "id": "L43",
+      "edgeIds": ["L43:forward"],
+      "source": "Indianapolis",
+      "target": "Chicago",
+      "directed": true
+    },
+    {
+      "id": "L44",
+      "edgeIds": ["L44:forward"],
+      "source": "Indianapolis",
+      "target": "StLouis",
+      "directed": true
+    },
+    {
+      "id": "L45",
+      "edgeIds": ["L45:forward"],
+      "source": "Indianapolis",
+      "target": "Nashville",
+      "directed": true
+    },
+    {
+      "id": "L46",
+      "edgeIds": ["L46:forward"],
+      "source": "Indianapolis",
+      "target": "Cleveland",
+      "directed": true
+    },
+    {
+      "id": "L47",
+      "edgeIds": ["L47:forward"],
+      "source": "Detroit",
+      "target": "Chicago",
+      "directed": true
+    },
+    {
+      "id": "L48",
+      "edgeIds": ["L48:forward"],
+      "source": "Detroit",
+      "target": "Cleveland",
+      "directed": true
+    },
+    {
+      "id": "L49",
+      "edgeIds": ["L49:forward"],
+      "source": "StLouis",
+      "target": "Tulsa",
+      "directed": true
+    },
+    {
+      "id": "L50",
+      "edgeIds": ["L50:forward"],
+      "source": "StLouis",
+      "target": "KansasCity",
+      "directed": true
+    },
+    {
+      "id": "L51",
+      "edgeIds": ["L51:forward"],
+      "source": "StLouis",
+      "target": "Chicago",
+      "directed": true
+    },
+    {
+      "id": "L52",
+      "edgeIds": ["L52:forward"],
+      "source": "StLouis",
+      "target": "Indianapolis",
+      "directed": true
+    },
+    {
+      "id": "L53",
+      "edgeIds": ["L53:forward"],
+      "source": "Nashville",
+      "target": "Dallas",
+      "directed": true
+    },
+    {
+      "id": "L54",
+      "edgeIds": ["L54:forward"],
+      "source": "Nashville",
+      "target": "Indianapolis",
+      "directed": true
+    },
+    {
+      "id": "L55",
+      "edgeIds": ["L55:forward"],
+      "source": "Nashville",
+      "target": "Charlotte",
+      "directed": true
+    },
+    {
+      "id": "L56",
+      "edgeIds": ["L56:forward"],
+      "source": "Nashville",
+      "target": "Atlanta",
+      "directed": true
+    },
+    {
+      "id": "L57",
+      "edgeIds": ["L57:forward"],
+      "source": "Cleveland",
+      "target": "Indianapolis",
+      "directed": true
+    },
+    {
+      "id": "L58",
+      "edgeIds": ["L58:forward"],
+      "source": "Cleveland",
+      "target": "Detroit",
+      "directed": true
+    },
+    {
+      "id": "L59",
+      "edgeIds": ["L59:forward"],
+      "source": "Cleveland",
+      "target": "Albany",
+      "directed": true
+    },
+    {
+      "id": "L60",
+      "edgeIds": ["L60:forward"],
+      "source": "Cleveland",
+      "target": "WashingtonDC",
+      "directed": true
+    },
+    {
+      "id": "L61",
+      "edgeIds": ["L61:forward"],
+      "source": "NewYork",
+      "target": "Albany",
+      "directed": true
+    },
+    {
+      "id": "L62",
+      "edgeIds": ["L62:forward"],
+      "source": "NewYork",
+      "target": "Boston",
+      "directed": true
+    },
+    {
+      "id": "L63",
+      "edgeIds": ["L63:forward"],
+      "source": "NewYork",
+      "target": "WashingtonDC",
+      "directed": true
+    },
+    {
+      "id": "L64",
+      "edgeIds": ["L64:forward"],
+      "source": "Albany",
+      "target": "Cleveland",
+      "directed": true
+    },
+    {
+      "id": "L65",
+      "edgeIds": ["L65:forward"],
+      "source": "Albany",
+      "target": "NewYork",
+      "directed": true
+    },
+    {
+      "id": "L66",
+      "edgeIds": ["L66:forward"],
+      "source": "Albany",
+      "target": "Boston",
+      "directed": true
+    },
+    {
+      "id": "L67",
+      "edgeIds": ["L67:forward"],
+      "source": "Charlotte",
+      "target": "Nashville",
+      "directed": true
+    },
+    {
+      "id": "L68",
+      "edgeIds": ["L68:forward"],
+      "source": "Charlotte",
+      "target": "Atlanta",
+      "directed": true
+    },
+    {
+      "id": "L69",
+      "edgeIds": ["L69:forward"],
+      "source": "Charlotte",
+      "target": "WashingtonDC",
+      "directed": true
+    },
+    {
+      "id": "L70",
+      "edgeIds": ["L70:forward"],
+      "source": "NewOrleans",
+      "target": "Houston",
+      "directed": true
+    },
+    {
+      "id": "L71",
+      "edgeIds": ["L71:forward"],
+      "source": "NewOrleans",
+      "target": "Atlanta",
+      "directed": true
+    },
+    {
+      "id": "L72",
+      "edgeIds": ["L72:forward"],
+      "source": "NewOrleans",
+      "target": "Miami",
+      "directed": true
+    },
+    {
+      "id": "L73",
+      "edgeIds": ["L73:forward"],
+      "source": "Boston",
+      "target": "NewYork",
+      "directed": true
+    },
+    {
+      "id": "L74",
+      "edgeIds": ["L74:forward"],
+      "source": "Boston",
+      "target": "Albany",
+      "directed": true
+    },
+    {
+      "id": "L75",
+      "edgeIds": ["L75:forward"],
+      "source": "Atlanta",
+      "target": "Nashville",
+      "directed": true
+    },
+    {
+      "id": "L76",
+      "edgeIds": ["L76:forward"],
+      "source": "Atlanta",
+      "target": "Charlotte",
+      "directed": true
+    },
+    {
+      "id": "L77",
+      "edgeIds": ["L77:forward"],
+      "source": "Atlanta",
+      "target": "NewOrleans",
+      "directed": true
+    },
+    {
+      "id": "L78",
+      "edgeIds": ["L78:forward"],
+      "source": "Atlanta",
+      "target": "Miami",
+      "directed": true
+    },
+    {
+      "id": "L79",
+      "edgeIds": ["L79:forward"],
+      "source": "Miami",
+      "target": "NewOrleans",
+      "directed": true
+    },
+    {
+      "id": "L80",
+      "edgeIds": ["L80:forward"],
+      "source": "Miami",
+      "target": "Atlanta",
+      "directed": true
+    },
+    {
+      "id": "L81",
+      "edgeIds": ["L81:forward"],
+      "source": "WashingtonDC",
+      "target": "Cleveland",
+      "directed": true
+    },
+    {
+      "id": "L82",
+      "edgeIds": ["L82:forward"],
+      "source": "WashingtonDC",
+      "target": "NewYork",
+      "directed": true
+    },
+    {
+      "id": "L83",
+      "edgeIds": ["L83:forward"],
+      "source": "WashingtonDC",
+      "target": "Charlotte",
+      "directed": true
+    }
+  ],
+  "graph": {
+    "name": "JANOS-US",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "Seattle",
+        "name": "Seattle",
+        "x": 61.246,
+        "y": 60.0
+      },
+      {
+        "id": "LosAngeles",
+        "name": "LosAngeles",
+        "x": 122.006,
+        "y": 372.529
+      },
+      {
+        "id": "SanFrancisco",
+        "name": "SanFrancisco",
+        "x": 60.0,
+        "y": 287.231
+      },
+      {
+        "id": "LasVegas",
+        "name": "LasVegas",
+        "x": 172.327,
+        "y": 322.829
+      },
+      {
+        "id": "SaltLakeCity",
+        "name": "SaltLakeCity",
+        "x": 222.181,
+        "y": 214.184
+      },
+      {
+        "id": "ElPaso",
+        "name": "ElPaso",
+        "x": 308.958,
+        "y": 421.766
+      },
+      {
+        "id": "Dallas",
+        "name": "Dallas",
+        "x": 457.741,
+        "y": 397.494
+      },
+      {
+        "id": "Houston",
+        "name": "Houston",
+        "x": 481.11,
+        "y": 464.068
+      },
+      {
+        "id": "Tulsa",
+        "name": "Tulsa",
+        "x": 472.541,
+        "y": 320.055
+      },
+      {
+        "id": "Minneapolis",
+        "name": "Minneapolis",
+        "x": 511.801,
+        "y": 115.016
+      },
+      {
+        "id": "KansasCity",
+        "name": "KansasCity",
+        "x": 490.925,
+        "y": 247.933
+      },
+      {
+        "id": "Denver",
+        "name": "Denver",
+        "x": 332.795,
+        "y": 237.994
+      },
+      {
+        "id": "Chicago",
+        "name": "Chicago",
+        "x": 597.176,
+        "y": 186.445
+      },
+      {
+        "id": "Indianapolis",
+        "name": "Indianapolis",
+        "x": 622.571,
+        "y": 240.305
+      },
+      {
+        "id": "Detroit",
+        "name": "Detroit",
+        "x": 673.204,
+        "y": 176.274
+      },
+      {
+        "id": "StLouis",
+        "name": "StLouis",
+        "x": 558.695,
+        "y": 261.11
+      },
+      {
+        "id": "Nashville",
+        "name": "Nashville",
+        "x": 616.183,
+        "y": 321.905
+      },
+      {
+        "id": "Cleveland",
+        "name": "Cleveland",
+        "x": 694.08,
+        "y": 197.078
+      },
+      {
+        "id": "NewYork",
+        "name": "NewYork",
+        "x": 817.157,
+        "y": 217.189
+      },
+      {
+        "id": "Albany",
+        "name": "Albany",
+        "x": 816.845,
+        "y": 168.645
+      },
+      {
+        "id": "Charlotte",
+        "name": "Charlotte",
+        "x": 705.764,
+        "y": 342.709
+      },
+      {
+        "id": "NewOrleans",
+        "name": "NewOrleans",
+        "x": 564.148,
+        "y": 467.305
+      },
+      {
+        "id": "Boston",
+        "name": "Boston",
+        "x": 860.0,
+        "y": 177.429
+      },
+      {
+        "id": "Atlanta",
+        "name": "Atlanta",
+        "x": 651.392,
+        "y": 379.001
+      },
+      {
+        "id": "Miami",
+        "name": "Miami",
+        "x": 715.891,
+        "y": 560.0
+      },
+      {
+        "id": "WashingtonDC",
+        "name": "WashingtonDC",
+        "x": 766.368,
+        "y": 258.798
+      }
+    ],
+    "edges": [
+      {
+        "id": "L0:forward",
+        "source": "Seattle",
+        "target": "SanFrancisco",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L1:forward",
+        "source": "Seattle",
+        "target": "SaltLakeCity",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L2:forward",
+        "source": "LosAngeles",
+        "target": "SanFrancisco",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L3:forward",
+        "source": "LosAngeles",
+        "target": "LasVegas",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L4:forward",
+        "source": "LosAngeles",
+        "target": "ElPaso",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L5:forward",
+        "source": "SanFrancisco",
+        "target": "Seattle",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L6:forward",
+        "source": "SanFrancisco",
+        "target": "LosAngeles",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L7:forward",
+        "source": "SanFrancisco",
+        "target": "SaltLakeCity",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L8:forward",
+        "source": "LasVegas",
+        "target": "LosAngeles",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L9:forward",
+        "source": "LasVegas",
+        "target": "SaltLakeCity",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L10:forward",
+        "source": "LasVegas",
+        "target": "ElPaso",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L11:forward",
+        "source": "SaltLakeCity",
+        "target": "Seattle",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L12:forward",
+        "source": "SaltLakeCity",
+        "target": "SanFrancisco",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L13:forward",
+        "source": "SaltLakeCity",
+        "target": "LasVegas",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L14:forward",
+        "source": "SaltLakeCity",
+        "target": "Denver",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L15:forward",
+        "source": "ElPaso",
+        "target": "LosAngeles",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L16:forward",
+        "source": "ElPaso",
+        "target": "LasVegas",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L17:forward",
+        "source": "ElPaso",
+        "target": "Dallas",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L18:forward",
+        "source": "ElPaso",
+        "target": "Houston",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L19:forward",
+        "source": "Dallas",
+        "target": "ElPaso",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L20:forward",
+        "source": "Dallas",
+        "target": "Houston",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L21:forward",
+        "source": "Dallas",
+        "target": "Tulsa",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L22:forward",
+        "source": "Dallas",
+        "target": "Denver",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L23:forward",
+        "source": "Dallas",
+        "target": "Nashville",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L24:forward",
+        "source": "Houston",
+        "target": "ElPaso",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L25:forward",
+        "source": "Houston",
+        "target": "Dallas",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L26:forward",
+        "source": "Houston",
+        "target": "NewOrleans",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L27:forward",
+        "source": "Tulsa",
+        "target": "Dallas",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L28:forward",
+        "source": "Tulsa",
+        "target": "KansasCity",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L29:forward",
+        "source": "Tulsa",
+        "target": "StLouis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L30:forward",
+        "source": "Minneapolis",
+        "target": "KansasCity",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L31:forward",
+        "source": "Minneapolis",
+        "target": "Chicago",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L32:forward",
+        "source": "KansasCity",
+        "target": "Tulsa",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L33:forward",
+        "source": "KansasCity",
+        "target": "Minneapolis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L34:forward",
+        "source": "KansasCity",
+        "target": "Denver",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L35:forward",
+        "source": "KansasCity",
+        "target": "StLouis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L36:forward",
+        "source": "Denver",
+        "target": "SaltLakeCity",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L37:forward",
+        "source": "Denver",
+        "target": "Dallas",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L38:forward",
+        "source": "Denver",
+        "target": "KansasCity",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L39:forward",
+        "source": "Chicago",
+        "target": "Minneapolis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L40:forward",
+        "source": "Chicago",
+        "target": "Indianapolis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L41:forward",
+        "source": "Chicago",
+        "target": "Detroit",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L42:forward",
+        "source": "Chicago",
+        "target": "StLouis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L43:forward",
+        "source": "Indianapolis",
+        "target": "Chicago",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L44:forward",
+        "source": "Indianapolis",
+        "target": "StLouis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L45:forward",
+        "source": "Indianapolis",
+        "target": "Nashville",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L46:forward",
+        "source": "Indianapolis",
+        "target": "Cleveland",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L47:forward",
+        "source": "Detroit",
+        "target": "Chicago",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L48:forward",
+        "source": "Detroit",
+        "target": "Cleveland",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L49:forward",
+        "source": "StLouis",
+        "target": "Tulsa",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L50:forward",
+        "source": "StLouis",
+        "target": "KansasCity",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L51:forward",
+        "source": "StLouis",
+        "target": "Chicago",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L52:forward",
+        "source": "StLouis",
+        "target": "Indianapolis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L53:forward",
+        "source": "Nashville",
+        "target": "Dallas",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L54:forward",
+        "source": "Nashville",
+        "target": "Indianapolis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L55:forward",
+        "source": "Nashville",
+        "target": "Charlotte",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L56:forward",
+        "source": "Nashville",
+        "target": "Atlanta",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L57:forward",
+        "source": "Cleveland",
+        "target": "Indianapolis",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L58:forward",
+        "source": "Cleveland",
+        "target": "Detroit",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L59:forward",
+        "source": "Cleveland",
+        "target": "Albany",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L60:forward",
+        "source": "Cleveland",
+        "target": "WashingtonDC",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L61:forward",
+        "source": "NewYork",
+        "target": "Albany",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L62:forward",
+        "source": "NewYork",
+        "target": "Boston",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L63:forward",
+        "source": "NewYork",
+        "target": "WashingtonDC",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L64:forward",
+        "source": "Albany",
+        "target": "Cleveland",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L65:forward",
+        "source": "Albany",
+        "target": "NewYork",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L66:forward",
+        "source": "Albany",
+        "target": "Boston",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L67:forward",
+        "source": "Charlotte",
+        "target": "Nashville",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L68:forward",
+        "source": "Charlotte",
+        "target": "Atlanta",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L69:forward",
+        "source": "Charlotte",
+        "target": "WashingtonDC",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L70:forward",
+        "source": "NewOrleans",
+        "target": "Houston",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L71:forward",
+        "source": "NewOrleans",
+        "target": "Atlanta",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L72:forward",
+        "source": "NewOrleans",
+        "target": "Miami",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L73:forward",
+        "source": "Boston",
+        "target": "NewYork",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L74:forward",
+        "source": "Boston",
+        "target": "Albany",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L75:forward",
+        "source": "Atlanta",
+        "target": "Nashville",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L76:forward",
+        "source": "Atlanta",
+        "target": "Charlotte",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L77:forward",
+        "source": "Atlanta",
+        "target": "NewOrleans",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L78:forward",
+        "source": "Atlanta",
+        "target": "Miami",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L79:forward",
+        "source": "Miami",
+        "target": "NewOrleans",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L80:forward",
+        "source": "Miami",
+        "target": "Atlanta",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L81:forward",
+        "source": "WashingtonDC",
+        "target": "Cleveland",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L82:forward",
+        "source": "WashingtonDC",
+        "target": "NewYork",
+        "capacity": 64,
+        "flow": 0
+      },
+      {
+        "id": "L83:forward",
+        "source": "WashingtonDC",
+        "target": "Charlotte",
+        "capacity": 64,
+        "flow": 0
+      }
+    ]
+  }
+}

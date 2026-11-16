@@ -1,0 +1,1150 @@
+{
+  "id": "newyork",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/newyork/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "cc9138a26f9f5b48048bdbf9d0c7788dcf4133a17c2a34d8b803539b3effd8dc",
+  "retrievedAt": "2026-11-16T18:32:42.155030+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "L1",
+      "edgeIds": ["L1:forward", "L1:backward"],
+      "source": "N1",
+      "target": "N2",
+      "directed": false
+    },
+    {
+      "id": "L2",
+      "edgeIds": ["L2:forward", "L2:backward"],
+      "source": "N1",
+      "target": "N5",
+      "directed": false
+    },
+    {
+      "id": "L3",
+      "edgeIds": ["L3:forward", "L3:backward"],
+      "source": "N1",
+      "target": "N6",
+      "directed": false
+    },
+    {
+      "id": "L4",
+      "edgeIds": ["L4:forward", "L4:backward"],
+      "source": "N1",
+      "target": "N7",
+      "directed": false
+    },
+    {
+      "id": "L5",
+      "edgeIds": ["L5:forward", "L5:backward"],
+      "source": "N1",
+      "target": "N8",
+      "directed": false
+    },
+    {
+      "id": "L6",
+      "edgeIds": ["L6:forward", "L6:backward"],
+      "source": "N1",
+      "target": "N12",
+      "directed": false
+    },
+    {
+      "id": "L7",
+      "edgeIds": ["L7:forward", "L7:backward"],
+      "source": "N1",
+      "target": "N13",
+      "directed": false
+    },
+    {
+      "id": "L8",
+      "edgeIds": ["L8:forward", "L8:backward"],
+      "source": "N1",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L9",
+      "edgeIds": ["L9:forward", "L9:backward"],
+      "source": "N2",
+      "target": "N5",
+      "directed": false
+    },
+    {
+      "id": "L10",
+      "edgeIds": ["L10:forward", "L10:backward"],
+      "source": "N2",
+      "target": "N6",
+      "directed": false
+    },
+    {
+      "id": "L11",
+      "edgeIds": ["L11:forward", "L11:backward"],
+      "source": "N2",
+      "target": "N12",
+      "directed": false
+    },
+    {
+      "id": "L12",
+      "edgeIds": ["L12:forward", "L12:backward"],
+      "source": "N2",
+      "target": "N13",
+      "directed": false
+    },
+    {
+      "id": "L13",
+      "edgeIds": ["L13:forward", "L13:backward"],
+      "source": "N2",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L14",
+      "edgeIds": ["L14:forward", "L14:backward"],
+      "source": "N3",
+      "target": "N4",
+      "directed": false
+    },
+    {
+      "id": "L15",
+      "edgeIds": ["L15:forward", "L15:backward"],
+      "source": "N3",
+      "target": "N6",
+      "directed": false
+    },
+    {
+      "id": "L16",
+      "edgeIds": ["L16:forward", "L16:backward"],
+      "source": "N3",
+      "target": "N7",
+      "directed": false
+    },
+    {
+      "id": "L17",
+      "edgeIds": ["L17:forward", "L17:backward"],
+      "source": "N3",
+      "target": "N8",
+      "directed": false
+    },
+    {
+      "id": "L18",
+      "edgeIds": ["L18:forward", "L18:backward"],
+      "source": "N3",
+      "target": "N11",
+      "directed": false
+    },
+    {
+      "id": "L19",
+      "edgeIds": ["L19:forward", "L19:backward"],
+      "source": "N4",
+      "target": "N7",
+      "directed": false
+    },
+    {
+      "id": "L20",
+      "edgeIds": ["L20:forward", "L20:backward"],
+      "source": "N4",
+      "target": "N8",
+      "directed": false
+    },
+    {
+      "id": "L21",
+      "edgeIds": ["L21:forward", "L21:backward"],
+      "source": "N4",
+      "target": "N9",
+      "directed": false
+    },
+    {
+      "id": "L22",
+      "edgeIds": ["L22:forward", "L22:backward"],
+      "source": "N4",
+      "target": "N10",
+      "directed": false
+    },
+    {
+      "id": "L23",
+      "edgeIds": ["L23:forward", "L23:backward"],
+      "source": "N4",
+      "target": "N11",
+      "directed": false
+    },
+    {
+      "id": "L24",
+      "edgeIds": ["L24:forward", "L24:backward"],
+      "source": "N5",
+      "target": "N12",
+      "directed": false
+    },
+    {
+      "id": "L25",
+      "edgeIds": ["L25:forward", "L25:backward"],
+      "source": "N5",
+      "target": "N13",
+      "directed": false
+    },
+    {
+      "id": "L26",
+      "edgeIds": ["L26:forward", "L26:backward"],
+      "source": "N5",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L27",
+      "edgeIds": ["L27:forward", "L27:backward"],
+      "source": "N6",
+      "target": "N7",
+      "directed": false
+    },
+    {
+      "id": "L28",
+      "edgeIds": ["L28:forward", "L28:backward"],
+      "source": "N6",
+      "target": "N8",
+      "directed": false
+    },
+    {
+      "id": "L29",
+      "edgeIds": ["L29:forward", "L29:backward"],
+      "source": "N7",
+      "target": "N8",
+      "directed": false
+    },
+    {
+      "id": "L30",
+      "edgeIds": ["L30:forward", "L30:backward"],
+      "source": "N7",
+      "target": "N9",
+      "directed": false
+    },
+    {
+      "id": "L31",
+      "edgeIds": ["L31:forward", "L31:backward"],
+      "source": "N7",
+      "target": "N10",
+      "directed": false
+    },
+    {
+      "id": "L32",
+      "edgeIds": ["L32:forward", "L32:backward"],
+      "source": "N7",
+      "target": "N12",
+      "directed": false
+    },
+    {
+      "id": "L33",
+      "edgeIds": ["L33:forward", "L33:backward"],
+      "source": "N7",
+      "target": "N13",
+      "directed": false
+    },
+    {
+      "id": "L34",
+      "edgeIds": ["L34:forward", "L34:backward"],
+      "source": "N7",
+      "target": "N14",
+      "directed": false
+    },
+    {
+      "id": "L35",
+      "edgeIds": ["L35:forward", "L35:backward"],
+      "source": "N7",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L36",
+      "edgeIds": ["L36:forward", "L36:backward"],
+      "source": "N9",
+      "target": "N10",
+      "directed": false
+    },
+    {
+      "id": "L37",
+      "edgeIds": ["L37:forward", "L37:backward"],
+      "source": "N9",
+      "target": "N11",
+      "directed": false
+    },
+    {
+      "id": "L38",
+      "edgeIds": ["L38:forward", "L38:backward"],
+      "source": "N9",
+      "target": "N14",
+      "directed": false
+    },
+    {
+      "id": "L39",
+      "edgeIds": ["L39:forward", "L39:backward"],
+      "source": "N9",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L40",
+      "edgeIds": ["L40:forward", "L40:backward"],
+      "source": "N9",
+      "target": "N16",
+      "directed": false
+    },
+    {
+      "id": "L41",
+      "edgeIds": ["L41:forward", "L41:backward"],
+      "source": "N10",
+      "target": "N11",
+      "directed": false
+    },
+    {
+      "id": "L42",
+      "edgeIds": ["L42:forward", "L42:backward"],
+      "source": "N10",
+      "target": "N14",
+      "directed": false
+    },
+    {
+      "id": "L43",
+      "edgeIds": ["L43:forward", "L43:backward"],
+      "source": "N10",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L44",
+      "edgeIds": ["L44:forward", "L44:backward"],
+      "source": "N12",
+      "target": "N13",
+      "directed": false
+    },
+    {
+      "id": "L45",
+      "edgeIds": ["L45:forward", "L45:backward"],
+      "source": "N12",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L46",
+      "edgeIds": ["L46:forward", "L46:backward"],
+      "source": "N13",
+      "target": "N14",
+      "directed": false
+    },
+    {
+      "id": "L47",
+      "edgeIds": ["L47:forward", "L47:backward"],
+      "source": "N13",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L48",
+      "edgeIds": ["L48:forward", "L48:backward"],
+      "source": "N14",
+      "target": "N15",
+      "directed": false
+    },
+    {
+      "id": "L49",
+      "edgeIds": ["L49:forward", "L49:backward"],
+      "source": "N14",
+      "target": "N16",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "NEWYORK",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "N1",
+        "name": "N1",
+        "x": 288.571,
+        "y": 331.331
+      },
+      {
+        "id": "N2",
+        "name": "N2",
+        "x": 116.338,
+        "y": 443.106
+      },
+      {
+        "id": "N3",
+        "name": "N3",
+        "x": 109.899,
+        "y": 166.655
+      },
+      {
+        "id": "N4",
+        "name": "N4",
+        "x": 243.501,
+        "y": 173.481
+      },
+      {
+        "id": "N5",
+        "name": "N5",
+        "x": 462.414,
+        "y": 421.775
+      },
+      {
+        "id": "N6",
+        "name": "N6",
+        "x": 60.0,
+        "y": 321.092
+      },
+      {
+        "id": "N7",
+        "name": "N7",
+        "x": 393.199,
+        "y": 275.017
+      },
+      {
+        "id": "N8",
+        "name": "N8",
+        "x": 166.237,
+        "y": 232.355
+      },
+      {
+        "id": "N9",
+        "name": "N9",
+        "x": 541.288,
+        "y": 193.959
+      },
+      {
+        "id": "N10",
+        "name": "N10",
+        "x": 533.239,
+        "y": 60.0
+      },
+      {
+        "id": "N11",
+        "name": "N11",
+        "x": 288.571,
+        "y": 69.386
+      },
+      {
+        "id": "N12",
+        "name": "N12",
+        "x": 352.958,
+        "y": 560.0
+      },
+      {
+        "id": "N13",
+        "name": "N13",
+        "x": 776.298,
+        "y": 494.3
+      },
+      {
+        "id": "N14",
+        "name": "N14",
+        "x": 860.0,
+        "y": 190.546
+      },
+      {
+        "id": "N15",
+        "name": "N15",
+        "x": 695.815,
+        "y": 321.945
+      },
+      {
+        "id": "N16",
+        "name": "N16",
+        "x": 652.354,
+        "y": 156.416
+      }
+    ],
+    "edges": [
+      {
+        "id": "L1:forward",
+        "source": "N1",
+        "target": "N2",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L1:backward",
+        "source": "N2",
+        "target": "N1",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L2:forward",
+        "source": "N1",
+        "target": "N5",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L2:backward",
+        "source": "N5",
+        "target": "N1",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L3:forward",
+        "source": "N1",
+        "target": "N6",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L3:backward",
+        "source": "N6",
+        "target": "N1",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L4:forward",
+        "source": "N1",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L4:backward",
+        "source": "N7",
+        "target": "N1",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L5:forward",
+        "source": "N1",
+        "target": "N8",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L5:backward",
+        "source": "N8",
+        "target": "N1",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L6:forward",
+        "source": "N1",
+        "target": "N12",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L6:backward",
+        "source": "N12",
+        "target": "N1",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L7:forward",
+        "source": "N1",
+        "target": "N13",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L7:backward",
+        "source": "N13",
+        "target": "N1",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L8:forward",
+        "source": "N1",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L8:backward",
+        "source": "N15",
+        "target": "N1",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L9:forward",
+        "source": "N2",
+        "target": "N5",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L9:backward",
+        "source": "N5",
+        "target": "N2",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L10:forward",
+        "source": "N2",
+        "target": "N6",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L10:backward",
+        "source": "N6",
+        "target": "N2",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L11:forward",
+        "source": "N2",
+        "target": "N12",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L11:backward",
+        "source": "N12",
+        "target": "N2",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L12:forward",
+        "source": "N2",
+        "target": "N13",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L12:backward",
+        "source": "N13",
+        "target": "N2",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L13:forward",
+        "source": "N2",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L13:backward",
+        "source": "N15",
+        "target": "N2",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L14:forward",
+        "source": "N3",
+        "target": "N4",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L14:backward",
+        "source": "N4",
+        "target": "N3",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L15:forward",
+        "source": "N3",
+        "target": "N6",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L15:backward",
+        "source": "N6",
+        "target": "N3",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L16:forward",
+        "source": "N3",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L16:backward",
+        "source": "N7",
+        "target": "N3",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L17:forward",
+        "source": "N3",
+        "target": "N8",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L17:backward",
+        "source": "N8",
+        "target": "N3",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L18:forward",
+        "source": "N3",
+        "target": "N11",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L18:backward",
+        "source": "N11",
+        "target": "N3",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L19:forward",
+        "source": "N4",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L19:backward",
+        "source": "N7",
+        "target": "N4",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L20:forward",
+        "source": "N4",
+        "target": "N8",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L20:backward",
+        "source": "N8",
+        "target": "N4",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L21:forward",
+        "source": "N4",
+        "target": "N9",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L21:backward",
+        "source": "N9",
+        "target": "N4",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L22:forward",
+        "source": "N4",
+        "target": "N10",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L22:backward",
+        "source": "N10",
+        "target": "N4",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L23:forward",
+        "source": "N4",
+        "target": "N11",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L23:backward",
+        "source": "N11",
+        "target": "N4",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L24:forward",
+        "source": "N5",
+        "target": "N12",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L24:backward",
+        "source": "N12",
+        "target": "N5",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L25:forward",
+        "source": "N5",
+        "target": "N13",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L25:backward",
+        "source": "N13",
+        "target": "N5",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L26:forward",
+        "source": "N5",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L26:backward",
+        "source": "N15",
+        "target": "N5",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L27:forward",
+        "source": "N6",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L27:backward",
+        "source": "N7",
+        "target": "N6",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L28:forward",
+        "source": "N6",
+        "target": "N8",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L28:backward",
+        "source": "N8",
+        "target": "N6",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L29:forward",
+        "source": "N7",
+        "target": "N8",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L29:backward",
+        "source": "N8",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L30:forward",
+        "source": "N7",
+        "target": "N9",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L30:backward",
+        "source": "N9",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L31:forward",
+        "source": "N7",
+        "target": "N10",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L31:backward",
+        "source": "N10",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L32:forward",
+        "source": "N7",
+        "target": "N12",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L32:backward",
+        "source": "N12",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L33:forward",
+        "source": "N7",
+        "target": "N13",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L33:backward",
+        "source": "N13",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L34:forward",
+        "source": "N7",
+        "target": "N14",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L34:backward",
+        "source": "N14",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L35:forward",
+        "source": "N7",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L35:backward",
+        "source": "N15",
+        "target": "N7",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L36:forward",
+        "source": "N9",
+        "target": "N10",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L36:backward",
+        "source": "N10",
+        "target": "N9",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L37:forward",
+        "source": "N9",
+        "target": "N11",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L37:backward",
+        "source": "N11",
+        "target": "N9",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L38:forward",
+        "source": "N9",
+        "target": "N14",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L38:backward",
+        "source": "N14",
+        "target": "N9",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L39:forward",
+        "source": "N9",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L39:backward",
+        "source": "N15",
+        "target": "N9",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L40:forward",
+        "source": "N9",
+        "target": "N16",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L40:backward",
+        "source": "N16",
+        "target": "N9",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L41:forward",
+        "source": "N10",
+        "target": "N11",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L41:backward",
+        "source": "N11",
+        "target": "N10",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L42:forward",
+        "source": "N10",
+        "target": "N14",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L42:backward",
+        "source": "N14",
+        "target": "N10",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L43:forward",
+        "source": "N10",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L43:backward",
+        "source": "N15",
+        "target": "N10",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L44:forward",
+        "source": "N12",
+        "target": "N13",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L44:backward",
+        "source": "N13",
+        "target": "N12",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L45:forward",
+        "source": "N12",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L45:backward",
+        "source": "N15",
+        "target": "N12",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L46:forward",
+        "source": "N13",
+        "target": "N14",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L46:backward",
+        "source": "N14",
+        "target": "N13",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L47:forward",
+        "source": "N13",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L47:backward",
+        "source": "N15",
+        "target": "N13",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L48:forward",
+        "source": "N14",
+        "target": "N15",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L48:backward",
+        "source": "N15",
+        "target": "N14",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L49:forward",
+        "source": "N14",
+        "target": "N16",
+        "capacity": 1000,
+        "flow": 0
+      },
+      {
+        "id": "L49:backward",
+        "source": "N16",
+        "target": "N14",
+        "capacity": 1000,
+        "flow": 0
+      }
+    ]
+  }
+}

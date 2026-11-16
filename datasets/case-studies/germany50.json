@@ -1,0 +1,2173 @@
+{
+  "id": "germany50",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/germany50/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "9dcb4fe4a213e7c2f993263d4f387468a68f83d9f723247cf606984e87f347e2",
+  "retrievedAt": "2026-11-16T18:32:42.153898+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "L1",
+      "edgeIds": ["L1:forward", "L1:backward"],
+      "source": "Duesseldorf",
+      "target": "Essen",
+      "directed": false
+    },
+    {
+      "id": "L2",
+      "edgeIds": ["L2:forward", "L2:backward"],
+      "source": "Dortmund",
+      "target": "Essen",
+      "directed": false
+    },
+    {
+      "id": "L3",
+      "edgeIds": ["L3:forward", "L3:backward"],
+      "source": "Wesel",
+      "target": "Essen",
+      "directed": false
+    },
+    {
+      "id": "L4",
+      "edgeIds": ["L4:forward", "L4:backward"],
+      "source": "Koeln",
+      "target": "Duesseldorf",
+      "directed": false
+    },
+    {
+      "id": "L5",
+      "edgeIds": ["L5:forward", "L5:backward"],
+      "source": "Aachen",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "L6",
+      "edgeIds": ["L6:forward", "L6:backward"],
+      "source": "Koblenz",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "L7",
+      "edgeIds": ["L7:forward", "L7:backward"],
+      "source": "Muenster",
+      "target": "Dortmund",
+      "directed": false
+    },
+    {
+      "id": "L8",
+      "edgeIds": ["L8:forward", "L8:backward"],
+      "source": "Siegen",
+      "target": "Dortmund",
+      "directed": false
+    },
+    {
+      "id": "L9",
+      "edgeIds": ["L9:forward", "L9:backward"],
+      "source": "Kassel",
+      "target": "Dortmund",
+      "directed": false
+    },
+    {
+      "id": "L10",
+      "edgeIds": ["L10:forward", "L10:backward"],
+      "source": "Wesel",
+      "target": "Aachen",
+      "directed": false
+    },
+    {
+      "id": "L11",
+      "edgeIds": ["L11:forward", "L11:backward"],
+      "source": "Trier",
+      "target": "Aachen",
+      "directed": false
+    },
+    {
+      "id": "L12",
+      "edgeIds": ["L12:forward", "L12:backward"],
+      "source": "Bielefeld",
+      "target": "Muenster",
+      "directed": false
+    },
+    {
+      "id": "L13",
+      "edgeIds": ["L13:forward", "L13:backward"],
+      "source": "Osnabrueck",
+      "target": "Muenster",
+      "directed": false
+    },
+    {
+      "id": "L14",
+      "edgeIds": ["L14:forward", "L14:backward"],
+      "source": "Siegen",
+      "target": "Koblenz",
+      "directed": false
+    },
+    {
+      "id": "L15",
+      "edgeIds": ["L15:forward", "L15:backward"],
+      "source": "Frankfurt",
+      "target": "Koblenz",
+      "directed": false
+    },
+    {
+      "id": "L16",
+      "edgeIds": ["L16:forward", "L16:backward"],
+      "source": "Kaiserslautern",
+      "target": "Koblenz",
+      "directed": false
+    },
+    {
+      "id": "L17",
+      "edgeIds": ["L17:forward", "L17:backward"],
+      "source": "Trier",
+      "target": "Koblenz",
+      "directed": false
+    },
+    {
+      "id": "L18",
+      "edgeIds": ["L18:forward", "L18:backward"],
+      "source": "Bielefeld",
+      "target": "Siegen",
+      "directed": false
+    },
+    {
+      "id": "L19",
+      "edgeIds": ["L19:forward", "L19:backward"],
+      "source": "Giessen",
+      "target": "Siegen",
+      "directed": false
+    },
+    {
+      "id": "L20",
+      "edgeIds": ["L20:forward", "L20:backward"],
+      "source": "Oldenburg",
+      "target": "Wesel",
+      "directed": false
+    },
+    {
+      "id": "L21",
+      "edgeIds": ["L21:forward", "L21:backward"],
+      "source": "Norden",
+      "target": "Wesel",
+      "directed": false
+    },
+    {
+      "id": "L22",
+      "edgeIds": ["L22:forward", "L22:backward"],
+      "source": "Leipzig",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "L23",
+      "edgeIds": ["L23:forward", "L23:backward"],
+      "source": "Dresden",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "L24",
+      "edgeIds": ["L24:forward", "L24:backward"],
+      "source": "Schwerin",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "L25",
+      "edgeIds": ["L25:forward", "L25:backward"],
+      "source": "Magdeburg",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "L26",
+      "edgeIds": ["L26:forward", "L26:backward"],
+      "source": "Greifswald",
+      "target": "Berlin",
+      "directed": false
+    },
+    {
+      "id": "L27",
+      "edgeIds": ["L27:forward", "L27:backward"],
+      "source": "Dresden",
+      "target": "Leipzig",
+      "directed": false
+    },
+    {
+      "id": "L28",
+      "edgeIds": ["L28:forward", "L28:backward"],
+      "source": "Erfurt",
+      "target": "Leipzig",
+      "directed": false
+    },
+    {
+      "id": "L29",
+      "edgeIds": ["L29:forward", "L29:backward"],
+      "source": "Magdeburg",
+      "target": "Leipzig",
+      "directed": false
+    },
+    {
+      "id": "L30",
+      "edgeIds": ["L30:forward", "L30:backward"],
+      "source": "Bayreuth",
+      "target": "Leipzig",
+      "directed": false
+    },
+    {
+      "id": "L31",
+      "edgeIds": ["L31:forward", "L31:backward"],
+      "source": "Erfurt",
+      "target": "Dresden",
+      "directed": false
+    },
+    {
+      "id": "L32",
+      "edgeIds": ["L32:forward", "L32:backward"],
+      "source": "Chemnitz",
+      "target": "Dresden",
+      "directed": false
+    },
+    {
+      "id": "L33",
+      "edgeIds": ["L33:forward", "L33:backward"],
+      "source": "Chemnitz",
+      "target": "Erfurt",
+      "directed": false
+    },
+    {
+      "id": "L34",
+      "edgeIds": ["L34:forward", "L34:backward"],
+      "source": "Kassel",
+      "target": "Erfurt",
+      "directed": false
+    },
+    {
+      "id": "L35",
+      "edgeIds": ["L35:forward", "L35:backward"],
+      "source": "Wuerzburg",
+      "target": "Erfurt",
+      "directed": false
+    },
+    {
+      "id": "L36",
+      "edgeIds": ["L36:forward", "L36:backward"],
+      "source": "Bayreuth",
+      "target": "Chemnitz",
+      "directed": false
+    },
+    {
+      "id": "L37",
+      "edgeIds": ["L37:forward", "L37:backward"],
+      "source": "Magdeburg",
+      "target": "Schwerin",
+      "directed": false
+    },
+    {
+      "id": "L38",
+      "edgeIds": ["L38:forward", "L38:backward"],
+      "source": "Greifswald",
+      "target": "Schwerin",
+      "directed": false
+    },
+    {
+      "id": "L39",
+      "edgeIds": ["L39:forward", "L39:backward"],
+      "source": "Hamburg",
+      "target": "Schwerin",
+      "directed": false
+    },
+    {
+      "id": "L40",
+      "edgeIds": ["L40:forward", "L40:backward"],
+      "source": "Kiel",
+      "target": "Schwerin",
+      "directed": false
+    },
+    {
+      "id": "L41",
+      "edgeIds": ["L41:forward", "L41:backward"],
+      "source": "Braunschweig",
+      "target": "Magdeburg",
+      "directed": false
+    },
+    {
+      "id": "L42",
+      "edgeIds": ["L42:forward", "L42:backward"],
+      "source": "Kiel",
+      "target": "Hamburg",
+      "directed": false
+    },
+    {
+      "id": "L43",
+      "edgeIds": ["L43:forward", "L43:backward"],
+      "source": "Hannover",
+      "target": "Hamburg",
+      "directed": false
+    },
+    {
+      "id": "L44",
+      "edgeIds": ["L44:forward", "L44:backward"],
+      "source": "Braunschweig",
+      "target": "Hamburg",
+      "directed": false
+    },
+    {
+      "id": "L45",
+      "edgeIds": ["L45:forward", "L45:backward"],
+      "source": "Oldenburg",
+      "target": "Bremen",
+      "directed": false
+    },
+    {
+      "id": "L46",
+      "edgeIds": ["L46:forward", "L46:backward"],
+      "source": "Bremerhaven",
+      "target": "Bremen",
+      "directed": false
+    },
+    {
+      "id": "L47",
+      "edgeIds": ["L47:forward", "L47:backward"],
+      "source": "Hannover",
+      "target": "Bremen",
+      "directed": false
+    },
+    {
+      "id": "L48",
+      "edgeIds": ["L48:forward", "L48:backward"],
+      "source": "Flensburg",
+      "target": "Kiel",
+      "directed": false
+    },
+    {
+      "id": "L49",
+      "edgeIds": ["L49:forward", "L49:backward"],
+      "source": "Norden",
+      "target": "Oldenburg",
+      "directed": false
+    },
+    {
+      "id": "L50",
+      "edgeIds": ["L50:forward", "L50:backward"],
+      "source": "Osnabrueck",
+      "target": "Oldenburg",
+      "directed": false
+    },
+    {
+      "id": "L51",
+      "edgeIds": ["L51:forward", "L51:backward"],
+      "source": "Bremerhaven",
+      "target": "Flensburg",
+      "directed": false
+    },
+    {
+      "id": "L52",
+      "edgeIds": ["L52:forward", "L52:backward"],
+      "source": "Bielefeld",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "L53",
+      "edgeIds": ["L53:forward", "L53:backward"],
+      "source": "Braunschweig",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "L54",
+      "edgeIds": ["L54:forward", "L54:backward"],
+      "source": "Osnabrueck",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "L55",
+      "edgeIds": ["L55:forward", "L55:backward"],
+      "source": "Braunschweig",
+      "target": "Bielefeld",
+      "directed": false
+    },
+    {
+      "id": "L56",
+      "edgeIds": ["L56:forward", "L56:backward"],
+      "source": "Kassel",
+      "target": "Braunschweig",
+      "directed": false
+    },
+    {
+      "id": "L57",
+      "edgeIds": ["L57:forward", "L57:backward"],
+      "source": "Giessen",
+      "target": "Kassel",
+      "directed": false
+    },
+    {
+      "id": "L58",
+      "edgeIds": ["L58:forward", "L58:backward"],
+      "source": "Fulda",
+      "target": "Kassel",
+      "directed": false
+    },
+    {
+      "id": "L59",
+      "edgeIds": ["L59:forward", "L59:backward"],
+      "source": "Darmstadt",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "L60",
+      "edgeIds": ["L60:forward", "L60:backward"],
+      "source": "Giessen",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "L61",
+      "edgeIds": ["L61:forward", "L61:backward"],
+      "source": "Fulda",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "L62",
+      "edgeIds": ["L62:forward", "L62:backward"],
+      "source": "Mannheim",
+      "target": "Darmstadt",
+      "directed": false
+    },
+    {
+      "id": "L63",
+      "edgeIds": ["L63:forward", "L63:backward"],
+      "source": "Kaiserslautern",
+      "target": "Darmstadt",
+      "directed": false
+    },
+    {
+      "id": "L64",
+      "edgeIds": ["L64:forward", "L64:backward"],
+      "source": "Karlsruhe",
+      "target": "Mannheim",
+      "directed": false
+    },
+    {
+      "id": "L65",
+      "edgeIds": ["L65:forward", "L65:backward"],
+      "source": "Saarbruecken",
+      "target": "Kaiserslautern",
+      "directed": false
+    },
+    {
+      "id": "L66",
+      "edgeIds": ["L66:forward", "L66:backward"],
+      "source": "Karlsruhe",
+      "target": "Kaiserslautern",
+      "directed": false
+    },
+    {
+      "id": "L67",
+      "edgeIds": ["L67:forward", "L67:backward"],
+      "source": "Fulda",
+      "target": "Giessen",
+      "directed": false
+    },
+    {
+      "id": "L68",
+      "edgeIds": ["L68:forward", "L68:backward"],
+      "source": "Saarbruecken",
+      "target": "Trier",
+      "directed": false
+    },
+    {
+      "id": "L69",
+      "edgeIds": ["L69:forward", "L69:backward"],
+      "source": "Wuerzburg",
+      "target": "Fulda",
+      "directed": false
+    },
+    {
+      "id": "L70",
+      "edgeIds": ["L70:forward", "L70:backward"],
+      "source": "Karlsruhe",
+      "target": "Saarbruecken",
+      "directed": false
+    },
+    {
+      "id": "L71",
+      "edgeIds": ["L71:forward", "L71:backward"],
+      "source": "Karlsruhe",
+      "target": "Stuttgart",
+      "directed": false
+    },
+    {
+      "id": "L72",
+      "edgeIds": ["L72:forward", "L72:backward"],
+      "source": "Ulm",
+      "target": "Stuttgart",
+      "directed": false
+    },
+    {
+      "id": "L73",
+      "edgeIds": ["L73:forward", "L73:backward"],
+      "source": "Konstanz",
+      "target": "Stuttgart",
+      "directed": false
+    },
+    {
+      "id": "L74",
+      "edgeIds": ["L74:forward", "L74:backward"],
+      "source": "Wuerzburg",
+      "target": "Stuttgart",
+      "directed": false
+    },
+    {
+      "id": "L75",
+      "edgeIds": ["L75:forward", "L75:backward"],
+      "source": "Freiburg",
+      "target": "Karlsruhe",
+      "directed": false
+    },
+    {
+      "id": "L76",
+      "edgeIds": ["L76:forward", "L76:backward"],
+      "source": "Augsburg",
+      "target": "Ulm",
+      "directed": false
+    },
+    {
+      "id": "L77",
+      "edgeIds": ["L77:forward", "L77:backward"],
+      "source": "Freiburg",
+      "target": "Konstanz",
+      "directed": false
+    },
+    {
+      "id": "L78",
+      "edgeIds": ["L78:forward", "L78:backward"],
+      "source": "Kempten",
+      "target": "Konstanz",
+      "directed": false
+    },
+    {
+      "id": "L79",
+      "edgeIds": ["L79:forward", "L79:backward"],
+      "source": "Augsburg",
+      "target": "Muenchen",
+      "directed": false
+    },
+    {
+      "id": "L80",
+      "edgeIds": ["L80:forward", "L80:backward"],
+      "source": "Kempten",
+      "target": "Muenchen",
+      "directed": false
+    },
+    {
+      "id": "L81",
+      "edgeIds": ["L81:forward", "L81:backward"],
+      "source": "Passau",
+      "target": "Muenchen",
+      "directed": false
+    },
+    {
+      "id": "L82",
+      "edgeIds": ["L82:forward", "L82:backward"],
+      "source": "Nuernberg",
+      "target": "Muenchen",
+      "directed": false
+    },
+    {
+      "id": "L83",
+      "edgeIds": ["L83:forward", "L83:backward"],
+      "source": "Regensburg",
+      "target": "Muenchen",
+      "directed": false
+    },
+    {
+      "id": "L84",
+      "edgeIds": ["L84:forward", "L84:backward"],
+      "source": "Wuerzburg",
+      "target": "Augsburg",
+      "directed": false
+    },
+    {
+      "id": "L85",
+      "edgeIds": ["L85:forward", "L85:backward"],
+      "source": "Regensburg",
+      "target": "Passau",
+      "directed": false
+    },
+    {
+      "id": "L86",
+      "edgeIds": ["L86:forward", "L86:backward"],
+      "source": "Bayreuth",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "L87",
+      "edgeIds": ["L87:forward", "L87:backward"],
+      "source": "Wuerzburg",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "L88",
+      "edgeIds": ["L88:forward", "L88:backward"],
+      "source": "Regensburg",
+      "target": "Nuernberg",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "GERMANY50",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "Aachen",
+        "name": "Aachen",
+        "x": 60.0,
+        "y": 341.997
+      },
+      {
+        "id": "Augsburg",
+        "name": "Augsburg",
+        "x": 565.592,
+        "y": 512.883
+      },
+      {
+        "id": "Bayreuth",
+        "name": "Bayreuth",
+        "x": 637.373,
+        "y": 400.366
+      },
+      {
+        "id": "Berlin",
+        "name": "Berlin",
+        "x": 824.629,
+        "y": 218.228
+      },
+      {
+        "id": "Bielefeld",
+        "name": "Bielefeld",
+        "x": 315.917,
+        "y": 251.983
+      },
+      {
+        "id": "Braunschweig",
+        "name": "Braunschweig",
+        "x": 529.181,
+        "y": 235.105
+      },
+      {
+        "id": "Bremen",
+        "name": "Bremen",
+        "x": 352.328,
+        "y": 176.737
+      },
+      {
+        "id": "Bremerhaven",
+        "name": "Bremerhaven",
+        "x": 324.239,
+        "y": 146.498
+      },
+      {
+        "id": "Chemnitz",
+        "name": "Chemnitz",
+        "x": 776.775,
+        "y": 336.371
+      },
+      {
+        "id": "Darmstadt",
+        "name": "Darmstadt",
+        "x": 331.521,
+        "y": 403.179
+      },
+      {
+        "id": "Dortmund",
+        "name": "Dortmund",
+        "x": 206.684,
+        "y": 289.255
+      },
+      {
+        "id": "Dresden",
+        "name": "Dresden",
+        "x": 860.0,
+        "y": 323.01
+      },
+      {
+        "id": "Duesseldorf",
+        "name": "Duesseldorf",
+        "x": 135.943,
+        "y": 307.539
+      },
+      {
+        "id": "Erfurt",
+        "name": "Erfurt",
+        "x": 580.156,
+        "y": 326.526
+      },
+      {
+        "id": "Essen",
+        "name": "Essen",
+        "x": 161.951,
+        "y": 292.771
+      },
+      {
+        "id": "Flensburg",
+        "name": "Flensburg",
+        "x": 414.746,
+        "y": 60.0
+      },
+      {
+        "id": "Frankfurt",
+        "name": "Frankfurt",
+        "x": 337.763,
+        "y": 387.004
+      },
+      {
+        "id": "Freiburg",
+        "name": "Freiburg",
+        "x": 243.095,
+        "y": 537.496
+      },
+      {
+        "id": "Fulda",
+        "name": "Fulda",
+        "x": 439.714,
+        "y": 356.062
+      },
+      {
+        "id": "Giessen",
+        "name": "Giessen",
+        "x": 333.602,
+        "y": 355.359
+      },
+      {
+        "id": "Greifswald",
+        "name": "Greifswald",
+        "x": 825.67,
+        "y": 107.82
+      },
+      {
+        "id": "Hamburg",
+        "name": "Hamburg",
+        "x": 470.923,
+        "y": 144.388
+      },
+      {
+        "id": "Hannover",
+        "name": "Hannover",
+        "x": 442.835,
+        "y": 228.073
+      },
+      {
+        "id": "Kaiserslautern",
+        "name": "Kaiserslautern",
+        "x": 237.893,
+        "y": 435.527
+      },
+      {
+        "id": "Karlsruhe",
+        "name": "Karlsruhe",
+        "x": 306.554,
+        "y": 465.063
+      },
+      {
+        "id": "Kassel",
+        "name": "Kassel",
+        "x": 420.988,
+        "y": 302.616
+      },
+      {
+        "id": "Kempten",
+        "name": "Kempten",
+        "x": 505.254,
+        "y": 555.781
+      },
+      {
+        "id": "Kiel",
+        "name": "Kiel",
+        "x": 484.447,
+        "y": 90.239
+      },
+      {
+        "id": "Koblenz",
+        "name": "Koblenz",
+        "x": 213.966,
+        "y": 367.314
+      },
+      {
+        "id": "Koeln",
+        "name": "Koeln",
+        "x": 146.346,
+        "y": 329.339
+      },
+      {
+        "id": "Konstanz",
+        "name": "Konstanz",
+        "x": 386.658,
+        "y": 560.0
+      },
+      {
+        "id": "Leipzig",
+        "name": "Leipzig",
+        "x": 719.558,
+        "y": 301.21
+      },
+      {
+        "id": "Magdeburg",
+        "name": "Magdeburg",
+        "x": 642.575,
+        "y": 244.951
+      },
+      {
+        "id": "Mannheim",
+        "name": "Mannheim",
+        "x": 314.876,
+        "y": 431.308
+      },
+      {
+        "id": "Muenchen",
+        "name": "Muenchen",
+        "x": 635.293,
+        "y": 525.541
+      },
+      {
+        "id": "Muenster",
+        "name": "Muenster",
+        "x": 222.289,
+        "y": 256.906
+      },
+      {
+        "id": "Norden",
+        "name": "Norden",
+        "x": 181.717,
+        "y": 142.278
+      },
+      {
+        "id": "Nuernberg",
+        "name": "Nuernberg",
+        "x": 579.116,
+        "y": 425.682
+      },
+      {
+        "id": "Oldenburg",
+        "name": "Oldenburg",
+        "x": 285.748,
+        "y": 176.737
+      },
+      {
+        "id": "Osnabrueck",
+        "name": "Osnabrueck",
+        "x": 267.022,
+        "y": 235.105
+      },
+      {
+        "id": "Passau",
+        "name": "Passau",
+        "x": 831.912,
+        "y": 496.006
+      },
+      {
+        "id": "Regensburg",
+        "name": "Regensburg",
+        "x": 689.389,
+        "y": 465.767
+      },
+      {
+        "id": "Saarbruecken",
+        "name": "Saarbruecken",
+        "x": 162.991,
+        "y": 449.592
+      },
+      {
+        "id": "Schwerin",
+        "name": "Schwerin",
+        "x": 622.809,
+        "y": 145.795
+      },
+      {
+        "id": "Siegen",
+        "name": "Siegen",
+        "x": 267.022,
+        "y": 331.449
+      },
+      {
+        "id": "Stuttgart",
+        "name": "Stuttgart",
+        "x": 378.336,
+        "y": 484.051
+      },
+      {
+        "id": "Trier",
+        "name": "Trier",
+        "x": 126.58,
+        "y": 413.024
+      },
+      {
+        "id": "Ulm",
+        "name": "Ulm",
+        "x": 470.923,
+        "y": 507.961
+      },
+      {
+        "id": "Wesel",
+        "name": "Wesel",
+        "x": 94.33,
+        "y": 297.693
+      },
+      {
+        "id": "Wuerzburg",
+        "name": "Wuerzburg",
+        "x": 468.843,
+        "y": 410.914
+      }
+    ],
+    "edges": [
+      {
+        "id": "L1:forward",
+        "source": "Duesseldorf",
+        "target": "Essen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L1:backward",
+        "source": "Essen",
+        "target": "Duesseldorf",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L2:forward",
+        "source": "Dortmund",
+        "target": "Essen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L2:backward",
+        "source": "Essen",
+        "target": "Dortmund",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L3:forward",
+        "source": "Wesel",
+        "target": "Essen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L3:backward",
+        "source": "Essen",
+        "target": "Wesel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L4:forward",
+        "source": "Koeln",
+        "target": "Duesseldorf",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L4:backward",
+        "source": "Duesseldorf",
+        "target": "Koeln",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L5:forward",
+        "source": "Aachen",
+        "target": "Koeln",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L5:backward",
+        "source": "Koeln",
+        "target": "Aachen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L6:forward",
+        "source": "Koblenz",
+        "target": "Koeln",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L6:backward",
+        "source": "Koeln",
+        "target": "Koblenz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L7:forward",
+        "source": "Muenster",
+        "target": "Dortmund",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L7:backward",
+        "source": "Dortmund",
+        "target": "Muenster",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L8:forward",
+        "source": "Siegen",
+        "target": "Dortmund",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L8:backward",
+        "source": "Dortmund",
+        "target": "Siegen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L9:forward",
+        "source": "Kassel",
+        "target": "Dortmund",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L9:backward",
+        "source": "Dortmund",
+        "target": "Kassel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L10:forward",
+        "source": "Wesel",
+        "target": "Aachen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L10:backward",
+        "source": "Aachen",
+        "target": "Wesel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L11:forward",
+        "source": "Trier",
+        "target": "Aachen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L11:backward",
+        "source": "Aachen",
+        "target": "Trier",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L12:forward",
+        "source": "Bielefeld",
+        "target": "Muenster",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L12:backward",
+        "source": "Muenster",
+        "target": "Bielefeld",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L13:forward",
+        "source": "Osnabrueck",
+        "target": "Muenster",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L13:backward",
+        "source": "Muenster",
+        "target": "Osnabrueck",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L14:forward",
+        "source": "Siegen",
+        "target": "Koblenz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L14:backward",
+        "source": "Koblenz",
+        "target": "Siegen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L15:forward",
+        "source": "Frankfurt",
+        "target": "Koblenz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L15:backward",
+        "source": "Koblenz",
+        "target": "Frankfurt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L16:forward",
+        "source": "Kaiserslautern",
+        "target": "Koblenz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L16:backward",
+        "source": "Koblenz",
+        "target": "Kaiserslautern",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L17:forward",
+        "source": "Trier",
+        "target": "Koblenz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L17:backward",
+        "source": "Koblenz",
+        "target": "Trier",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L18:forward",
+        "source": "Bielefeld",
+        "target": "Siegen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L18:backward",
+        "source": "Siegen",
+        "target": "Bielefeld",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L19:forward",
+        "source": "Giessen",
+        "target": "Siegen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L19:backward",
+        "source": "Siegen",
+        "target": "Giessen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L20:forward",
+        "source": "Oldenburg",
+        "target": "Wesel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L20:backward",
+        "source": "Wesel",
+        "target": "Oldenburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L21:forward",
+        "source": "Norden",
+        "target": "Wesel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L21:backward",
+        "source": "Wesel",
+        "target": "Norden",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L22:forward",
+        "source": "Leipzig",
+        "target": "Berlin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L22:backward",
+        "source": "Berlin",
+        "target": "Leipzig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L23:forward",
+        "source": "Dresden",
+        "target": "Berlin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L23:backward",
+        "source": "Berlin",
+        "target": "Dresden",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L24:forward",
+        "source": "Schwerin",
+        "target": "Berlin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L24:backward",
+        "source": "Berlin",
+        "target": "Schwerin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L25:forward",
+        "source": "Magdeburg",
+        "target": "Berlin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L25:backward",
+        "source": "Berlin",
+        "target": "Magdeburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L26:forward",
+        "source": "Greifswald",
+        "target": "Berlin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L26:backward",
+        "source": "Berlin",
+        "target": "Greifswald",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L27:forward",
+        "source": "Dresden",
+        "target": "Leipzig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L27:backward",
+        "source": "Leipzig",
+        "target": "Dresden",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L28:forward",
+        "source": "Erfurt",
+        "target": "Leipzig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L28:backward",
+        "source": "Leipzig",
+        "target": "Erfurt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L29:forward",
+        "source": "Magdeburg",
+        "target": "Leipzig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L29:backward",
+        "source": "Leipzig",
+        "target": "Magdeburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L30:forward",
+        "source": "Bayreuth",
+        "target": "Leipzig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L30:backward",
+        "source": "Leipzig",
+        "target": "Bayreuth",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L31:forward",
+        "source": "Erfurt",
+        "target": "Dresden",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L31:backward",
+        "source": "Dresden",
+        "target": "Erfurt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L32:forward",
+        "source": "Chemnitz",
+        "target": "Dresden",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L32:backward",
+        "source": "Dresden",
+        "target": "Chemnitz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L33:forward",
+        "source": "Chemnitz",
+        "target": "Erfurt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L33:backward",
+        "source": "Erfurt",
+        "target": "Chemnitz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L34:forward",
+        "source": "Kassel",
+        "target": "Erfurt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L34:backward",
+        "source": "Erfurt",
+        "target": "Kassel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L35:forward",
+        "source": "Wuerzburg",
+        "target": "Erfurt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L35:backward",
+        "source": "Erfurt",
+        "target": "Wuerzburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L36:forward",
+        "source": "Bayreuth",
+        "target": "Chemnitz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L36:backward",
+        "source": "Chemnitz",
+        "target": "Bayreuth",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L37:forward",
+        "source": "Magdeburg",
+        "target": "Schwerin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L37:backward",
+        "source": "Schwerin",
+        "target": "Magdeburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L38:forward",
+        "source": "Greifswald",
+        "target": "Schwerin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L38:backward",
+        "source": "Schwerin",
+        "target": "Greifswald",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L39:forward",
+        "source": "Hamburg",
+        "target": "Schwerin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L39:backward",
+        "source": "Schwerin",
+        "target": "Hamburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L40:forward",
+        "source": "Kiel",
+        "target": "Schwerin",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L40:backward",
+        "source": "Schwerin",
+        "target": "Kiel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L41:forward",
+        "source": "Braunschweig",
+        "target": "Magdeburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L41:backward",
+        "source": "Magdeburg",
+        "target": "Braunschweig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L42:forward",
+        "source": "Kiel",
+        "target": "Hamburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L42:backward",
+        "source": "Hamburg",
+        "target": "Kiel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L43:forward",
+        "source": "Hannover",
+        "target": "Hamburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L43:backward",
+        "source": "Hamburg",
+        "target": "Hannover",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L44:forward",
+        "source": "Braunschweig",
+        "target": "Hamburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L44:backward",
+        "source": "Hamburg",
+        "target": "Braunschweig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L45:forward",
+        "source": "Oldenburg",
+        "target": "Bremen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L45:backward",
+        "source": "Bremen",
+        "target": "Oldenburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L46:forward",
+        "source": "Bremerhaven",
+        "target": "Bremen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L46:backward",
+        "source": "Bremen",
+        "target": "Bremerhaven",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L47:forward",
+        "source": "Hannover",
+        "target": "Bremen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L47:backward",
+        "source": "Bremen",
+        "target": "Hannover",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L48:forward",
+        "source": "Flensburg",
+        "target": "Kiel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L48:backward",
+        "source": "Kiel",
+        "target": "Flensburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L49:forward",
+        "source": "Norden",
+        "target": "Oldenburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L49:backward",
+        "source": "Oldenburg",
+        "target": "Norden",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L50:forward",
+        "source": "Osnabrueck",
+        "target": "Oldenburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L50:backward",
+        "source": "Oldenburg",
+        "target": "Osnabrueck",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L51:forward",
+        "source": "Bremerhaven",
+        "target": "Flensburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L51:backward",
+        "source": "Flensburg",
+        "target": "Bremerhaven",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L52:forward",
+        "source": "Bielefeld",
+        "target": "Hannover",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L52:backward",
+        "source": "Hannover",
+        "target": "Bielefeld",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L53:forward",
+        "source": "Braunschweig",
+        "target": "Hannover",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L53:backward",
+        "source": "Hannover",
+        "target": "Braunschweig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L54:forward",
+        "source": "Osnabrueck",
+        "target": "Hannover",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L54:backward",
+        "source": "Hannover",
+        "target": "Osnabrueck",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L55:forward",
+        "source": "Braunschweig",
+        "target": "Bielefeld",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L55:backward",
+        "source": "Bielefeld",
+        "target": "Braunschweig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L56:forward",
+        "source": "Kassel",
+        "target": "Braunschweig",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L56:backward",
+        "source": "Braunschweig",
+        "target": "Kassel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L57:forward",
+        "source": "Giessen",
+        "target": "Kassel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L57:backward",
+        "source": "Kassel",
+        "target": "Giessen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L58:forward",
+        "source": "Fulda",
+        "target": "Kassel",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L58:backward",
+        "source": "Kassel",
+        "target": "Fulda",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L59:forward",
+        "source": "Darmstadt",
+        "target": "Frankfurt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L59:backward",
+        "source": "Frankfurt",
+        "target": "Darmstadt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L60:forward",
+        "source": "Giessen",
+        "target": "Frankfurt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L60:backward",
+        "source": "Frankfurt",
+        "target": "Giessen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L61:forward",
+        "source": "Fulda",
+        "target": "Frankfurt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L61:backward",
+        "source": "Frankfurt",
+        "target": "Fulda",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L62:forward",
+        "source": "Mannheim",
+        "target": "Darmstadt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L62:backward",
+        "source": "Darmstadt",
+        "target": "Mannheim",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L63:forward",
+        "source": "Kaiserslautern",
+        "target": "Darmstadt",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L63:backward",
+        "source": "Darmstadt",
+        "target": "Kaiserslautern",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L64:forward",
+        "source": "Karlsruhe",
+        "target": "Mannheim",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L64:backward",
+        "source": "Mannheim",
+        "target": "Karlsruhe",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L65:forward",
+        "source": "Saarbruecken",
+        "target": "Kaiserslautern",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L65:backward",
+        "source": "Kaiserslautern",
+        "target": "Saarbruecken",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L66:forward",
+        "source": "Karlsruhe",
+        "target": "Kaiserslautern",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L66:backward",
+        "source": "Kaiserslautern",
+        "target": "Karlsruhe",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L67:forward",
+        "source": "Fulda",
+        "target": "Giessen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L67:backward",
+        "source": "Giessen",
+        "target": "Fulda",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L68:forward",
+        "source": "Saarbruecken",
+        "target": "Trier",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L68:backward",
+        "source": "Trier",
+        "target": "Saarbruecken",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L69:forward",
+        "source": "Wuerzburg",
+        "target": "Fulda",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L69:backward",
+        "source": "Fulda",
+        "target": "Wuerzburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L70:forward",
+        "source": "Karlsruhe",
+        "target": "Saarbruecken",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L70:backward",
+        "source": "Saarbruecken",
+        "target": "Karlsruhe",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L71:forward",
+        "source": "Karlsruhe",
+        "target": "Stuttgart",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L71:backward",
+        "source": "Stuttgart",
+        "target": "Karlsruhe",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L72:forward",
+        "source": "Ulm",
+        "target": "Stuttgart",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L72:backward",
+        "source": "Stuttgart",
+        "target": "Ulm",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L73:forward",
+        "source": "Konstanz",
+        "target": "Stuttgart",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L73:backward",
+        "source": "Stuttgart",
+        "target": "Konstanz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L74:forward",
+        "source": "Wuerzburg",
+        "target": "Stuttgart",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L74:backward",
+        "source": "Stuttgart",
+        "target": "Wuerzburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L75:forward",
+        "source": "Freiburg",
+        "target": "Karlsruhe",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L75:backward",
+        "source": "Karlsruhe",
+        "target": "Freiburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L76:forward",
+        "source": "Augsburg",
+        "target": "Ulm",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L76:backward",
+        "source": "Ulm",
+        "target": "Augsburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L77:forward",
+        "source": "Freiburg",
+        "target": "Konstanz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L77:backward",
+        "source": "Konstanz",
+        "target": "Freiburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L78:forward",
+        "source": "Kempten",
+        "target": "Konstanz",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L78:backward",
+        "source": "Konstanz",
+        "target": "Kempten",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L79:forward",
+        "source": "Augsburg",
+        "target": "Muenchen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L79:backward",
+        "source": "Muenchen",
+        "target": "Augsburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L80:forward",
+        "source": "Kempten",
+        "target": "Muenchen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L80:backward",
+        "source": "Muenchen",
+        "target": "Kempten",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L81:forward",
+        "source": "Passau",
+        "target": "Muenchen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L81:backward",
+        "source": "Muenchen",
+        "target": "Passau",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L82:forward",
+        "source": "Nuernberg",
+        "target": "Muenchen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L82:backward",
+        "source": "Muenchen",
+        "target": "Nuernberg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L83:forward",
+        "source": "Regensburg",
+        "target": "Muenchen",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L83:backward",
+        "source": "Muenchen",
+        "target": "Regensburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L84:forward",
+        "source": "Wuerzburg",
+        "target": "Augsburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L84:backward",
+        "source": "Augsburg",
+        "target": "Wuerzburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L85:forward",
+        "source": "Regensburg",
+        "target": "Passau",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L85:backward",
+        "source": "Passau",
+        "target": "Regensburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L86:forward",
+        "source": "Bayreuth",
+        "target": "Nuernberg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L86:backward",
+        "source": "Nuernberg",
+        "target": "Bayreuth",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L87:forward",
+        "source": "Wuerzburg",
+        "target": "Nuernberg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L87:backward",
+        "source": "Nuernberg",
+        "target": "Wuerzburg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L88:forward",
+        "source": "Regensburg",
+        "target": "Nuernberg",
+        "capacity": 40,
+        "flow": 0
+      },
+      {
+        "id": "L88:backward",
+        "source": "Nuernberg",
+        "target": "Regensburg",
+        "capacity": 40,
+        "flow": 0
+      }
+    ]
+  }
+}

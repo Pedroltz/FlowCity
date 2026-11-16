@@ -32,6 +32,7 @@ public static class DependencyInjectionConfig
         services.AddScoped<IMaxFlowAlgorithm, FordFulkerson>();
         services.AddScoped<IGraphRepository, GraphRepository>();
         services.AddScoped<IGraphService, GraphService>();
+        services.AddScoped<ResilienceService>();
         services.AddScoped<DatabaseInitializer>();
         services.AddDbContext<FlowCityDbContext>(options => options.UseSqlite(
             configuration.GetConnectionString("FlowCity") ?? "Data Source=flowcity.db",

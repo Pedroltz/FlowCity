@@ -1,0 +1,1054 @@
+{
+  "id": "nobel-eu",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/nobel-eu/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "0a169d757e38bc002554173b97c6cb5f0e89292fb1bdcb340cb5485f084be121",
+  "retrievedAt": "2026-11-16T18:32:42.155303+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "L1",
+      "edgeIds": ["L1:forward", "L1:backward"],
+      "source": "Amsterdam",
+      "target": "Brussels",
+      "directed": false
+    },
+    {
+      "id": "L2",
+      "edgeIds": ["L2:forward", "L2:backward"],
+      "source": "Amsterdam",
+      "target": "Glasgow",
+      "directed": false
+    },
+    {
+      "id": "L3",
+      "edgeIds": ["L3:forward", "L3:backward"],
+      "source": "Amsterdam",
+      "target": "Hamburg",
+      "directed": false
+    },
+    {
+      "id": "L4",
+      "edgeIds": ["L4:forward", "L4:backward"],
+      "source": "Amsterdam",
+      "target": "London",
+      "directed": false
+    },
+    {
+      "id": "L5",
+      "edgeIds": ["L5:forward", "L5:backward"],
+      "source": "Athens",
+      "target": "Belgrade",
+      "directed": false
+    },
+    {
+      "id": "L6",
+      "edgeIds": ["L6:forward", "L6:backward"],
+      "source": "Athens",
+      "target": "Rome",
+      "directed": false
+    },
+    {
+      "id": "L7",
+      "edgeIds": ["L7:forward", "L7:backward"],
+      "source": "Barcelona",
+      "target": "Lyon",
+      "directed": false
+    },
+    {
+      "id": "L8",
+      "edgeIds": ["L8:forward", "L8:backward"],
+      "source": "Barcelona",
+      "target": "Madrid",
+      "directed": false
+    },
+    {
+      "id": "L9",
+      "edgeIds": ["L9:forward", "L9:backward"],
+      "source": "Belgrade",
+      "target": "Budapest",
+      "directed": false
+    },
+    {
+      "id": "L10",
+      "edgeIds": ["L10:forward", "L10:backward"],
+      "source": "Belgrade",
+      "target": "Zagreb",
+      "directed": false
+    },
+    {
+      "id": "L11",
+      "edgeIds": ["L11:forward", "L11:backward"],
+      "source": "Berlin",
+      "target": "Copenhagen",
+      "directed": false
+    },
+    {
+      "id": "L12",
+      "edgeIds": ["L12:forward", "L12:backward"],
+      "source": "Berlin",
+      "target": "Hamburg",
+      "directed": false
+    },
+    {
+      "id": "L13",
+      "edgeIds": ["L13:forward", "L13:backward"],
+      "source": "Berlin",
+      "target": "Munich",
+      "directed": false
+    },
+    {
+      "id": "L14",
+      "edgeIds": ["L14:forward", "L14:backward"],
+      "source": "Berlin",
+      "target": "Prague",
+      "directed": false
+    },
+    {
+      "id": "L15",
+      "edgeIds": ["L15:forward", "L15:backward"],
+      "source": "Berlin",
+      "target": "Warsaw",
+      "directed": false
+    },
+    {
+      "id": "L16",
+      "edgeIds": ["L16:forward", "L16:backward"],
+      "source": "Bordeaux",
+      "target": "Madrid",
+      "directed": false
+    },
+    {
+      "id": "L17",
+      "edgeIds": ["L17:forward", "L17:backward"],
+      "source": "Bordeaux",
+      "target": "Paris",
+      "directed": false
+    },
+    {
+      "id": "L18",
+      "edgeIds": ["L18:forward", "L18:backward"],
+      "source": "Brussels",
+      "target": "Frankfurt",
+      "directed": false
+    },
+    {
+      "id": "L19",
+      "edgeIds": ["L19:forward", "L19:backward"],
+      "source": "Brussels",
+      "target": "Paris",
+      "directed": false
+    },
+    {
+      "id": "L20",
+      "edgeIds": ["L20:forward", "L20:backward"],
+      "source": "Budapest",
+      "target": "Prague",
+      "directed": false
+    },
+    {
+      "id": "L21",
+      "edgeIds": ["L21:forward", "L21:backward"],
+      "source": "Budapest",
+      "target": "Warsaw",
+      "directed": false
+    },
+    {
+      "id": "L22",
+      "edgeIds": ["L22:forward", "L22:backward"],
+      "source": "Copenhagen",
+      "target": "Oslo",
+      "directed": false
+    },
+    {
+      "id": "L23",
+      "edgeIds": ["L23:forward", "L23:backward"],
+      "source": "Dublin",
+      "target": "Glasgow",
+      "directed": false
+    },
+    {
+      "id": "L24",
+      "edgeIds": ["L24:forward", "L24:backward"],
+      "source": "Dublin",
+      "target": "London",
+      "directed": false
+    },
+    {
+      "id": "L25",
+      "edgeIds": ["L25:forward", "L25:backward"],
+      "source": "Frankfurt",
+      "target": "Hamburg",
+      "directed": false
+    },
+    {
+      "id": "L26",
+      "edgeIds": ["L26:forward", "L26:backward"],
+      "source": "Frankfurt",
+      "target": "Munich",
+      "directed": false
+    },
+    {
+      "id": "L27",
+      "edgeIds": ["L27:forward", "L27:backward"],
+      "source": "Frankfurt",
+      "target": "Strasbourg",
+      "directed": false
+    },
+    {
+      "id": "L28",
+      "edgeIds": ["L28:forward", "L28:backward"],
+      "source": "London",
+      "target": "Paris",
+      "directed": false
+    },
+    {
+      "id": "L29",
+      "edgeIds": ["L29:forward", "L29:backward"],
+      "source": "Lyon",
+      "target": "Paris",
+      "directed": false
+    },
+    {
+      "id": "L30",
+      "edgeIds": ["L30:forward", "L30:backward"],
+      "source": "Milan",
+      "target": "Munich",
+      "directed": false
+    },
+    {
+      "id": "L31",
+      "edgeIds": ["L31:forward", "L31:backward"],
+      "source": "Milan",
+      "target": "Rome",
+      "directed": false
+    },
+    {
+      "id": "L32",
+      "edgeIds": ["L32:forward", "L32:backward"],
+      "source": "Milan",
+      "target": "Zurich",
+      "directed": false
+    },
+    {
+      "id": "L33",
+      "edgeIds": ["L33:forward", "L33:backward"],
+      "source": "Munich",
+      "target": "Vienna",
+      "directed": false
+    },
+    {
+      "id": "L34",
+      "edgeIds": ["L34:forward", "L34:backward"],
+      "source": "Oslo",
+      "target": "Stockholm",
+      "directed": false
+    },
+    {
+      "id": "L35",
+      "edgeIds": ["L35:forward", "L35:backward"],
+      "source": "Paris",
+      "target": "Strasbourg",
+      "directed": false
+    },
+    {
+      "id": "L36",
+      "edgeIds": ["L36:forward", "L36:backward"],
+      "source": "Prague",
+      "target": "Vienna",
+      "directed": false
+    },
+    {
+      "id": "L37",
+      "edgeIds": ["L37:forward", "L37:backward"],
+      "source": "Rome",
+      "target": "Zagreb",
+      "directed": false
+    },
+    {
+      "id": "L38",
+      "edgeIds": ["L38:forward", "L38:backward"],
+      "source": "Stockholm",
+      "target": "Warsaw",
+      "directed": false
+    },
+    {
+      "id": "L39",
+      "edgeIds": ["L39:forward", "L39:backward"],
+      "source": "Zurich",
+      "target": "Lyon",
+      "directed": false
+    },
+    {
+      "id": "L40",
+      "edgeIds": ["L40:forward", "L40:backward"],
+      "source": "Strasbourg",
+      "target": "Zurich",
+      "directed": false
+    },
+    {
+      "id": "L41",
+      "edgeIds": ["L41:forward", "L41:backward"],
+      "source": "Vienna",
+      "target": "Zagreb",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "NOBEL-EU",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "Amsterdam",
+        "name": "Amsterdam",
+        "x": 348.4,
+        "y": 227.122
+      },
+      {
+        "id": "Athens",
+        "name": "Athens",
+        "x": 860.0,
+        "y": 560.0
+      },
+      {
+        "id": "Barcelona",
+        "name": "Barcelona",
+        "x": 282.388,
+        "y": 477.122
+      },
+      {
+        "id": "Belgrade",
+        "name": "Belgrade",
+        "x": 774.237,
+        "y": 403.124
+      },
+      {
+        "id": "Berlin",
+        "name": "Berlin",
+        "x": 583.774,
+        "y": 224.617
+      },
+      {
+        "id": "Bordeaux",
+        "name": "Bordeaux",
+        "x": 216.916,
+        "y": 402.213
+      },
+      {
+        "id": "Brussels",
+        "name": "Brussels",
+        "x": 340.014,
+        "y": 266.056
+      },
+      {
+        "id": "Budapest",
+        "name": "Budapest",
+        "x": 740.96,
+        "y": 338.916
+      },
+      {
+        "id": "Copenhagen",
+        "name": "Copenhagen",
+        "x": 559.696,
+        "y": 154.035
+      },
+      {
+        "id": "Dublin",
+        "name": "Dublin",
+        "x": 60.0,
+        "y": 204.126
+      },
+      {
+        "id": "Frankfurt",
+        "name": "Frankfurt",
+        "x": 453.101,
+        "y": 275.619
+      },
+      {
+        "id": "Glasgow",
+        "name": "Glasgow",
+        "x": 113.838,
+        "y": 151.758
+      },
+      {
+        "id": "Hamburg",
+        "name": "Hamburg",
+        "x": 496.929,
+        "y": 201.393
+      },
+      {
+        "id": "London",
+        "name": "London",
+        "x": 224.491,
+        "y": 247.614
+      },
+      {
+        "id": "Lyon",
+        "name": "Lyon",
+        "x": 347.859,
+        "y": 381.266
+      },
+      {
+        "id": "Madrid",
+        "name": "Madrid",
+        "x": 133.859,
+        "y": 499.208
+      },
+      {
+        "id": "Milan",
+        "name": "Milan",
+        "x": 472.851,
+        "y": 384.681
+      },
+      {
+        "id": "Munich",
+        "name": "Munich",
+        "x": 532.912,
+        "y": 321.157
+      },
+      {
+        "id": "Oslo",
+        "name": "Oslo",
+        "x": 509.104,
+        "y": 60.0
+      },
+      {
+        "id": "Paris",
+        "name": "Paris",
+        "x": 285.905,
+        "y": 311.138
+      },
+      {
+        "id": "Prague",
+        "name": "Prague",
+        "x": 611.911,
+        "y": 276.302
+      },
+      {
+        "id": "Rome",
+        "name": "Rome",
+        "x": 558.884,
+        "y": 470.064
+      },
+      {
+        "id": "Stockholm",
+        "name": "Stockholm",
+        "x": 714.177,
+        "y": 67.969
+      },
+      {
+        "id": "Strasbourg",
+        "name": "Strasbourg",
+        "x": 427.94,
+        "y": 314.781
+      },
+      {
+        "id": "Vienna",
+        "name": "Vienna",
+        "x": 664.937,
+        "y": 320.018
+      },
+      {
+        "id": "Warsaw",
+        "name": "Warsaw",
+        "x": 783.436,
+        "y": 228.488
+      },
+      {
+        "id": "Zagreb",
+        "name": "Zagreb",
+        "x": 647.623,
+        "y": 380.128
+      },
+      {
+        "id": "Zurich",
+        "name": "Zurich",
+        "x": 451.478,
+        "y": 340.51
+      }
+    ],
+    "edges": [
+      {
+        "id": "L1:forward",
+        "source": "Amsterdam",
+        "target": "Brussels",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L1:backward",
+        "source": "Brussels",
+        "target": "Amsterdam",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L2:forward",
+        "source": "Amsterdam",
+        "target": "Glasgow",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L2:backward",
+        "source": "Glasgow",
+        "target": "Amsterdam",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L3:forward",
+        "source": "Amsterdam",
+        "target": "Hamburg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L3:backward",
+        "source": "Hamburg",
+        "target": "Amsterdam",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L4:forward",
+        "source": "Amsterdam",
+        "target": "London",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L4:backward",
+        "source": "London",
+        "target": "Amsterdam",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L5:forward",
+        "source": "Athens",
+        "target": "Belgrade",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L5:backward",
+        "source": "Belgrade",
+        "target": "Athens",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L6:forward",
+        "source": "Athens",
+        "target": "Rome",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L6:backward",
+        "source": "Rome",
+        "target": "Athens",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L7:forward",
+        "source": "Barcelona",
+        "target": "Lyon",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L7:backward",
+        "source": "Lyon",
+        "target": "Barcelona",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L8:forward",
+        "source": "Barcelona",
+        "target": "Madrid",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L8:backward",
+        "source": "Madrid",
+        "target": "Barcelona",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L9:forward",
+        "source": "Belgrade",
+        "target": "Budapest",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L9:backward",
+        "source": "Budapest",
+        "target": "Belgrade",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L10:forward",
+        "source": "Belgrade",
+        "target": "Zagreb",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L10:backward",
+        "source": "Zagreb",
+        "target": "Belgrade",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L11:forward",
+        "source": "Berlin",
+        "target": "Copenhagen",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L11:backward",
+        "source": "Copenhagen",
+        "target": "Berlin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L12:forward",
+        "source": "Berlin",
+        "target": "Hamburg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L12:backward",
+        "source": "Hamburg",
+        "target": "Berlin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L13:forward",
+        "source": "Berlin",
+        "target": "Munich",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L13:backward",
+        "source": "Munich",
+        "target": "Berlin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L14:forward",
+        "source": "Berlin",
+        "target": "Prague",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L14:backward",
+        "source": "Prague",
+        "target": "Berlin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L15:forward",
+        "source": "Berlin",
+        "target": "Warsaw",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L15:backward",
+        "source": "Warsaw",
+        "target": "Berlin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L16:forward",
+        "source": "Bordeaux",
+        "target": "Madrid",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L16:backward",
+        "source": "Madrid",
+        "target": "Bordeaux",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L17:forward",
+        "source": "Bordeaux",
+        "target": "Paris",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L17:backward",
+        "source": "Paris",
+        "target": "Bordeaux",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L18:forward",
+        "source": "Brussels",
+        "target": "Frankfurt",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L18:backward",
+        "source": "Frankfurt",
+        "target": "Brussels",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L19:forward",
+        "source": "Brussels",
+        "target": "Paris",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L19:backward",
+        "source": "Paris",
+        "target": "Brussels",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L20:forward",
+        "source": "Budapest",
+        "target": "Prague",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L20:backward",
+        "source": "Prague",
+        "target": "Budapest",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L21:forward",
+        "source": "Budapest",
+        "target": "Warsaw",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L21:backward",
+        "source": "Warsaw",
+        "target": "Budapest",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L22:forward",
+        "source": "Copenhagen",
+        "target": "Oslo",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L22:backward",
+        "source": "Oslo",
+        "target": "Copenhagen",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L23:forward",
+        "source": "Dublin",
+        "target": "Glasgow",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L23:backward",
+        "source": "Glasgow",
+        "target": "Dublin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L24:forward",
+        "source": "Dublin",
+        "target": "London",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L24:backward",
+        "source": "London",
+        "target": "Dublin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L25:forward",
+        "source": "Frankfurt",
+        "target": "Hamburg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L25:backward",
+        "source": "Hamburg",
+        "target": "Frankfurt",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L26:forward",
+        "source": "Frankfurt",
+        "target": "Munich",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L26:backward",
+        "source": "Munich",
+        "target": "Frankfurt",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L27:forward",
+        "source": "Frankfurt",
+        "target": "Strasbourg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L27:backward",
+        "source": "Strasbourg",
+        "target": "Frankfurt",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L28:forward",
+        "source": "London",
+        "target": "Paris",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L28:backward",
+        "source": "Paris",
+        "target": "London",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L29:forward",
+        "source": "Lyon",
+        "target": "Paris",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L29:backward",
+        "source": "Paris",
+        "target": "Lyon",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L30:forward",
+        "source": "Milan",
+        "target": "Munich",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L30:backward",
+        "source": "Munich",
+        "target": "Milan",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L31:forward",
+        "source": "Milan",
+        "target": "Rome",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L31:backward",
+        "source": "Rome",
+        "target": "Milan",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L32:forward",
+        "source": "Milan",
+        "target": "Zurich",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L32:backward",
+        "source": "Zurich",
+        "target": "Milan",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L33:forward",
+        "source": "Munich",
+        "target": "Vienna",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L33:backward",
+        "source": "Vienna",
+        "target": "Munich",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L34:forward",
+        "source": "Oslo",
+        "target": "Stockholm",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L34:backward",
+        "source": "Stockholm",
+        "target": "Oslo",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L35:forward",
+        "source": "Paris",
+        "target": "Strasbourg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L35:backward",
+        "source": "Strasbourg",
+        "target": "Paris",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L36:forward",
+        "source": "Prague",
+        "target": "Vienna",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L36:backward",
+        "source": "Vienna",
+        "target": "Prague",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L37:forward",
+        "source": "Rome",
+        "target": "Zagreb",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L37:backward",
+        "source": "Zagreb",
+        "target": "Rome",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L38:forward",
+        "source": "Stockholm",
+        "target": "Warsaw",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L38:backward",
+        "source": "Warsaw",
+        "target": "Stockholm",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L39:forward",
+        "source": "Zurich",
+        "target": "Lyon",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L39:backward",
+        "source": "Lyon",
+        "target": "Zurich",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L40:forward",
+        "source": "Strasbourg",
+        "target": "Zurich",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L40:backward",
+        "source": "Zurich",
+        "target": "Strasbourg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L41:forward",
+        "source": "Vienna",
+        "target": "Zagreb",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L41:backward",
+        "source": "Zagreb",
+        "target": "Vienna",
+        "capacity": 20,
+        "flow": 0
+      }
+    ]
+  }
+}

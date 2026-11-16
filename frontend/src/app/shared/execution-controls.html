@@ -1,8 +1,10 @@
 <section class="execution panel">
-  <div class="section-label">03 / EXECUÇÃO</div>
-  <h2>Encontre o fluxo máximo</h2>
+  <div class="section-label">ANÁLISE DA REDE</div>
+  <h2>Verifique a capacidade entre dois pontos</h2>
   <p class="muted">
-    Defina os extremos da rede. Alterações são salvas antes do cálculo.
+    Escolha quais pontos precisam se comunicar. A análise encontra os caminhos
+    disponíveis e calcula o limite de transporte. Alterações são salvas antes de
+    continuar.
   </p>
   <div class="inline-form">
     <mat-form-field
@@ -33,7 +35,7 @@
       (click)="s.calculate()"
       [disabled]="s.busy() || !s.source || !s.sink || s.source === s.sink"
     >
-      Calcular fluxo máximo
+      Calcular capacidade disponível
     </button>
   </div>
   @if (s.source && s.source === s.sink) {

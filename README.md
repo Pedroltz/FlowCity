@@ -1,6 +1,12 @@
-# FlowCity
+# LinkPlan
 
-Aplicação acadêmica de Teoria dos Grafos para calcular a quantidade máxima de veículos por minuto entre dois pontos de uma rede urbana. O núcleo é uma implementação explícita de **Ford-Fulkerson com busca em largura (Edmonds-Karp)** em C#, acompanhada de histórico completo e visualização da rede residual.
+O estudo principal agora analisa resiliência de redes de computadores: em **Planejamento**, carregue os benchmarks SNDlib, escolha origem/destino e enlaces físicos indisponíveis. Compare a capacidade original e remanescente e os cortes mínimos. Consulte [procedência e hipóteses](datasets/case-studies/README.md). Os exemplos urbanos existentes continuam disponíveis.
+
+Aplicação de Teoria dos Grafos para analisar a resiliência de redes de telecomunicações: calcular a capacidade máxima entre dois pontos e quantificar sua redução após falhas de enlaces físicos. O núcleo é uma implementação própria de **Ford-Fulkerson com BFS (Edmonds-Karp)** em C#, com caminhos aumentantes, residual e corte mínimo. A aplicação preserva os exemplos urbanos como apoio didático secundário.
+
+O seletor oferece 26 topologias da coleção SNDlib fixada no projeto. Abilene e Atlanta usam capacidades pré-instaladas; nas outras redes, a aplicação explicita a configuração hipotética de um menor módulo positivo por enlace. As capacidades não são medições das redes atuais. Fonte, sentido das arestas e política de capacidade de cada instância estão em [datasets/case-studies](datasets/case-studies/README.md). Veja a [proposta para submissão ao professor](docs/PROPOSTA.md).
+
+O projeto era denominado FlowCity. Nomes internos dos projetos .NET, configuração do Angular, banco SQLite, volume Docker e variáveis `FLOWCITY_*` são mantidos por compatibilidade com instalações e dados existentes. A identidade apresentada ao usuário é LinkPlan.
 
 ## Tecnologias e organização
 
@@ -20,9 +26,13 @@ backend/
   FlowCity.Api/             Controllers, DTOs, DI, OpenAPI e carga inicial
   FlowCity.Tests/           Testes unitários, integração e experimento
 frontend/src/app/          Rotas, estado compartilhado, serviço HTTP e páginas Angular
-datasets/                  Três redes JSON e documentação
+datasets/                  Exemplos urbanos, catálogo SNDlib e documentação
 scripts/                   Gerador reproduzível dos datasets
 ```
+
+Em `datasets/case-studies`, o catálogo selecionável contém 26 topologias
+SNDlib e seus XML de origem. Os três JSON usados na seção de exemplos urbanos
+continuam separados desse catálogo.
 
 Não há bibliotecas de cálculo de grafos, CQRS, MediatR ou serviços intermediários que apenas encaminham chamadas. Cytoscape é usado exclusivamente para visualização e interação.
 
@@ -57,13 +67,11 @@ npm start
 
 Abra **http://localhost:4200**. O proxy de desenvolvimento envia `/api` e `/swagger` para a porta 5000. Para validar a compilação de produção: `npm run build` na pasta `frontend`.
 
-Neste workspace, se o SDK não estiver no PATH, foi disponibilizada uma instalação local em `.tools/dotnet`. Em PowerShell, substitua `dotnet` por `& ./.tools/dotnet/dotnet.exe` a partir da raiz. Essa pasta não faz parte do projeto versionado.
-
 ## Banco de dados
 
 O SQLite é criado automaticamente no primeiro início com `EnsureCreatedAsync`; nenhuma ferramenta externa nem comando de migração é necessário. Por padrão, o arquivo `flowcity.db` é relativo ao diretório de execução da API. Para escolher uma localização, defina `ConnectionStrings__FlowCity`, por exemplo `Data Source=C:/dados/flowcity.db` (o diretório deve existir). No Docker, o arquivo fica em `/data/flowcity.db`.
 
-As três redes são inseridas **somente quando o banco é criado**. Excluir todas as redes não as recria automaticamente. Para recuperá-las, importe os JSON pela interface. O banco usa tabelas relacionadas para redes, vértices e arestas, com chaves compostas por rede e ID. Exclusões de redes removem suas entidades dependentes. Uma edição é persistida em uma única operação transacional do EF Core.
+As três redes urbanas sintéticas são inseridas **somente quando o banco é criado**. Excluir todas as redes não as recria automaticamente. Para recuperá-las, importe os JSON pela interface. O catálogo SNDlib é fornecido separadamente pela API e não é gravado no banco. O banco usa tabelas relacionadas para redes, vértices e arestas, com chaves compostas por rede e ID. Exclusões de redes removem suas entidades dependentes. Uma edição é persistida em uma única operação transacional do EF Core.
 
 Não há migrações de esquema nesta versão de demonstração. Ao alterar o modelo de persistência, exporte suas redes e use um novo arquivo SQLite, ou implemente uma migração antes de reutilizar o banco antigo.
 
@@ -81,12 +89,50 @@ O `GraphApi` concentra os contratos HTTP existentes. O `WorkspaceState` mantém 
 
 Inter é servida localmente por `@fontsource/inter`. Os ícones Lucide são importados individualmente de `@lucide/angular`. O layout inclui menu móvel, foco visível, link para pular ao conteúdo, mensagens de estado e suporte a movimento reduzido.
 
-## Roteiro da demonstração
+## Aparência
+
+O seletor **Aparência** no cabeçalho oferece Claro, Escuro e Sistema. A preferência é salva localmente no navegador; Sistema acompanha a configuração do dispositivo. Se o armazenamento estiver bloqueado, a alternância continua funcionando na sessão. A paleta escura adapta formulários, tabelas, indicadores e grafos, preservando as cores semânticas de falhas, caminhos e cortes. A mudança de tema não altera resultados nem posições dos nós. Para validar com a aplicação ativa: `npm run test:theme` em frontend.
+
+## Editor de redes
+
+O editor oferece três tarefas: **Adicionar ponto**, **Criar conexão** e **Editar itens**. Os pontos recebem identificadores automáticos; códigos manuais permanecem disponíveis em uma seção avançada. A capacidade deve ser informada explicitamente, na unidade da rede registrada na descrição. A opção de volta cria duas arestas independentes com a mesma capacidade; editar uma direção não altera a outra.
+
+Selecionar um ponto ou uma conexão no mapa abre sua edição. A lista pesquisável oferece a mesma seleção pelo teclado; em telas pequenas, o campo de edição recebe foco. **Aplicar à rede** altera o rascunho; **Salvar rede** grava no banco. Excluir um ponto exige confirmação e remove também suas conexões. **Analisar esta rede** salva e leva diretamente à análise da rede editável, sem misturar um benchmark anteriormente selecionado. O cálculo também continua disponível em uma seção opcional do editor.
+
+Para validar a construção e edição pelo navegador: `npm run test:editor` em frontend, com os servidores ativos.
+
+## Planejamento de manutenção
+
+O fluxo principal segue três etapas: escolher a topologia, definir origem/destino e selecionar enlaces em manutenção. A capacidade necessária é opcional e usa a unidade da rede escolhida. Quando informada, o resultado mostra capacidade suficiente ou insuficiente no modelo, com margem ou déficit, e avisa quando a rede original já não atende ao requisito. Sem esse valor, apresenta somente a comparação de capacidades. Valores negativos ou zero são rejeitados; trocar de rede limpa o requisito para evitar misturar unidades. Uma manutenção pode não reduzir o fluxo máximo quando há rotas alternativas. Os detalhes de algoritmo e procedência ficam em seções expansíveis.
+
+As redes do catálogo continuam sendo exemplos documentados. A avaliação não autoriza intervenções em infraestrutura real sem validação de roteamento e tráfego concorrente.
+
+## Estudos de resiliência
+
+Em **Minhas redes**, use **Explorar benchmarks** para abrir **Planejar manutenção**. Selecione uma topologia e os extremos. O seletor de enlaces mostra `↔` para conexões bidirecionais e `→` para enlaces direcionados. A manutenção desativa os sentidos indicados pela topologia, sem alterar os arquivos originais. Compare o cenário original com o cenário de falhas e examine caminhos, residual, corte mínimo e utilização. **Resultados** preserva essa comparação durante a sessão; recarregar a aplicação reinicia o estado.
+
+“Criar cópia editável” salva uma rede independente, com atribuição e unidade na descrição. As ferramentas existentes de edição e JSON continuam disponíveis. Redes editáveis usam o rótulo genérico “unidades de capacidade”; a unidade específica deve ser consultada na descrição. Resultados de redes editáveis e de benchmarks são apresentados separadamente.
+
+Novos endpoints, sem migração do SQLite:
+
+- `GET /api/case-studies`: catálogo e procedência das 26 topologias SNDlib.
+- `GET /api/case-studies/{id}`: benchmark imutável com vínculos de enlaces físicos.
+- `POST /api/case-studies/{id}/resilience`: recebe `source`, `sink`, `failedLinkIds`; retorna `baseline`, `scenario`, `baselineCut`, `scenarioCut`, `lostCapacity` e `lossPercent`.
+
+IDs de estudo inexistentes retornam 404; extremos inválidos ou enlaces desconhecidos, 400. IDs de falha duplicados são tratados uma vez. A perda percentual é `null` quando o fluxo original é zero. Cortes são extraídos do residual, sem inferir que qualquer aresta saturada seja um corte.
+
+O estado de resiliência é independente da rede pessoal em edição. O algoritmo permanece inalterado. O serviço de aplicação coordena cópias dos benchmarks; os controllers tratam HTTP.
+
+Na pasta frontend: `npm run test:resilience`. Na raiz, com a API ativa: `node scripts/experiment-resilience.mjs`. O experimento avalia falhas individuais e grava `artifacts/resilience-experiment.json`; `FLOWCITY_API_URL` e `FLOWCITY_RESILIENCE_OUTPUT` permitem escolher API e arquivo de saída. O produto permite seleção manual de falhas, sem classificação automática de criticidade.
+
+Na raiz, `python scripts/import-sndlib.py --verify` confere os dados offline; sem argumentos reconstrói os JSON usando XML locais e checksums; `--download` obtém novamente a revisão fixada. Python é necessário somente para essa manutenção dos datasets, não para executar a aplicação.
+
+## Roteiro dos exemplos urbanos secundários
 
 1. Em **Minhas redes**, abra **Centro · 6 cruzamentos** no editor.
 2. Selecione uma via, altere a capacidade em **Propriedades da seleção** e clique em **Aplicar alteração**.
 3. Escolha origem **S** e destino **T**, depois **Calcular fluxo máximo**. A aplicação salva alterações antes do cálculo.
-4. Em **Simulações**, observe as arestas violetas e os rótulos `fluxo / capacidade`; selecione um caminho para destacá-lo em laranja. Em **Resultados**, examine o fluxo máximo e a utilização por aresta.
+4. Em **Planejamento**, observe as arestas violetas e os rótulos `fluxo / capacidade`; selecione um caminho para destacá-lo em laranja. Em **Resultados**, examine o fluxo máximo e a utilização por aresta.
 5. Expanda as iterações em **Caminhos aumentantes** para examinar resíduos, gargalo e fluxo adicionado.
 6. Alterne para **Rede residual**. As arestas tracejadas representam possibilidades de cancelar fluxo. Resíduos zero ficam ocultos no desenho, mas estão na resposta da API.
 7. Abra **Bairros** ou **Malha urbana** e execute novamente com os extremos pré-selecionados.
@@ -94,9 +140,11 @@ Inter é servida localmente por `@fontsource/inter`. Os ícones Lucide são impo
 
 Alterar capacidades, estrutura ou extremos invalida o resultado anterior. Arrastar vértices altera apenas o posicionamento. Trocar de rede avisa sobre alterações não salvas. Importar JSON cria e salva uma nova rede e aceita o formato mínimo mostrado em `datasets/README.md`.
 
-## Modelagem e algoritmo
+## Modelagem dos exemplos urbanos e algoritmo
 
-Vértices são cruzamentos ou regiões. Arestas direcionadas representam vias, com capacidade inteira não negativa em veículos/minuto. O fluxo é conservado em todos os vértices intermediários. Vias paralelas e em sentidos opostos são independentes e possuem IDs próprios. Laços são aceitos, mas não ajudam a transportar fluxo entre extremos diferentes.
+Nos exemplos urbanos secundários, vértices representam cruzamentos ou regiões. Arestas direcionadas representam vias, com capacidade inteira não negativa em veículos/minuto. Vias paralelas e em sentidos opostos são independentes e possuem IDs próprios. Nos estudos SNDlib, vértices, sentidos e unidades seguem a topologia selecionada; capacidades e hipóteses de cada rede estão documentadas em `datasets/case-studies/README.md`.
+
+Em todos os casos, o fluxo é conservado nos vértices intermediários. Laços são aceitos, mas não ajudam a transportar fluxo entre extremos diferentes.
 
 `FordFulkerson.Calculate` começa com fluxo zero em cada execução, independentemente de valores importados. Para cada via cria dois objetos residuais emparelhados: direto, com capacidade original, e reverso, inicialmente zero. A BFS encontra o caminho aumentante com menor número de arestas; o gargalo é o menor resíduo desse caminho. Subtrair o gargalo dos arcos percorridos e adicioná-lo aos pares permite também desfazer atribuições anteriores. A busca termina quando o destino deixa de ser alcançável.
 
@@ -151,21 +199,28 @@ A rotina usa cinco aquecimentos e 30 execuções por instância. Registra vérti
 
 ## Integrantes
 
-Preencher antes da entrega acadêmica, sem atribuições fictícias:
+Disciplina: **Teoria dos Grafos**. Professor: **Patrcik Pedreira**.
 
-| Nome                   | Matrícula   | Contribuição |
-| ---------------------- | ----------- | ------------ |
-| A preencher pelo grupo | A preencher | A preencher  |
+Matrículas e contribuições individuais permanecem para preenchimento pelo grupo.
+
+| Nome                       | Matrícula   | Contribuição |
+| -------------------------- | ----------- | ------------ |
+| Bruno Bomfim Lima          | A preencher | A preencher  |
+| Pedro Luiz Tunin           | A preencher | A preencher  |
+| Raphael Camurri Michelassi | A preencher | A preencher  |
+| Bruno Martins              | A preencher | A preencher  |
+| Lucas Galli                | A preencher | A preencher  |
+| Christian Decloedt         | A preencher | A preencher  |
 
 ## Relatório técnico e uso de IA
 
-O [relatório técnico em PDF](output/pdf/FlowCity-Relatorio-Tecnico.pdf) contém problema, modelagem, algoritmo, arquitetura, metodologia, resultados históricos, limitações, roteiro de demonstração, referências e declaração de uso do **Codex, da OpenAI**. O [original editável em HTML](docs/RELATORIO.html) permite preencher identificação e contribuições individuais antes de regenerar o PDF.
+O [relatório técnico em PDF](output/pdf/LinkPlan-Relatorio-Tecnico.pdf) contém problema, modelagem, algoritmo, arquitetura, metodologia, resultados históricos, limitações, roteiro de demonstração, referências e declaração de uso do **Codex, da OpenAI**. O [original editável em HTML](docs/RELATORIO.html) permite preencher identificação e contribuições individuais antes de regenerar o PDF.
 
-O Codex auxiliou nesta revisão na inspeção dos arquivos, comparação com os requisitos, tentativa de execução e elaboração do relatório e da documentação. O grupo deve complementar o histórico de uso de IA, revisar os conteúdos e registrar sua validação efetiva. Não se atribuem contribuições ou revisões humanas sem confirmação.
+O Codex auxiliou na inspeção dos arquivos, comparação com os requisitos, reformulação do frontend, implementação e testes da resiliência, conversão dos benchmarks e elaboração do relatório e da documentação. O grupo deve complementar o histórico de uso de IA, revisar os conteúdos e registrar sua validação efetiva. Não se atribuem contribuições ou revisões humanas sem confirmação.
 
-Para regenerar o PDF após editar o HTML, com as dependências do frontend instaladas e Microsoft Edge disponível: `node scripts/build-report.mjs`. O script também produz prévias em `tmp/pdfs/`.
+Para regenerar o PDF após editar o HTML, com as dependências do frontend e o Chromium do Playwright instalados: `node scripts/build-report.mjs`. O script também produz prévias em `tmp/pdfs/`.
 
-Consulte o [roteiro de entrega e apresentação](docs/ENTREGA.md). A revisão de 12/11/2026 não conseguiu iniciar a aplicação devido a falhas na instalação de dependências; os resultados em `docs/VALIDACAO.md` são registros anteriores e precisam ser reproduzidos pelo grupo.
+Consulte o [roteiro de entrega e apresentação](docs/ENTREGA.md). A validação de 16/11/2026 e os registros históricos estão separados em `docs/VALIDACAO.md`. A apresentação pelo grupo ainda precisa ser ensaiada.
 
 ## Limitações conhecidas
 

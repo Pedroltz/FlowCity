@@ -1,0 +1,673 @@
+{
+  "id": "nobel-germany",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/nobel-germany/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "9e370b3f6c4dea80238371f6da86c34d962da5a7c05e737d6fede8551c59a43f",
+  "retrievedAt": "2026-11-16T18:32:42.155514+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "L1",
+      "edgeIds": ["L1:forward", "L1:backward"],
+      "source": "Berlin",
+      "target": "Hamburg",
+      "directed": false
+    },
+    {
+      "id": "L2",
+      "edgeIds": ["L2:forward", "L2:backward"],
+      "source": "Berlin",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "L3",
+      "edgeIds": ["L3:forward", "L3:backward"],
+      "source": "Berlin",
+      "target": "Leipzig",
+      "directed": false
+    },
+    {
+      "id": "L4",
+      "edgeIds": ["L4:forward", "L4:backward"],
+      "source": "Bremen",
+      "target": "Hamburg",
+      "directed": false
+    },
+    {
+      "id": "L5",
+      "edgeIds": ["L5:forward", "L5:backward"],
+      "source": "Bremen",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "L6",
+      "edgeIds": ["L6:forward", "L6:backward"],
+      "source": "Bremen",
+      "target": "Norden",
+      "directed": false
+    },
+    {
+      "id": "L7",
+      "edgeIds": ["L7:forward", "L7:backward"],
+      "source": "Dortmund",
+      "target": "Essen",
+      "directed": false
+    },
+    {
+      "id": "L8",
+      "edgeIds": ["L8:forward", "L8:backward"],
+      "source": "Dortmund",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "L9",
+      "edgeIds": ["L9:forward", "L9:backward"],
+      "source": "Dortmund",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "L10",
+      "edgeIds": ["L10:forward", "L10:backward"],
+      "source": "Dortmund",
+      "target": "Norden",
+      "directed": false
+    },
+    {
+      "id": "L11",
+      "edgeIds": ["L11:forward", "L11:backward"],
+      "source": "Duesseldorf",
+      "target": "Essen",
+      "directed": false
+    },
+    {
+      "id": "L12",
+      "edgeIds": ["L12:forward", "L12:backward"],
+      "source": "Duesseldorf",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "L13",
+      "edgeIds": ["L13:forward", "L13:backward"],
+      "source": "Frankfurt",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "L14",
+      "edgeIds": ["L14:forward", "L14:backward"],
+      "source": "Frankfurt",
+      "target": "Koeln",
+      "directed": false
+    },
+    {
+      "id": "L15",
+      "edgeIds": ["L15:forward", "L15:backward"],
+      "source": "Frankfurt",
+      "target": "Leipzig",
+      "directed": false
+    },
+    {
+      "id": "L16",
+      "edgeIds": ["L16:forward", "L16:backward"],
+      "source": "Frankfurt",
+      "target": "Mannheim",
+      "directed": false
+    },
+    {
+      "id": "L17",
+      "edgeIds": ["L17:forward", "L17:backward"],
+      "source": "Frankfurt",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "L18",
+      "edgeIds": ["L18:forward", "L18:backward"],
+      "source": "Hamburg",
+      "target": "Hannover",
+      "directed": false
+    },
+    {
+      "id": "L19",
+      "edgeIds": ["L19:forward", "L19:backward"],
+      "source": "Hannover",
+      "target": "Leipzig",
+      "directed": false
+    },
+    {
+      "id": "L20",
+      "edgeIds": ["L20:forward", "L20:backward"],
+      "source": "Karlsruhe",
+      "target": "Mannheim",
+      "directed": false
+    },
+    {
+      "id": "L21",
+      "edgeIds": ["L21:forward", "L21:backward"],
+      "source": "Karlsruhe",
+      "target": "Stuttgart",
+      "directed": false
+    },
+    {
+      "id": "L22",
+      "edgeIds": ["L22:forward", "L22:backward"],
+      "source": "Leipzig",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "L23",
+      "edgeIds": ["L23:forward", "L23:backward"],
+      "source": "Muenchen",
+      "target": "Nuernberg",
+      "directed": false
+    },
+    {
+      "id": "L24",
+      "edgeIds": ["L24:forward", "L24:backward"],
+      "source": "Muenchen",
+      "target": "Ulm",
+      "directed": false
+    },
+    {
+      "id": "L25",
+      "edgeIds": ["L25:forward", "L25:backward"],
+      "source": "Nuernberg",
+      "target": "Stuttgart",
+      "directed": false
+    },
+    {
+      "id": "L26",
+      "edgeIds": ["L26:forward", "L26:backward"],
+      "source": "Stuttgart",
+      "target": "Ulm",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "NOBEL-GERMANY",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "Hannover",
+        "name": "Hannover",
+        "x": 420.597,
+        "y": 171.009
+      },
+      {
+        "id": "Frankfurt",
+        "name": "Frankfurt",
+        "x": 284.478,
+        "y": 377.431
+      },
+      {
+        "id": "Hamburg",
+        "name": "Hamburg",
+        "x": 454.03,
+        "y": 64.587
+      },
+      {
+        "id": "Norden",
+        "name": "Norden",
+        "x": 111.343,
+        "y": 60.0
+      },
+      {
+        "id": "Bremen",
+        "name": "Bremen",
+        "x": 301.194,
+        "y": 107.706
+      },
+      {
+        "id": "Berlin",
+        "name": "Berlin",
+        "x": 860.0,
+        "y": 159.083
+      },
+      {
+        "id": "Muenchen",
+        "name": "Muenchen",
+        "x": 629.552,
+        "y": 560.0
+      },
+      {
+        "id": "Ulm",
+        "name": "Ulm",
+        "x": 443.284,
+        "y": 537.064
+      },
+      {
+        "id": "Nuernberg",
+        "name": "Nuernberg",
+        "x": 573.433,
+        "y": 440.734
+      },
+      {
+        "id": "Stuttgart",
+        "name": "Stuttgart",
+        "x": 339.403,
+        "y": 506.789
+      },
+      {
+        "id": "Karlsruhe",
+        "name": "Karlsruhe",
+        "x": 254.627,
+        "y": 481.101
+      },
+      {
+        "id": "Mannheim",
+        "name": "Mannheim",
+        "x": 264.179,
+        "y": 437.064
+      },
+      {
+        "id": "Essen",
+        "name": "Essen",
+        "x": 86.269,
+        "y": 258.165
+      },
+      {
+        "id": "Dortmund",
+        "name": "Dortmund",
+        "x": 143.582,
+        "y": 251.743
+      },
+      {
+        "id": "Duesseldorf",
+        "name": "Duesseldorf",
+        "x": 60.0,
+        "y": 278.349
+      },
+      {
+        "id": "Koeln",
+        "name": "Koeln",
+        "x": 87.463,
+        "y": 305.872
+      },
+      {
+        "id": "Leipzig",
+        "name": "Leipzig",
+        "x": 728.657,
+        "y": 267.339
+      }
+    ],
+    "edges": [
+      {
+        "id": "L1:forward",
+        "source": "Berlin",
+        "target": "Hamburg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L1:backward",
+        "source": "Hamburg",
+        "target": "Berlin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L2:forward",
+        "source": "Berlin",
+        "target": "Hannover",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L2:backward",
+        "source": "Hannover",
+        "target": "Berlin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L3:forward",
+        "source": "Berlin",
+        "target": "Leipzig",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L3:backward",
+        "source": "Leipzig",
+        "target": "Berlin",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L4:forward",
+        "source": "Bremen",
+        "target": "Hamburg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L4:backward",
+        "source": "Hamburg",
+        "target": "Bremen",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L5:forward",
+        "source": "Bremen",
+        "target": "Hannover",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L5:backward",
+        "source": "Hannover",
+        "target": "Bremen",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L6:forward",
+        "source": "Bremen",
+        "target": "Norden",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L6:backward",
+        "source": "Norden",
+        "target": "Bremen",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L7:forward",
+        "source": "Dortmund",
+        "target": "Essen",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L7:backward",
+        "source": "Essen",
+        "target": "Dortmund",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L8:forward",
+        "source": "Dortmund",
+        "target": "Hannover",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L8:backward",
+        "source": "Hannover",
+        "target": "Dortmund",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L9:forward",
+        "source": "Dortmund",
+        "target": "Koeln",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L9:backward",
+        "source": "Koeln",
+        "target": "Dortmund",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L10:forward",
+        "source": "Dortmund",
+        "target": "Norden",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L10:backward",
+        "source": "Norden",
+        "target": "Dortmund",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L11:forward",
+        "source": "Duesseldorf",
+        "target": "Essen",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L11:backward",
+        "source": "Essen",
+        "target": "Duesseldorf",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L12:forward",
+        "source": "Duesseldorf",
+        "target": "Koeln",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L12:backward",
+        "source": "Koeln",
+        "target": "Duesseldorf",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L13:forward",
+        "source": "Frankfurt",
+        "target": "Hannover",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L13:backward",
+        "source": "Hannover",
+        "target": "Frankfurt",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L14:forward",
+        "source": "Frankfurt",
+        "target": "Koeln",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L14:backward",
+        "source": "Koeln",
+        "target": "Frankfurt",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L15:forward",
+        "source": "Frankfurt",
+        "target": "Leipzig",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L15:backward",
+        "source": "Leipzig",
+        "target": "Frankfurt",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L16:forward",
+        "source": "Frankfurt",
+        "target": "Mannheim",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L16:backward",
+        "source": "Mannheim",
+        "target": "Frankfurt",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L17:forward",
+        "source": "Frankfurt",
+        "target": "Nuernberg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L17:backward",
+        "source": "Nuernberg",
+        "target": "Frankfurt",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L18:forward",
+        "source": "Hamburg",
+        "target": "Hannover",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L18:backward",
+        "source": "Hannover",
+        "target": "Hamburg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L19:forward",
+        "source": "Hannover",
+        "target": "Leipzig",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L19:backward",
+        "source": "Leipzig",
+        "target": "Hannover",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L20:forward",
+        "source": "Karlsruhe",
+        "target": "Mannheim",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L20:backward",
+        "source": "Mannheim",
+        "target": "Karlsruhe",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L21:forward",
+        "source": "Karlsruhe",
+        "target": "Stuttgart",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L21:backward",
+        "source": "Stuttgart",
+        "target": "Karlsruhe",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L22:forward",
+        "source": "Leipzig",
+        "target": "Nuernberg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L22:backward",
+        "source": "Nuernberg",
+        "target": "Leipzig",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L23:forward",
+        "source": "Muenchen",
+        "target": "Nuernberg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L23:backward",
+        "source": "Nuernberg",
+        "target": "Muenchen",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L24:forward",
+        "source": "Muenchen",
+        "target": "Ulm",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L24:backward",
+        "source": "Ulm",
+        "target": "Muenchen",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L25:forward",
+        "source": "Nuernberg",
+        "target": "Stuttgart",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L25:backward",
+        "source": "Stuttgart",
+        "target": "Nuernberg",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L26:forward",
+        "source": "Stuttgart",
+        "target": "Ulm",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L26:backward",
+        "source": "Ulm",
+        "target": "Stuttgart",
+        "capacity": 20,
+        "flow": 0
+      }
+    ]
+  }
+}

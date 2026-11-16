@@ -7,17 +7,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "output/pdf");
 fs.mkdirSync(out, { recursive: true });
 const html = fs.readFileSync(path.join(root, "docs/RELATORIO.html"), "utf8");
-const browser = await chromium.launch({ channel: "msedge", headless: true });
+const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage();
   await page.setContent(html, { waitUntil: "load" });
-  await page.pdf({
-    path: path.join(out, "FlowCity-Relatorio-Tecnico.pdf"),
-    format: "A4",
-    printBackground: true,
-    preferCSSPageSize: true,
-    pageRanges: "1-7",
-  });
   const preview = path.join(root, "tmp/pdfs");
   fs.mkdirSync(preview, { recursive: true });
   await page.emulateMedia({ media: "print" });
@@ -32,6 +25,12 @@ try {
       path: path.join(preview, `pagina-${i + 1}.png`),
     });
   }
+  await page.pdf({
+    path: path.join(out, "LinkPlan-Relatorio-Tecnico.pdf"),
+    format: "A4",
+    printBackground: true,
+    preferCSSPageSize: true,
+  });
   console.log("PDF e prévias gerados em output/pdf e tmp/pdfs.");
 } finally {
   await browser.close();

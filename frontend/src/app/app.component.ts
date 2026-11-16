@@ -1,3 +1,4 @@
+import { ThemeService } from "./theme.service";
 import {
   Component,
   inject,
@@ -45,6 +46,7 @@ import { WorkspaceState } from "./workspace-state.service";
   templateUrl: "./app.component.html",
 })
 export class AppComponent implements OnInit {
+  readonly theme = inject(ThemeService);
   readonly s = inject(WorkspaceState);
   menuOpen = signal(false);
   private document = inject(DOCUMENT);
@@ -56,6 +58,13 @@ export class AppComponent implements OnInit {
         takeUntilDestroyed(),
       )
       .subscribe(() => {
+        try {
+          this.document.defaultView?.sessionStorage.removeItem(
+            "linkplan:stale-chunk-reload",
+          );
+        } catch {
+          // Storage can be unavailable in private browsing contexts.
+        }
         this.menuOpen.set(false);
         afterNextRender(
           () =>

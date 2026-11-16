@@ -12,7 +12,7 @@ import { NetworkActions } from "../shared/network-actions";
         <span class="eyebrow">SEU ESPAÇO DE APRENDIZAGEM</span>
         <h1>Explore conexões.<br />Descubra possibilidades.</h1>
         <p class="muted">
-          Construa redes e entenda como o fluxo encontra seu caminho.
+          Avalie a capacidade de redes e o impacto de falhas nos enlaces.
         </p>
       </div>
       <span class="subject-tag">Teoria dos grafos</span>
@@ -22,11 +22,11 @@ import { NetworkActions } from "../shared/network-actions";
         <span class="eyebrow">LABORATÓRIO INTERATIVO</span>
         <h2>Grandes descobertas<br />começam com uma conexão.</h2>
         <p>
-          Do primeiro vértice ao fluxo máximo.<br />Explore Ford-Fulkerson com
+          Da topologia ao impacto de uma falha.<br />Explore Ford-Fulkerson com
           busca em largura.
         </p>
-        <a routerLink="/editor" class="button light"
-          >Continuar no editor <span>↗</span></a
+        <a routerLink="/simulacoes" class="button light"
+          >Planejar manutenção <span>↗</span></a
         >
       </div>
       <div class="hero-graph" aria-hidden="true">

@@ -1,49 +1,51 @@
-# Preparação da entrega
+# Preparação da entrega — LinkPlan
 
 ## Documentos
 
-- Relatório: `output/pdf/FlowCity-Relatorio-Tecnico.pdf`.
-- Fonte editável: `docs/RELATORIO.html`; regenerar com `node scripts/build-report.mjs` após as alterações.
-- Preencher instituição, professor, turma, nomes, matrículas e contribuições reais no relatório e no README.
-- Conferir e completar a declaração de uso do Codex, incluindo eventual assistência anterior no código, nos dados e nos testes. Não declarar revisão humana sem realizá-la.
-- Conferir data, versões e procedência dos resultados em `VALIDACAO.md`; substituir por resultados reproduzidos e manter a evidência da execução.
+- Proposta resumida: `docs/PROPOSTA.md`. Submeter ao professor; não presumir aprovação.
+- Relatório final: `output/pdf/LinkPlan-Relatorio-Tecnico.pdf`; fonte editável: `docs/RELATORIO.html`.
+- Os seis integrantes estão identificados. Disciplina: Teoria dos Grafos. Professor: Patrcik Pedreira. Preencher instituição, curso, turma, matrículas e contribuições reais. Complementar a declaração de IA após revisão humana.
+- Fontes, XML originais e hipóteses: `datasets/case-studies/README.md`.
+- Resultados reproduzidos: `docs/case-study-results.json`; testes: `docs/VALIDACAO.md`.
 
-## Execução e validação antes da apresentação
+## Preparação e execução
 
-Na raiz FlowCity:
+Na raiz, antes da apresentação:
 
-```powershell
+```sh
 dotnet restore backend/FlowCity.sln
 dotnet test backend/FlowCity.sln -c Release
-dotnet run --project backend/FlowCity.Api --urls http://localhost:5080
-```
-
-Em outro terminal:
-
-```powershell
 cd frontend
 npm ci
+npx playwright install chromium
+npm run lint
+npm run format:check
 npm run build
+```
+
+Durante a demonstração, em dois terminais na raiz:
+
+```sh
+dotnet run --project backend/FlowCity.Api --urls http://localhost:5000
+```
+
+```sh
+cd frontend
 npm start
 ```
 
-Com ambos os servidores ativos, conferir `http://localhost:4200` e `http://localhost:5080/swagger`. Opcionalmente reproduzir o roteiro automatizado, a partir de frontend:
+Acessar `http://localhost:4200`; Swagger: `http://localhost:5000/swagger`. O proxy local usa a porta 5000. No Docker, a porta externa 5080 continua sendo a configuração do Compose; não confundir os dois modos. Docker ainda exige validação no equipamento de apresentação.
 
-```powershell
-npx playwright install chromium
-npm run test:e2e
-```
+As 26 topologias SNDlib são locais e não exigem conexão com a fonte durante a demonstração. O teste `npm run test:resilience`, em frontend, verifica a seleção do catálogo e o fluxo de análise. `npm run test:e2e` verifica as redes editáveis e os exemplos urbanos. Ambos criam cópias temporárias e as excluem ao terminar, sem modificar as redes originais. Não excluir o banco para preparar a apresentação; exportar redes próprias quando necessário.
 
-O roteiro altera e restaura uma capacidade e cria/exclui uma rede temporária. Usar um banco de demonstração com os exemplos originais. Preservar redes próprias por exportação antes de preparar o ambiente; não excluir o banco para corrigir problemas sem avaliar seus dados.
+O conversor opcional requer Python 3: `python scripts/import-sndlib.py --verify`. A geração do PDF usa o Chromium instalado pelo Playwright: `node scripts/build-report.mjs`.
 
-Nesta revisão, em 12/11/2026, o NuGet foi bloqueado por permissões de rede e o npm falhou. A execução atual permanece pendente. Não apresentar os registros históricos como testes repetidos nesta sessão.
+## Roteiro de aproximadamente dez minutos
 
-## Demonstração de aproximadamente 10 minutos
+1. **0–2 min:** iniciar a aplicação; explicar que a pergunta é o impacto de falhas na capacidade entre dois pontos, com um único fluxo.
+2. **2–4 min:** em Planejamento, escolher Abilene, ATLAM5 → WASHng; executar sem falhas e mostrar capacidade 9920. Explicar unidade e procedência.
+3. **4–6 min:** desabilitar ATLAM5_ATLAng e comparar: capacidade zero. Mostrar enlace físico nas duas direções, residual e corte mínimo. Resultados preserva a comparação.
+4. **6–8 min:** Atlanta, N1 → N15, falha L15: 4000 → 1000 (75% de perda). TA2, N1 → N65, falha L1_N1_N31: 1512000 → 1008000 (33,33%). Declarar que TA2 usa um menor módulo positivo por enlace, configuração hipotética.
+5. **8–10 min:** mostrar cópia editável, limites do modelo, contribuições e uso de IA. Distinguir corte mínimo de arestas saturadas.
 
-1. Iniciar os servidores ao vivo e explicar o problema e a modelagem (0-2 min).
-2. Selecionar a rede pequena, origem S e destino T; calcular 23 e explicar caminho, gargalo e resíduo (2-5 min).
-3. Alterar D→T de 4 para 1; calcular 20; restaurar a capacidade 4 e salvar (5-7 min).
-4. Selecionar as redes média e grande e calcular 32. Criar uma rede A→B com capacidade zero e mostrar fluxo zero (7-9 min).
-5. Explicar limitações, contribuições e uso de IA (9-10 min).
-
-Distribuir as falas entre todos os integrantes. Ensaiar perguntas sobre BFS, arcos reversos, conservação, corte mínimo, complexidade e dados sintéticos. Instalar as dependências com antecedência e testar nova inicialização sem downloads. Conferir carregador, adaptadores, navegador e acesso aos arquivos no computador da apresentação.
+Distribuir as falas entre todos os integrantes. Ensaiar perguntas sobre BFS, cancelamento residual, conservação, corte mínimo, capacidades instaladas versus módulos disponíveis e diferença entre capacidade teórica e tráfego observado. Providenciar adaptadores, carregador e dependências já instaladas. Os testes automatizados não substituem esse ensaio humano.

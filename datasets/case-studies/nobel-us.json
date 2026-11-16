@@ -1,0 +1,550 @@
+{
+  "id": "nobel-us",
+  "unit": "unidades de capacidade do benchmark",
+  "sourceUrl": "https://raw.githubusercontent.com/sands-lab/nika/d945c0484678f35a93483ca1ff0b8ebc999e9d03/src/nika/net_env/isp/sndlib/nobel-us/network.xml",
+  "revision": "d945c0484678f35a93483ca1ff0b8ebc999e9d03",
+  "sha256": "fa50340bf9792e4ec822cbbfe72fcbbadb8c80309546fdb21d0d9eddd03087aa",
+  "retrievedAt": "2026-11-16T18:32:42.155685+00:00",
+  "sourceMetadata": {
+    "time": null,
+    "unit": null,
+    "origin": null,
+    "granularity": null
+  },
+  "capacityPolicy": "Um módulo positivo de menor capacidade por enlace; configuração hipotética de projeto, não uma medição da rede instalada.",
+  "links": [
+    {
+      "id": "L1",
+      "edgeIds": ["L1:forward", "L1:backward"],
+      "source": "Palo-Alto",
+      "target": "San-Diego",
+      "directed": false
+    },
+    {
+      "id": "L2",
+      "edgeIds": ["L2:forward", "L2:backward"],
+      "source": "Palo-Alto",
+      "target": "Salt-Lake-City",
+      "directed": false
+    },
+    {
+      "id": "L3",
+      "edgeIds": ["L3:forward", "L3:backward"],
+      "source": "Palo-Alto",
+      "target": "Seattle",
+      "directed": false
+    },
+    {
+      "id": "L4",
+      "edgeIds": ["L4:forward", "L4:backward"],
+      "source": "San-Diego",
+      "target": "Houston",
+      "directed": false
+    },
+    {
+      "id": "L5",
+      "edgeIds": ["L5:forward", "L5:backward"],
+      "source": "San-Diego",
+      "target": "Seattle",
+      "directed": false
+    },
+    {
+      "id": "L6",
+      "edgeIds": ["L6:forward", "L6:backward"],
+      "source": "Boulder",
+      "target": "Lincoln",
+      "directed": false
+    },
+    {
+      "id": "L7",
+      "edgeIds": ["L7:forward", "L7:backward"],
+      "source": "Boulder",
+      "target": "Houston",
+      "directed": false
+    },
+    {
+      "id": "L8",
+      "edgeIds": ["L8:forward", "L8:backward"],
+      "source": "Boulder",
+      "target": "Salt-Lake-City",
+      "directed": false
+    },
+    {
+      "id": "L9",
+      "edgeIds": ["L9:forward", "L9:backward"],
+      "source": "Washington",
+      "target": "Princeton",
+      "directed": false
+    },
+    {
+      "id": "L10",
+      "edgeIds": ["L10:forward", "L10:backward"],
+      "source": "Washington",
+      "target": "Ithaca",
+      "directed": false
+    },
+    {
+      "id": "L11",
+      "edgeIds": ["L11:forward", "L11:backward"],
+      "source": "Washington",
+      "target": "Houston",
+      "directed": false
+    },
+    {
+      "id": "L12",
+      "edgeIds": ["L12:forward", "L12:backward"],
+      "source": "Atlanta",
+      "target": "Pittsburgh",
+      "directed": false
+    },
+    {
+      "id": "L13",
+      "edgeIds": ["L13:forward", "L13:backward"],
+      "source": "Atlanta",
+      "target": "Houston",
+      "directed": false
+    },
+    {
+      "id": "L14",
+      "edgeIds": ["L14:forward", "L14:backward"],
+      "source": "Urbana-Champaign",
+      "target": "Lincoln",
+      "directed": false
+    },
+    {
+      "id": "L15",
+      "edgeIds": ["L15:forward", "L15:backward"],
+      "source": "Urbana-Champaign",
+      "target": "Pittsburgh",
+      "directed": false
+    },
+    {
+      "id": "L16",
+      "edgeIds": ["L16:forward", "L16:backward"],
+      "source": "Urbana-Champaign",
+      "target": "Seattle",
+      "directed": false
+    },
+    {
+      "id": "L17",
+      "edgeIds": ["L17:forward", "L17:backward"],
+      "source": "Ann-Arbor",
+      "target": "Princeton",
+      "directed": false
+    },
+    {
+      "id": "L18",
+      "edgeIds": ["L18:forward", "L18:backward"],
+      "source": "Ann-Arbor",
+      "target": "Ithaca",
+      "directed": false
+    },
+    {
+      "id": "L19",
+      "edgeIds": ["L19:forward", "L19:backward"],
+      "source": "Ann-Arbor",
+      "target": "Salt-Lake-City",
+      "directed": false
+    },
+    {
+      "id": "L20",
+      "edgeIds": ["L20:forward", "L20:backward"],
+      "source": "Princeton",
+      "target": "Pittsburgh",
+      "directed": false
+    },
+    {
+      "id": "L21",
+      "edgeIds": ["L21:forward", "L21:backward"],
+      "source": "Ithaca",
+      "target": "Pittsburgh",
+      "directed": false
+    }
+  ],
+  "graph": {
+    "name": "NOBEL-US",
+    "description": "Topologia SNDlib histórica; capacidade teórica para um par de pontos, sem tráfego concorrente.",
+    "nodes": [
+      {
+        "id": "Palo-Alto",
+        "name": "Palo-Alto",
+        "x": 62.842,
+        "y": 341.879
+      },
+      {
+        "id": "San-Diego",
+        "name": "San-Diego",
+        "x": 146.27,
+        "y": 476.946
+      },
+      {
+        "id": "Boulder",
+        "name": "Boulder",
+        "x": 345.559,
+        "y": 264.978
+      },
+      {
+        "id": "Washington",
+        "name": "Washington",
+        "x": 816.029,
+        "y": 306.365
+      },
+      {
+        "id": "Atlanta",
+        "name": "Atlanta",
+        "x": 695.486,
+        "y": 448.423
+      },
+      {
+        "id": "Urbana-Champaign",
+        "name": "Urbana-Champaign",
+        "x": 630.115,
+        "y": 263.3
+      },
+      {
+        "id": "Ann-Arbor",
+        "name": "Ann-Arbor",
+        "x": 708.861,
+        "y": 204.575
+      },
+      {
+        "id": "Lincoln",
+        "name": "Lincoln",
+        "x": 491.682,
+        "y": 251.834
+      },
+      {
+        "id": "Princeton",
+        "name": "Princeton",
+        "x": 860.0,
+        "y": 259.105
+      },
+      {
+        "id": "Ithaca",
+        "name": "Ithaca",
+        "x": 828.067,
+        "y": 201.779
+      },
+      {
+        "id": "Pittsburgh",
+        "name": "Pittsburgh",
+        "x": 773.229,
+        "y": 257.707
+      },
+      {
+        "id": "Houston",
+        "name": "Houston",
+        "x": 511.912,
+        "y": 560.0
+      },
+      {
+        "id": "Salt-Lake-City",
+        "name": "Salt-Lake-City",
+        "x": 238.725,
+        "y": 254.072
+      },
+      {
+        "id": "Seattle",
+        "name": "Seattle",
+        "x": 60.0,
+        "y": 60.0
+      }
+    ],
+    "edges": [
+      {
+        "id": "L1:forward",
+        "source": "Palo-Alto",
+        "target": "San-Diego",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L1:backward",
+        "source": "San-Diego",
+        "target": "Palo-Alto",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L2:forward",
+        "source": "Palo-Alto",
+        "target": "Salt-Lake-City",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L2:backward",
+        "source": "Salt-Lake-City",
+        "target": "Palo-Alto",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L3:forward",
+        "source": "Palo-Alto",
+        "target": "Seattle",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L3:backward",
+        "source": "Seattle",
+        "target": "Palo-Alto",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L4:forward",
+        "source": "San-Diego",
+        "target": "Houston",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L4:backward",
+        "source": "Houston",
+        "target": "San-Diego",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L5:forward",
+        "source": "San-Diego",
+        "target": "Seattle",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L5:backward",
+        "source": "Seattle",
+        "target": "San-Diego",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L6:forward",
+        "source": "Boulder",
+        "target": "Lincoln",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L6:backward",
+        "source": "Lincoln",
+        "target": "Boulder",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L7:forward",
+        "source": "Boulder",
+        "target": "Houston",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L7:backward",
+        "source": "Houston",
+        "target": "Boulder",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L8:forward",
+        "source": "Boulder",
+        "target": "Salt-Lake-City",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L8:backward",
+        "source": "Salt-Lake-City",
+        "target": "Boulder",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L9:forward",
+        "source": "Washington",
+        "target": "Princeton",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L9:backward",
+        "source": "Princeton",
+        "target": "Washington",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L10:forward",
+        "source": "Washington",
+        "target": "Ithaca",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L10:backward",
+        "source": "Ithaca",
+        "target": "Washington",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L11:forward",
+        "source": "Washington",
+        "target": "Houston",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L11:backward",
+        "source": "Houston",
+        "target": "Washington",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L12:forward",
+        "source": "Atlanta",
+        "target": "Pittsburgh",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L12:backward",
+        "source": "Pittsburgh",
+        "target": "Atlanta",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L13:forward",
+        "source": "Atlanta",
+        "target": "Houston",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L13:backward",
+        "source": "Houston",
+        "target": "Atlanta",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L14:forward",
+        "source": "Urbana-Champaign",
+        "target": "Lincoln",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L14:backward",
+        "source": "Lincoln",
+        "target": "Urbana-Champaign",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L15:forward",
+        "source": "Urbana-Champaign",
+        "target": "Pittsburgh",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L15:backward",
+        "source": "Pittsburgh",
+        "target": "Urbana-Champaign",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L16:forward",
+        "source": "Urbana-Champaign",
+        "target": "Seattle",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L16:backward",
+        "source": "Seattle",
+        "target": "Urbana-Champaign",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L17:forward",
+        "source": "Ann-Arbor",
+        "target": "Princeton",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L17:backward",
+        "source": "Princeton",
+        "target": "Ann-Arbor",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L18:forward",
+        "source": "Ann-Arbor",
+        "target": "Ithaca",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L18:backward",
+        "source": "Ithaca",
+        "target": "Ann-Arbor",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L19:forward",
+        "source": "Ann-Arbor",
+        "target": "Salt-Lake-City",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L19:backward",
+        "source": "Salt-Lake-City",
+        "target": "Ann-Arbor",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L20:forward",
+        "source": "Princeton",
+        "target": "Pittsburgh",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L20:backward",
+        "source": "Pittsburgh",
+        "target": "Princeton",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L21:forward",
+        "source": "Ithaca",
+        "target": "Pittsburgh",
+        "capacity": 20,
+        "flow": 0
+      },
+      {
+        "id": "L21:backward",
+        "source": "Pittsburgh",
+        "target": "Ithaca",
+        "capacity": 20,
+        "flow": 0
+      }
+    ]
+  }
+}

@@ -1,5 +1,37 @@
 # Validação da implementação
 
+## Versão de 16/11/2026 — resiliência de telecomunicações
+
+- **45 testes xUnit aprovados** cobrem o catálogo de 26 topologias, a preservação dos sentidos direcionados, contratos HTTP, validação de extremos e IDs, falhas físicas, desconexão, ausência de mutação e igualdade entre fluxo e corte mínimo. A perda percentual com baseline zero é verificada com um algoritmo substituto de teste, sem atribuir esse resultado a um benchmark real.
+- ESLint sem erros/avisos, compilação Angular de produção e checagens Prettier/dotnet format executadas.
+- Conversor offline: `python scripts/import-sndlib.py --verify`, com contagens e checksums dos 26 XML.
+- Fluxo de resiliência em Chromium: carregamento e seleção do catálogo completo, cálculo, falhas respeitando a direção de cada rede, cortes, caminhos destacados, residual, navegação com estado preservado, cópia editável sem mutação do catálogo, erro e recuperação, e telas de 390/768 px sem transbordamento. Evidência: `artifacts/resilience-validation.json`.
+- Regressão das redes editáveis: `npm run test:e2e` em frontend. Evidência: `artifacts/interface-validation.json` quando executado com redirecionamento da saída.
+
+Os testes de navegador utilizam uma API e banco SQLite temporários, separados do banco do usuário. Os scripts aceitam `FLOWCITY_URL`; a porta padrão da aplicação local é 4200 e o proxy aponta para a API na porta 5000. As capturas ficam em `artifacts/`. Os testes não comprovam desempenho multiusuário nem substituem o ensaio humano da apresentação. Docker não foi executado nesta revisão.
+
+### Editor por tarefas
+
+O roteiro `npm run test:editor` cria pontos com identificadores automáticos, rejeita capacidade fracionária, cria ida e volta, salva e abre a análise da própria rede sem reaproveitar um benchmark anterior. Confere edição pelo mapa, preservação da capacidade do sentido contrário, fluxo 100 → 60 após edição, busca, foco de edição em celular, temas claro/escuro e exclusão de um ponto com suas conexões. Evidência: `artifacts/editor-validation.json`. O teste utiliza uma rede temporária e a exclui ao terminar.
+
+### Experimento reproduzido com os benchmarks
+
+Resultados completos: [case-study-results.json](case-study-results.json). Fonte, período histórico e políticas de capacidade: [datasets](../datasets/case-studies/README.md).
+
+| Estudo  | Par             | Falha física  | Original | Remanescente |  Perda |
+| ------- | --------------- | ------------- | -------: | -----------: | -----: |
+| Abilene | ATLAM5 → WASHng | ATLAM5_ATLAng |     9920 |            0 |   100% |
+| Atlanta | N1 → N15        | L15           |     4000 |         1000 |    75% |
+| TA2     | N1 → N65        | L1_N1_N31     |  1512000 |      1008000 | 33,33% |
+
+Foram avaliados o cenário original e cada falha física individual (15, 22 e 108 possibilidades). Retém-se a maior perda absoluta, com desempate pela ordem do arquivo. Esse é um experimento offline; a interface continua permitindo seleção manual. Os cortes originais e dos cenários coincidem com os respectivos fluxos. TA2 utiliza um menor módulo positivo por enlace, configuração hipotética de projeto. As unidades não são convertidas, e os valores não representam velocidade medida ou disponibilidade atual.
+
+Para reproduzir, com a API ativa: `node scripts/experiment-resilience.mjs`. A saída padrão fica em `artifacts/resilience-experiment.json`. Pode-se definir `FLOWCITY_API_URL` e `FLOWCITY_RESILIENCE_OUTPUT`.
+
+## Registro histórico de 08/09/2026 — exemplos urbanos
+
+Os valores abaixo pertencem à versão e ao equipamento indicados; não são medições das redes SNDlib nem da máquina atual.
+
 Execução local em 08/09/2026: Windows 10 (10.0.19045), Intel Core i5-7500T 2,70 GHz, 4 processadores lógicos; SDK .NET 10.0.401, runtime .NET 10.0.12, Node.js 24.19.0. Build do backend em Release.
 
 ## Testes
@@ -10,7 +42,7 @@ Execução local em 08/09/2026: Windows 10 (10.0.19045), Intel Core i5-7500T 2,7
 
 O teste no navegador carregou a rede pequena (fluxo 23), selecionou a via D→T, alterou sua capacidade de 4 para 1 (fluxo 20), restaurou a capacidade após salvar (fluxo 23), expandiu o histórico e verificou arcos residuais reversos. Em seguida carregou as redes média e grande (fluxo 32 em ambas), exportou a grande com 100 vértices/401 arestas e importou um JSON mínimo de dois vértices (fluxo 9). A rede temporária de importação foi excluída ao final.
 
-O script `scripts/smoke.mjs` reproduz esse cenário com os servidores locais em execução. Ele altera temporariamente D→T no dataset pequeno, restaura a capacidade 4 e cria/exclui uma rede temporária. Utilize um banco de demonstração com os datasets originais. Capturas e exportação são gravadas em `artifacts/`.
+Esse registro descreve o roteiro antigo. O script atual usa cópias temporárias e preserva os datasets originais; as evidências atuais são registradas separadamente.
 
 ## Experimento
 

@@ -1,5 +1,5 @@
 {
-  "name": "flowcity",
+  "name": "linkplan",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,10 @@
     "lint:fix": "eslint .. --fix --max-warnings=0",
     "format": "prettier --ignore-path ../.prettierignore --write .. && npm run format:csharp",
     "format:check": "prettier --ignore-path ../.prettierignore --check .. && dotnet format whitespace ../backend/FlowCity.sln --no-restore --verify-no-changes",
-    "format:csharp": "dotnet format whitespace ../backend/FlowCity.sln --no-restore"
+    "format:csharp": "dotnet format whitespace ../backend/FlowCity.sln --no-restore",
+    "test:resilience": "node ../scripts/smoke-resilience.mjs",
+    "test:theme": "node ../scripts/smoke-theme.mjs",
+    "test:editor": "node ../scripts/smoke-editor.mjs"
   },
   "dependencies": {
     "@angular/animations": "^21.2.0",

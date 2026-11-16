@@ -2,29 +2,29 @@ import { Routes } from "@angular/router";
 export const routes: Routes = [
   {
     path: "dashboard",
-    title: "Dashboard · FlowCity",
+    title: "Dashboard · LinkPlan",
     loadComponent: () =>
       import("./pages/dashboard").then((m) => m.DashboardPage),
   },
   {
     path: "redes",
-    title: "Minhas redes · FlowCity",
+    title: "Minhas redes · LinkPlan",
     loadComponent: () => import("./pages/networks").then((m) => m.NetworksPage),
   },
   {
     path: "editor",
-    title: "Editor · FlowCity",
+    title: "Editar rede · LinkPlan",
     loadComponent: () => import("./pages/editor").then((m) => m.EditorPage),
   },
   {
     path: "simulacoes",
-    title: "Simulações · FlowCity",
+    title: "Planejamento · LinkPlan",
     loadComponent: () =>
       import("./pages/simulations").then((m) => m.SimulationsPage),
   },
   {
     path: "resultados",
-    title: "Resultados · FlowCity",
+    title: "Resultados · LinkPlan",
     loadComponent: () => import("./pages/results").then((m) => m.ResultsPage),
   },
   { path: "", pathMatch: "full", redirectTo: "dashboard" },

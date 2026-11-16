@@ -1,3 +1,5 @@
+import { ResilienceState } from "../resilience-state.service";
+import { ResilienceComparison } from "../shared/resilience-comparison";
 import { Component, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterLink } from "@angular/router";
@@ -6,26 +8,51 @@ import { ResultSummary } from "../shared/result-summary";
 import { PathHistory } from "../shared/path-history";
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterLink, ResultSummary, PathHistory],
+  imports: [
+    ResilienceComparison,
+    CommonModule,
+    RouterLink,
+    ResultSummary,
+    PathHistory,
+  ],
   template: `
     <div class="page-heading">
       <div>
         <span class="eyebrow">ENTENDA SUA REDE</span>
         <h1>Resultados</h1>
-        <p class="muted">{{ s.graph().name }} · resumo da execução atual.</p>
+        <p class="muted">
+          {{
+            resilience.result()
+              ? resilience.study()?.graph?.name
+              : s.graph().name
+          }}
+          · resumo da execução atual.
+        </p>
       </div>
       <a routerLink="/simulacoes" class="button secondary"
-        >Voltar à simulação ↗</a
+        >Ajustar planejamento ↗</a
       >
     </div>
+    @if (resilience.result()) {
+      <section class="panel padded">
+        <span class="eyebrow">ESTUDO DE RESILIÊNCIA</span>
+        <h2>{{ resilience.study()?.graph?.name }}</h2>
+        <p>
+          Comparação preservada nesta sessão.
+          {{ resilience.study()?.capacityPolicy }}
+        </p>
+      </section>
+      <fc-resilience-comparison />
+    }
     @if (s.result(); as r) {
+      <h2>Resultado da rede editável: {{ s.graph().name }}</h2>
       <fc-result-summary />
       <section class="panel padded">
         <h2>Utilização das capacidades</h2>
         <p class="muted">
           Uma aresta saturada utiliza toda sua capacidade. Isso, isoladamente,
-          não identifica um corte mínimo. Capacidades em veículos por minuto nos
-          exemplos urbanos.
+          não identifica um corte mínimo. A unidade depende da fonte da rede e
+          está registrada na descrição.
         </p>
         <div class="table-scroll">
           <table>
@@ -82,7 +109,7 @@ import { PathHistory } from "../shared/path-history";
         </div>
       </section>
       <fc-path-history />
-    } @else {
+    } @else if (!resilience.result()) {
       <section class="panel empty-state">
         <span class="empty-symbol">↗</span>
         <h2>Seu próximo resultado começa com uma simulação.</h2>
@@ -97,5 +124,6 @@ import { PathHistory } from "../shared/path-history";
   `,
 })
 export class ResultsPage {
+  readonly resilience = inject(ResilienceState);
   readonly s = inject(WorkspaceState);
 }

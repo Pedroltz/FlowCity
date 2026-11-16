@@ -7,9 +7,9 @@
 >
   <a class="brand" routerLink="/dashboard" (click)="menuOpen.set(false)"
     ><span class="brand-icon"><svg lucideNetwork aria-hidden="true"></svg></span
-    ><span>FlowCity<small>LABORATÓRIO DE GRAFOS</small></span></a
+    ><span>LinkPlan<small>PLANEJAMENTO DE REDES</small></span></a
   >
-  <span class="nav-label">SEU LABORATÓRIO</span>
+  <span class="nav-label">ESPAÇO DE TRABALHO</span>
   <nav>
     <a
       routerLink="/dashboard"
@@ -30,14 +30,14 @@
       routerLinkActive="active"
       (click)="menuOpen.set(false)"
       ariaCurrentWhenActive="page"
-      ><svg lucidePencilRuler aria-hidden="true"></svg>Editor</a
+      ><svg lucidePencilRuler aria-hidden="true"></svg>Editar rede</a
     >
     <a
       routerLink="/simulacoes"
       routerLinkActive="active"
       (click)="menuOpen.set(false)"
       ariaCurrentWhenActive="page"
-      ><svg lucidePlay aria-hidden="true"></svg>Simulações</a
+      ><svg lucidePlay aria-hidden="true"></svg>Planejar manutenção</a
     >
     <a
       routerLink="/resultados"
@@ -49,15 +49,15 @@
   </nav>
   <div class="sidebar-tip">
     <svg lucideGraduationCap aria-hidden="true"></svg>
-    <h3>Aprender é conectar.</h3>
-    <p>Transforme conceitos em caminhos e descubra o potencial de cada rede.</p>
+    <h3>Planeje antes de interromper.</h3>
+    <p>Compare a capacidade da rede antes de retirar uma conexão de serviço.</p>
     <a routerLink="/simulacoes" (click)="menuOpen.set(false)"
-      >Explorar simulações ↗</a
+      >Planejar manutenção ↗</a
     >
   </div>
   <div class="sidebar-bottom">
     <a href="/swagger" target="_blank" rel="noopener">Documentação da API ↗</a
-    ><small>FlowCity · Projeto acadêmico</small>
+    ><small>LinkPlan · Projeto acadêmico</small>
   </div>
 </aside>
 @if (menuOpen()) {
@@ -78,11 +78,23 @@
         aria-controls="app-navigation"
       >
         <svg lucideMenu aria-hidden="true"></svg></button
-      ><span>Seu laboratório de possibilidades</span>
+      ><span>Sua rede, com decisões mais claras</span>
     </div>
-    <span class="algorithm-badge"
-      ><i></i> Ford-Fulkerson <span>· BFS</span></span
-    >
+    <div class="topbar-actions">
+      <span class="algorithm-badge"><i></i> Planejamento de rede</span>
+      <label class="theme-picker"
+        ><span>Aparência</span
+        ><select
+          aria-label="Aparência"
+          [value]="theme.preference()"
+          (change)="theme.setPreference($any($event.target).value)"
+        >
+          <option value="system">Sistema</option>
+          <option value="light">Claro</option>
+          <option value="dark">Escuro</option>
+        </select></label
+      >
+    </div>
   </header>
   <main
     id="main-content"
@@ -111,8 +123,8 @@
     }
     <router-outlet />
     <footer>
-      <span>FlowCity · Aprendendo com conexões</span
-      ><span>Os exemplos urbanos são simulações, não medições reais.</span>
+      <span>LinkPlan · Aprendendo com conexões</span
+      ><span>Benchmarks SNDlib históricos · Exemplos urbanos sintéticos.</span>
     </footer>
   </main>
 </div>
