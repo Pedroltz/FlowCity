@@ -1,0 +1,54 @@
+<div class="graph-panel panel">
+  <div class="graph-toolbar">
+    <div class="view-tabs">
+      <button
+        mat-button
+        (click)="s.mode = 'original'; s.draw()"
+        [class.chosen]="s.mode === 'original'"
+      >
+        Rede original</button
+      ><button
+        mat-button
+        (click)="s.mode = 'flow'; s.draw()"
+        [disabled]="!s.result()"
+        [class.chosen]="s.mode === 'flow'"
+      >
+        Fluxo calculado</button
+      ><button
+        mat-button
+        (click)="s.mode = 'residual'; s.draw()"
+        [disabled]="!s.result()"
+        [class.chosen]="s.mode === 'residual'"
+      >
+        Rede residual
+      </button>
+    </div>
+    <div>
+      <button mat-button (click)="s.layout()">Organizar</button
+      ><button mat-button (click)="s.fit()">Enquadrar</button>
+    </div>
+  </div>
+  <div
+    #canvas
+    class="graph-canvas"
+    [class.locked]="s.busy()"
+    role="img"
+    aria-label="Grafo urbano interativo. Selecione vértices ou arestas para editar; arraste para posicionar."
+  ></div>
+  @if (!s.graph().nodes.length) {
+    <div class="empty-graph">
+      Adicione vértices abaixo para começar sua rede.
+    </div>
+  }
+  <div class="legend">
+    <span><i></i> Origem / destino</span
+    ><span>{{
+      s.mode === "original"
+        ? "Rótulos: capacidade (veículos/min)"
+        : s.mode === "flow"
+          ? "Rótulos: fluxo / capacidade · Violeta: via utilizada"
+          : "Rótulos: capacidade residual · Tracejado: cancelamento de fluxo"
+    }}</span
+    ><span>Arraste para mover · Role para ampliar</span>
+  </div>
+</div>

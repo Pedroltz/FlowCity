@@ -9,7 +9,8 @@ public class AlgorithmTests
 {
     internal static Graph Make(params (string From, string To, int Capacity)[] edges) => new()
     {
-        Name = "Teste", Nodes = edges.SelectMany(e => new[] { e.From, e.To }).Distinct().Select(id => new GraphNode { Id = id, Name = id }).ToList(),
+        Name = "Teste",
+        Nodes = edges.SelectMany(e => new[] { e.From, e.To }).Distinct().Select(id => new GraphNode { Id = id, Name = id }).ToList(),
         Edges = edges.Select((e, i) => new GraphEdge { Id = $"e{i}", Source = e.From, Target = e.To, Capacity = e.Capacity }).ToList()
     };
     public static TheoryData<Graph, string, string, long> Cases => new()
@@ -52,30 +53,34 @@ public class AlgorithmTests
         Assert.DoesNotContain(sink, reachable);
         Assert.Equal(expected, result.Edges.Where(e => reachable.Contains(e.Source) && !reachable.Contains(e.Target)).Sum(e => (long)e.Capacity));
     }
-    [Fact] public void ReverseArcCancelsEarlierFlow()
+    [Fact]
+    public void ReverseArcCancelsEarlierFlow()
     {
-        var graph = Make(("S","A",1),("S","B",1),("A","C",1),("A","D",1),("B","C",1),("C","T",1),("D","T",1));
-        var result = new FordFulkerson(new GraphValidator()).Calculate(graph,"S","T");
+        var graph = Make(("S", "A", 1), ("S", "B", 1), ("A", "C", 1), ("A", "D", 1), ("B", "C", 1), ("C", "T", 1), ("D", "T", 1));
+        var result = new FordFulkerson(new GraphValidator()).Calculate(graph, "S", "T");
         Assert.Equal(2, result.MaxFlow);
         Assert.Contains(result.AugmentingPaths.SelectMany(p => p.Edges), e => e.IsReverse && e.Source == "C" && e.Target == "A");
         Assert.Equal(0, result.Edges.Single(e => e.Source == "A" && e.Target == "C").Flow);
     }
-    [Fact] public void RejectsSameOrMissingEndpoints()
+    [Fact]
+    public void RejectsSameOrMissingEndpoints()
     {
-        var graph = Make(("A","B",1)); var algorithm = new FordFulkerson(new GraphValidator());
-        Assert.Throws<ArgumentException>(() => algorithm.Calculate(graph,"A","A"));
-        Assert.Throws<ArgumentException>(() => algorithm.Calculate(graph,"A","Z"));
+        var graph = Make(("A", "B", 1)); var algorithm = new FordFulkerson(new GraphValidator());
+        Assert.Throws<ArgumentException>(() => algorithm.Calculate(graph, "A", "A"));
+        Assert.Throws<ArgumentException>(() => algorithm.Calculate(graph, "A", "Z"));
     }
-    [Fact] public void RejectsInvalidGraph()
+    [Fact]
+    public void RejectsInvalidGraph()
     {
-        var graph = Make(("A","B",-1));
+        var graph = Make(("A", "B", -1));
         Assert.Throws<ValidationException>(() => new GraphValidator().ValidateAndThrow(graph));
         graph.Edges[0].Capacity = 1; graph.Nodes.Add(new() { Id = "A", Name = "Duplicado" });
         Assert.Throws<ValidationException>(() => new GraphValidator().ValidateAndThrow(graph));
     }
-    [Fact] public void IsolatedVertexHasZeroFlow()
+    [Fact]
+    public void IsolatedVertexHasZeroFlow()
     {
-        var graph = Make(("A","B",1)); graph.Nodes.Add(new() { Id = "Z", Name = "Isolado" });
-        Assert.Equal(0, new FordFulkerson(new GraphValidator()).Calculate(graph,"A","Z").MaxFlow);
+        var graph = Make(("A", "B", 1)); graph.Nodes.Add(new() { Id = "Z", Name = "Isolado" });
+        Assert.Equal(0, new FordFulkerson(new GraphValidator()).Calculate(graph, "A", "Z").MaxFlow);
     }
 }

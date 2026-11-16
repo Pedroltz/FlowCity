@@ -1,419 +1,118 @@
-<header>
-  <a class="brand" href="/"
-    >Flow<span>City</span><small>TEORIA DOS GRAFOS</small></a
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<aside
+  id="app-navigation"
+  class="sidebar"
+  [class.mobile-open]="menuOpen()"
+  aria-label="Navegação principal"
+>
+  <a class="brand" routerLink="/dashboard" (click)="menuOpen.set(false)"
+    ><span class="brand-icon"><svg lucideNetwork aria-hidden="true"></svg></span
+    ><span>FlowCity<small>LABORATÓRIO DE GRAFOS</small></span></a
   >
-  <div class="header-note">
-    Laboratório de fluxo urbano <span class="pill">Ford-Fulkerson · BFS</span>
+  <span class="nav-label">SEU LABORATÓRIO</span>
+  <nav>
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      (click)="menuOpen.set(false)"
+      ariaCurrentWhenActive="page"
+      ><svg lucideLayoutDashboard aria-hidden="true"></svg>Dashboard</a
+    >
+    <a
+      routerLink="/redes"
+      routerLinkActive="active"
+      (click)="menuOpen.set(false)"
+      ariaCurrentWhenActive="page"
+      ><svg lucideNetwork aria-hidden="true"></svg>Minhas redes</a
+    >
+    <a
+      routerLink="/editor"
+      routerLinkActive="active"
+      (click)="menuOpen.set(false)"
+      ariaCurrentWhenActive="page"
+      ><svg lucidePencilRuler aria-hidden="true"></svg>Editor</a
+    >
+    <a
+      routerLink="/simulacoes"
+      routerLinkActive="active"
+      (click)="menuOpen.set(false)"
+      ariaCurrentWhenActive="page"
+      ><svg lucidePlay aria-hidden="true"></svg>Simulações</a
+    >
+    <a
+      routerLink="/resultados"
+      routerLinkActive="active"
+      (click)="menuOpen.set(false)"
+      ariaCurrentWhenActive="page"
+      ><svg lucideChartNoAxesCombined aria-hidden="true"></svg>Resultados</a
+    >
+  </nav>
+  <div class="sidebar-tip">
+    <svg lucideGraduationCap aria-hidden="true"></svg>
+    <h3>Aprender é conectar.</h3>
+    <p>Transforme conceitos em caminhos e descubra o potencial de cada rede.</p>
+    <a routerLink="/simulacoes" (click)="menuOpen.set(false)"
+      >Explorar simulações ↗</a
+    >
   </div>
-</header>
-<main>
-  <aside class="networks panel">
-    <div class="section-label">01 / REDES</div>
-    <h2>Suas redes</h2>
-    <p class="muted">Cruzamentos conectados. Capacidades para explorar.</p>
-    <button mat-flat-button (click)="newGraph()" [disabled]="busy()">
-      + Nova rede
-    </button>
-    <div class="network-list">
-      @for (network of networks(); track network.id) {
-        <button
-          class="network"
-          [class.active]="graph().id === network.id"
-          (click)="open(network.id)"
-          [disabled]="busy()"
-        >
-          <strong>{{ network.name }}</strong
-          ><small
-            >{{ network.nodeCount }} vértices ·
-            {{ network.edgeCount }} vias</small
-          >
-        </button>
-      } @empty {
-        <p class="muted">
-          Nenhuma rede cadastrada. Crie uma ou importe um dataset.
-        </p>
-      }
-    </div>
-    <div class="file-actions">
+  <div class="sidebar-bottom">
+    <a href="/swagger" target="_blank" rel="noopener">Documentação da API ↗</a
+    ><small>FlowCity · Projeto acadêmico</small>
+  </div>
+</aside>
+@if (menuOpen()) {
+  <button
+    class="nav-backdrop"
+    aria-label="Fechar navegação"
+    (click)="closeMenu()"
+  ></button>
+}
+<div class="app-body">
+  <header class="topbar">
+    <div class="topbar-left">
       <button
-        mat-stroked-button
-        (click)="fileInput.click()"
-        [disabled]="busy()"
+        class="menu-toggle"
+        (click)="menuOpen.set(!menuOpen())"
+        [attr.aria-expanded]="menuOpen()"
+        aria-label="Alternar navegação"
+        aria-controls="app-navigation"
       >
-        Importar JSON</button
-      ><button mat-button (click)="exportGraph()" [disabled]="busy()">
-        Exportar JSON</button
-      ><input
-        #fileInput
-        type="file"
-        accept=".json,application/json"
-        hidden
-        (change)="importGraph($event)"
-      />
+        <svg lucideMenu aria-hidden="true"></svg></button
+      ><span>Seu laboratório de possibilidades</span>
     </div>
-    <div class="note">
-      <strong>Sobre os dados</strong>
-      <p>
-        Os exemplos são simulações urbanas. As capacidades estimam veículos por
-        minuto e não representam medições de uma cidade real.
-      </p>
-    </div>
-    <a href="/swagger" target="_blank" rel="noopener">Documentação da API ↗</a>
-  </aside>
-  <section class="workspace">
-    <div class="workspace-heading">
-      <div>
-        <div class="section-label">02 / EDITOR</div>
-        <h1>{{ graph().name }}</h1>
-        <p class="muted">
-          {{ graph().nodes.length }} vértices · {{ graph().edges.length }} vias
-          direcionadas <span *ngIf="dirty()">· Alterações não salvas</span>
-        </p>
+    <span class="algorithm-badge"
+      ><i></i> Ford-Fulkerson <span>· BFS</span></span
+    >
+  </header>
+  <main
+    id="main-content"
+    class="page-content"
+    tabindex="-1"
+    [attr.aria-busy]="s.busy()"
+  >
+    @if (s.error()) {
+      <div class="alert error" role="alert">
+        <span>{{ s.error() }}</span><button
+          class="button secondary"
+          (click)="reload()"
+          [disabled]="s.busy()"
+        >
+          Recarregar redes
+        </button>
       </div>
-      <button mat-flat-button (click)="saveClick()" [disabled]="busy()">
-        Salvar rede
-      </button>
-    </div>
-    @if (error()) {
-      <div class="alert error" role="alert">{{ error() }}</div>
     }
-    @if (message()) {
-      <div class="alert success" role="status">{{ message() }}</div>
+    @if (s.message()) {
+      <div class="alert success" role="status">{{ s.message() }}</div>
     }
-    @if (busy()) {
-      <div class="alert" role="status">Processando…</div>
+    @if (s.busy()) {
+      <div class="loading-bar" role="status">
+        <span class="spinner"></span>Processando…
+      </div>
     }
-    <fieldset [disabled]="busy()">
-      <div class="metadata">
-        <mat-form-field
-          ><mat-label>Nome da rede</mat-label
-          ><input
-            matInput
-            [(ngModel)]="graph().name"
-            (ngModelChange)="changed(false)"
-            maxlength="200" /></mat-form-field
-        ><mat-form-field class="description"
-          ><mat-label>Descrição</mat-label
-          ><input
-            matInput
-            [(ngModel)]="graph().description"
-            (ngModelChange)="changed(false)"
-            maxlength="5000"
-        /></mat-form-field>
-      </div>
-      <div class="graph-panel panel">
-        <div class="graph-toolbar">
-          <div class="view-tabs">
-            <button
-              mat-button
-              (click)="mode = 'original'; draw()"
-              [class.chosen]="mode === 'original'"
-            >
-              Rede original</button
-            ><button
-              mat-button
-              (click)="mode = 'flow'; draw()"
-              [disabled]="!result()"
-              [class.chosen]="mode === 'flow'"
-            >
-              Fluxo calculado</button
-            ><button
-              mat-button
-              (click)="mode = 'residual'; draw()"
-              [disabled]="!result()"
-              [class.chosen]="mode === 'residual'"
-            >
-              Rede residual
-            </button>
-          </div>
-          <div>
-            <button mat-button (click)="layout()">Organizar</button
-            ><button mat-button (click)="fit()">Enquadrar</button>
-          </div>
-        </div>
-        <div
-          #canvas
-          class="graph-canvas"
-          [class.locked]="busy()"
-          role="img"
-          aria-label="Grafo urbano interativo. Selecione vértices ou arestas para editar; arraste para posicionar."
-        ></div>
-        @if (!graph().nodes.length) {
-          <div class="empty-graph">
-            Adicione vértices abaixo para começar sua rede.
-          </div>
-        }
-        <div class="legend">
-          <span><i></i> Origem / destino</span
-          ><span>{{
-            mode === "original"
-              ? "Rótulos: capacidade
-            (veículos/min)"
-              : mode === "flow"
-                ? "Rótulos: fluxo / capacidade · Verde: via utilizada"
-                : "Rótulos:
-            capacidade residual · Tracejado: cancelamento de fluxo"
-          }}</span
-          ><span>Arraste para mover · Role para ampliar</span>
-        </div>
-      </div>
-      <div class="editor-tools">
-        <mat-accordion multi>
-          <mat-expansion-panel
-            ><mat-expansion-panel-header
-              ><mat-panel-title
-                >Adicionar vértices e vias</mat-panel-title
-              ></mat-expansion-panel-header
-            >
-            <div class="inline-form">
-              <mat-form-field
-                ><mat-label>ID do vértice</mat-label
-                ><input
-                  matInput
-                  [(ngModel)]="nodeId"
-                  maxlength="100" /></mat-form-field
-              ><mat-form-field
-                ><mat-label>Nome do cruzamento</mat-label
-                ><input
-                  matInput
-                  [(ngModel)]="nodeName"
-                  maxlength="200" /></mat-form-field
-              ><button mat-stroked-button (click)="addNode()">
-                Adicionar vértice
-              </button>
-            </div>
-            <div class="inline-form">
-              <mat-form-field
-                ><mat-label>Via: origem</mat-label
-                ><mat-select [(ngModel)]="edgeSource">
-                  @for (n of graph().nodes; track n.id) {
-                    <mat-option [value]="n.id"
-                      >{{ n.id }} · {{ n.name }}</mat-option
-                    >
-                  }
-                </mat-select></mat-form-field
-              ><mat-form-field
-                ><mat-label>Via: destino</mat-label
-                ><mat-select [(ngModel)]="edgeTarget">
-                  @for (n of graph().nodes; track n.id) {
-                    <mat-option [value]="n.id"
-                      >{{ n.id }} · {{ n.name }}</mat-option
-                    >
-                  }
-                </mat-select></mat-form-field
-              ><mat-form-field
-                ><mat-label>Capacidade (veíc./min)</mat-label
-                ><input
-                  matInput
-                  type="number"
-                  min="0"
-                  max="2147483647"
-                  step="1"
-                  [(ngModel)]="capacity" /></mat-form-field
-              ><button mat-stroked-button (click)="addEdge()">
-                Adicionar via
-              </button>
-            </div>
-          </mat-expansion-panel>
-          <mat-expansion-panel [expanded]="!!selectedNode() || !!selectedEdge()"
-            ><mat-expansion-panel-header
-              ><mat-panel-title
-                >Propriedades da seleção</mat-panel-title
-              ></mat-expansion-panel-header
-            >
-            @if (selectedNode(); as n) {
-              <p>Vértice {{ n.id }}</p>
-              <mat-form-field
-                ><mat-label>Nome</mat-label
-                ><input matInput [(ngModel)]="editName" maxlength="200"
-              /></mat-form-field>
-            }
-            @if (selectedEdge(); as e) {
-              <p>
-                Via {{ e.source }} → {{ e.target }} <small>({{ e.id }})</small>
-              </p>
-              <mat-form-field
-                ><mat-label>Capacidade (veíc./min)</mat-label
-                ><input
-                  matInput
-                  type="number"
-                  min="0"
-                  max="2147483647"
-                  step="1"
-                  [(ngModel)]="editCapacity"
-              /></mat-form-field>
-            }
-            @if (selectedNode() || selectedEdge()) {
-              <div class="actions">
-                <button mat-flat-button (click)="applySelection()">
-                  Aplicar alteração</button
-                ><button mat-button (click)="removeSelection()">
-                  Remover seleção
-                </button>
-              </div>
-            } @else {
-              <p class="muted">
-                Clique em um vértice ou em uma aresta do grafo.
-              </p>
-            }
-          </mat-expansion-panel>
-        </mat-accordion>
-      </div>
-      <section class="execution panel">
-        <div class="section-label">03 / EXECUÇÃO</div>
-        <h2>Encontre o fluxo máximo</h2>
-        <p class="muted">
-          Defina os extremos da rede. Alterações são salvas antes do cálculo.
-        </p>
-        <div class="inline-form">
-          <mat-form-field
-            ><mat-label>Origem</mat-label
-            ><mat-select
-              [(ngModel)]="source"
-              (ngModelChange)="endpointsChanged()"
-              [disabled]="busy()"
-            >
-              @for (n of graph().nodes; track n.id) {
-                <mat-option [value]="n.id"
-                  >{{ n.id }} · {{ n.name }}</mat-option
-                >
-              }
-            </mat-select></mat-form-field
-          ><span class="direction">→</span
-          ><mat-form-field
-            ><mat-label>Destino</mat-label
-            ><mat-select
-              [(ngModel)]="sink"
-              (ngModelChange)="endpointsChanged()"
-              [disabled]="busy()"
-            >
-              @for (n of graph().nodes; track n.id) {
-                <mat-option [value]="n.id"
-                  >{{ n.id }} · {{ n.name }}</mat-option
-                >
-              }
-            </mat-select></mat-form-field
-          ><button
-            mat-flat-button
-            (click)="calculate()"
-            [disabled]="busy() || !source || !sink || source === sink"
-          >
-            Calcular fluxo máximo
-          </button>
-        </div>
-        @if (source && source === sink) {
-          <p>Origem e destino devem ser diferentes.</p>
-        }
-      </section>
-    </fieldset>
-    @if (result(); as r) {
-      <div class="metrics">
-        <article class="primary-metric">
-          <small>Fluxo máximo</small
-          ><strong>{{ r.maxFlow | number: "1.0-0" }}</strong
-          ><span>veículos/minuto</span>
-        </article>
-        <article>
-          <small>Caminhos aumentantes</small><strong>{{ r.iterations }}</strong>
-        </article>
-        <article>
-          <small>Vértices</small><strong>{{ graph().nodes.length }}</strong>
-        </article>
-        <article>
-          <small>Arestas</small><strong>{{ graph().edges.length }}</strong>
-        </article>
-        <article>
-          <small>Tempo do algoritmo</small
-          ><strong>{{ r.executionTimeMs | number: "1.3-3" }}</strong
-          ><span>milissegundos</span>
-        </article>
-      </div>
-      <section class="history panel">
-        <h2>Caminhos aumentantes</h2>
-        <p class="muted">
-          Resíduos registrados antes de cada aumento. Um trecho reverso cancela
-          fluxo da via original.
-        </p>
-        @if (!r.iterations) {
-          <p>
-            Não existe caminho com capacidade positiva entre os extremos
-            selecionados. Fluxo máximo: 0.
-          </p>
-        }
-        <mat-accordion>
-          @for (path of r.augmentingPaths; track path.iteration) {
-            <mat-expansion-panel
-              ><mat-expansion-panel-header
-                ><mat-panel-title
-                  >Iteração {{ path.iteration }} · +{{
-                    path.addedFlow
-                  }}
-                  veíc./min</mat-panel-title
-                ></mat-expansion-panel-header
-              >
-              <p class="path">{{ path.nodes.join(" → ") }}</p>
-              <p>
-                Gargalo: <strong>{{ path.bottleneck }}</strong> · Fluxo
-                adicionado: <strong>{{ path.addedFlow }}</strong>
-              </p>
-              <ul>
-                @for (e of path.edges; track $index) {
-                  <li>
-                    {{ e.source }} → {{ e.target }} = {{ e.residualCapacity }}
-                    <small
-                      >· {{ e.edgeId }}
-                      {{
-                        e.isReverse ? "(reversa: cancelamento)" : "(direta)"
-                      }}</small
-                    >
-                  </li>
-                }
-              </ul>
-            </mat-expansion-panel>
-          }
-        </mat-accordion>
-      </section>
-      <details class="panel edge-results">
-        <summary>
-          Tabela de fluxos e capacidades · {{ r.edges.length }} vias
-        </summary>
-        <div class="table-scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>Via</th>
-                <th>Origem</th>
-                <th>Destino</th>
-                <th>Capacidade</th>
-                <th>Fluxo</th>
-                <th>Residual direto</th>
-              </tr>
-            </thead>
-            <tbody>
-              @for (e of r.edges; track e.id) {
-                <tr>
-                  <td>{{ e.id }}</td>
-                  <td>{{ e.source }}</td>
-                  <td>{{ e.target }}</td>
-                  <td>{{ e.capacity }}</td>
-                  <td>{{ e.flow }}</td>
-                  <td>{{ e.residualCapacity }}</td>
-                </tr>
-              }
-            </tbody>
-          </table>
-        </div>
-      </details>
-    }
+    <router-outlet />
     <footer>
-      <span>FlowCity · Análise acadêmica de redes direcionadas</span
-      ><button
-        mat-button
-        (click)="deleteGraph()"
-        [disabled]="!graph().id || busy()"
-      >
-        Excluir rede atual
-      </button>
+      <span>FlowCity · Aprendendo com conexões</span
+      ><span>Os exemplos urbanos são simulações, não medições reais.</span>
     </footer>
-  </section>
-</main>
+  </main>
+</div>

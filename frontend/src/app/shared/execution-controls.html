@@ -1,0 +1,42 @@
+<section class="execution panel">
+  <div class="section-label">03 / EXECUÇÃO</div>
+  <h2>Encontre o fluxo máximo</h2>
+  <p class="muted">
+    Defina os extremos da rede. Alterações são salvas antes do cálculo.
+  </p>
+  <div class="inline-form">
+    <mat-form-field
+      ><mat-label>Origem</mat-label
+      ><mat-select
+        [(ngModel)]="s.source"
+        (ngModelChange)="s.endpointsChanged()"
+        [disabled]="s.busy()"
+      >
+        @for (n of s.graph().nodes; track n.id) {
+          <mat-option [value]="n.id">{{ n.id }} · {{ n.name }}</mat-option>
+        }
+      </mat-select></mat-form-field
+    ><span class="direction">→</span
+    ><mat-form-field
+      ><mat-label>Destino</mat-label
+      ><mat-select
+        [(ngModel)]="s.sink"
+        (ngModelChange)="s.endpointsChanged()"
+        [disabled]="s.busy()"
+      >
+        @for (n of s.graph().nodes; track n.id) {
+          <mat-option [value]="n.id">{{ n.id }} · {{ n.name }}</mat-option>
+        }
+      </mat-select></mat-form-field
+    ><button
+      mat-flat-button
+      (click)="s.calculate()"
+      [disabled]="s.busy() || !s.source || !s.sink || s.source === s.sink"
+    >
+      Calcular fluxo máximo
+    </button>
+  </div>
+  @if (s.source && s.source === s.sink) {
+    <p>Origem e destino devem ser diferentes.</p>
+  }
+</section>

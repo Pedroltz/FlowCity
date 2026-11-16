@@ -6,11 +6,11 @@ As capacidades são estimativas simuladas de **veículos por minuto**, em um ún
 
 O modelo é um **grafo direcionado e ponderado por capacidades**. Esses pesos limitam o fluxo; não representam distância nem custo de deslocamento.
 
-| Arquivo | Contexto | Vértices | Arestas | Origem → destino |
-|---|---|---:|---:|---|
-| `01-pequeno.json` | Dois corredores com conexões transversais | 6 | 10 | S → T |
-| `02-medio.json` | Malha de bairros 4 × 5 com ligações diagonais | 20 | 68 | N001 → N020 |
-| `03-grande.json` | Malha urbana 10 × 10, vias nos dois sentidos e diagonais | 100 | 401 | N001 → N100 |
+| Arquivo           | Contexto                                                 | Vértices | Arestas | Origem → destino |
+| ----------------- | -------------------------------------------------------- | -------: | ------: | ---------------- |
+| `01-pequeno.json` | Dois corredores com conexões transversais                |        6 |      10 | S → T            |
+| `02-medio.json`   | Malha de bairros 4 × 5 com ligações diagonais            |       20 |      68 | N001 → N020      |
+| `03-grande.json`  | Malha urbana 10 × 10, vias nos dois sentidos e diagonais |      100 |     401 | N001 → N100      |
 
 A instância pequena usa uma topologia didática clássica de fluxo máximo, com nomes urbanos fictícios. Seu valor esperado é **23**. Um corte mínimo é `{S,A,C,D}` → `{B,T}`, com capacidades `A→B=12`, `D→B=7` e `D→T=4`, totalizando 23. Isso fornece um limite superior verificável manualmente; o algoritmo constrói um fluxo que o atinge.
 
@@ -24,7 +24,10 @@ Campos obrigatórios: `name`, `nodes` e `edges`. Cada vértice contém `id` e `n
 {
   "name": "Corredor de demonstração",
   "description": "Simulação em veículos/minuto",
-  "nodes": [{ "id": "A", "name": "Entrada" }, { "id": "B", "name": "Saída" }],
+  "nodes": [
+    { "id": "A", "name": "Entrada" },
+    { "id": "B", "name": "Saída" }
+  ],
   "edges": [{ "source": "A", "target": "B", "capacity": 20 }]
 }
 ```

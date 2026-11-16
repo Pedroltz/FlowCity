@@ -55,14 +55,17 @@ public class GraphValidatorTests
     {
         var graph = new Graph
         {
-            Name = new string('N', 200), Description = new string('D', 5000),
+            Name = new string('N', 200),
+            Description = new string('D', 5000),
             Nodes = Enumerable.Range(0, 500).Select(i => new GraphNode
-                { Id = i.ToString().PadLeft(100, '0'), Name = new string('V', 200) }).ToList()
+            { Id = i.ToString().PadLeft(100, '0'), Name = new string('V', 200) }).ToList()
         };
         graph.Edges = Enumerable.Range(0, 5000).Select(i => new GraphEdge
         {
-            Id = i.ToString().PadLeft(100, '0'), Source = graph.Nodes[0].Id,
-            Target = graph.Nodes[^1].Id, Capacity = int.MaxValue
+            Id = i.ToString().PadLeft(100, '0'),
+            Source = graph.Nodes[0].Id,
+            Target = graph.Nodes[^1].Id,
+            Capacity = int.MaxValue
         }).ToList();
         var validator = new GraphValidator();
         Assert.True(validator.Validate(graph).IsValid);

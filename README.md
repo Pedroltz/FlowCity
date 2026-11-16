@@ -19,7 +19,7 @@ backend/
   FlowCity.Infrastructure/  Mapeamento e persistência EF Core/SQLite
   FlowCity.Api/             Controllers, DTOs, DI, OpenAPI e carga inicial
   FlowCity.Tests/           Testes unitários, integração e experimento
-frontend/src/app/          Editor, redes e painel de execução
+frontend/src/app/          Rotas, estado compartilhado, serviço HTTP e páginas Angular
 datasets/                  Três redes JSON e documentação
 scripts/                   Gerador reproduzível dos datasets
 ```
@@ -44,7 +44,7 @@ Na raiz, em um terminal:
 
 ```sh
 dotnet restore backend/FlowCity.sln
-dotnet run --project backend/FlowCity.Api --urls http://localhost:5080
+dotnet run --project backend/FlowCity.Api --urls http://localhost:5000
 ```
 
 Em outro terminal:
@@ -55,7 +55,7 @@ npm ci
 npm start
 ```
 
-Abra **http://localhost:4200**. O proxy de desenvolvimento envia `/api` e `/swagger` para a porta 5080. Para validar a compilação de produção: `npm run build` na pasta `frontend`.
+Abra **http://localhost:4200**. O proxy de desenvolvimento envia `/api` e `/swagger` para a porta 5000. Para validar a compilação de produção: `npm run build` na pasta `frontend`.
 
 Neste workspace, se o SDK não estiver no PATH, foi disponibilizada uma instalação local em `.tools/dotnet`. Em PowerShell, substitua `dotnet` por `& ./.tools/dotnet/dotnet.exe` a partir da raiz. Essa pasta não faz parte do projeto versionado.
 
@@ -67,12 +67,26 @@ As três redes são inseridas **somente quando o banco é criado**. Excluir toda
 
 Não há migrações de esquema nesta versão de demonstração. Ao alterar o modelo de persistência, exporte suas redes e use um novo arquivo SQLite, ou implemente uma migração antes de reutilizar o banco antigo.
 
+## Interface e navegação
+
+O frontend possui cinco páginas carregadas sob demanda pelo Angular Router:
+
+- `/dashboard`: totais reais das redes salvas, redes disponíveis e ações rápidas.
+- `/redes`: busca, seleção, criação, exclusão e importação/exportação JSON. A exportação e a exclusão usam a rede atual indicada na página.
+- `/editor`: canvas Cytoscape, metadados, vértices, arestas e capacidades. Uma lista permite selecionar elementos também pelo teclado.
+- `/simulacoes`: origem/destino, execução, caminhos aumentantes destacados e visualizações original, fluxo e residual.
+- `/resultados`: fluxo máximo, tempo, iterações, gargalos dos caminhos e utilização de cada aresta.
+
+O `GraphApi` concentra os contratos HTTP existentes. O `WorkspaceState` mantém a rede em edição, a seleção e o resultado ao navegar entre páginas. O canvas é recriado a partir desse estado. Recarregar a aplicação não restaura resultados da sessão. Não há datas nem histórico persistente nos contratos atuais; por isso a interface não inventa redes recentes ou métricas históricas. Arestas saturadas são identificadas separadamente de um corte mínimo.
+
+Inter é servida localmente por `@fontsource/inter`. Os ícones Lucide são importados individualmente de `@lucide/angular`. O layout inclui menu móvel, foco visível, link para pular ao conteúdo, mensagens de estado e suporte a movimento reduzido.
+
 ## Roteiro da demonstração
 
-1. Abra a rede **Centro · 6 cruzamentos**.
+1. Em **Minhas redes**, abra **Centro · 6 cruzamentos** no editor.
 2. Selecione uma via, altere a capacidade em **Propriedades da seleção** e clique em **Aplicar alteração**.
 3. Escolha origem **S** e destino **T**, depois **Calcular fluxo máximo**. A aplicação salva alterações antes do cálculo.
-4. Observe o valor, as arestas verdes e os rótulos `fluxo / capacidade`.
+4. Em **Simulações**, observe as arestas violetas e os rótulos `fluxo / capacidade`; selecione um caminho para destacá-lo em laranja. Em **Resultados**, examine o fluxo máximo e a utilização por aresta.
 5. Expanda as iterações em **Caminhos aumentantes** para examinar resíduos, gargalo e fluxo adicionado.
 6. Alterne para **Rede residual**. As arestas tracejadas representam possibilidades de cancelar fluxo. Resíduos zero ficam ocultos no desenho, mas estão na resposta da API.
 7. Abra **Bairros** ou **Malha urbana** e execute novamente com os extremos pré-selecionados.
@@ -92,14 +106,14 @@ Edmonds-Karp tem complexidade temporal **O(V E²)** e estrutura de trabalho **O(
 
 ## API
 
-| Método | Endpoint | Função |
-|---|---|---|
-| GET | `/api/graphs` | Resumos das redes |
-| GET | `/api/graphs/{id}` | Rede completa |
-| POST | `/api/graphs` | Criar/importar rede |
-| PUT | `/api/graphs/{id}` | Atualizar rede completa |
-| DELETE | `/api/graphs/{id}` | Excluir rede |
-| POST | `/api/graphs/{id}/max-flow` | Calcular com `{"source":"S","sink":"T"}` |
+| Método | Endpoint                    | Função                                   |
+| ------ | --------------------------- | ---------------------------------------- |
+| GET    | `/api/graphs`               | Resumos das redes                        |
+| GET    | `/api/graphs/{id}`          | Rede completa                            |
+| POST   | `/api/graphs`               | Criar/importar rede                      |
+| PUT    | `/api/graphs/{id}`          | Atualizar rede completa                  |
+| DELETE | `/api/graphs/{id}`          | Excluir rede                             |
+| POST   | `/api/graphs/{id}/max-flow` | Calcular com `{"source":"S","sink":"T"}` |
 
 POST e PUT recebem `name`, `description` opcional, `nodes` e `edges`. Consulte os esquemas no Swagger. Dados inválidos retornam HTTP 400; redes inexistentes, 404; criação, 201; exclusão, 204. Origem igual ao destino é rejeitada. Sem caminho positivo, o resultado válido é zero com zero iterações.
 
@@ -118,7 +132,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-O teste altera e restaura a capacidade D→T do dataset pequeno, cria/exclui uma rede temporária e grava capturas em `artifacts/`. Veja o [registro de validação e resultados experimentais](docs/VALIDACAO.md).
+O teste usa cópias temporárias das redes e as exclui ao terminar, preservando os datasets originais. Verifica edição repetida, navegação com estado compartilhado, cálculo, caminhos, rede residual, importação/exportação, busca, recuperação de erro e as cinco páginas em tela móvel. Grava capturas em `artifacts/`. A URL padrão é `http://localhost:4200`; pode ser substituída pela variável `FLOWCITY_URL`. Veja o [registro de validação e resultados experimentais](docs/VALIDACAO.md).
 
 Para gerar o CSV experimental, em PowerShell na raiz:
 
@@ -139,9 +153,9 @@ A rotina usa cinco aquecimentos e 30 execuções por instância. Registra vérti
 
 Preencher antes da entrega acadêmica, sem atribuições fictícias:
 
-| Nome | Matrícula | Contribuição |
-|---|---|---|
-| A preencher pelo grupo | A preencher | A preencher |
+| Nome                   | Matrícula   | Contribuição |
+| ---------------------- | ----------- | ------------ |
+| A preencher pelo grupo | A preencher | A preencher  |
 
 ## Relatório técnico e uso de IA
 
@@ -160,5 +174,5 @@ Consulte o [roteiro de entrega e apresentação](docs/ENTREGA.md). A revisão de
 - Resultados não são armazenados no banco; exportação JSON guarda a rede e posições, não o histórico de uma execução.
 - Edição colaborativa e controle de concorrência não estão previstos: a última gravação prevalece.
 - Não há autenticação: ambiente destinado a demonstração local.
-- Navegar/recarregar a página pode descartar alterações ainda não salvas; use **Salvar rede**.
+- A navegação interna preserva a rede em edição. Recarregar ou sair da aplicação pode descartar alterações não salvas; o navegador é avisado quando há alterações pendentes. Use **Salvar rede**.
 - Docker precisa ser validado em um ambiente com Docker instalado; esta máquina não dispõe desse executável.

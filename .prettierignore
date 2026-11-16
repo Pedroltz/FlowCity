@@ -1,0 +1,10 @@
+**/node_modules/
+**/dist/
+**/.angular/
+**/bin/
+**/obj/
+**/.idea/
+artifacts/
+output/
+tmp/
+**/package-lock.json

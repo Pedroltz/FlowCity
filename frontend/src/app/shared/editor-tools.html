@@ -1,0 +1,111 @@
+<div class="metadata">
+  <mat-form-field
+    ><mat-label>Nome da rede</mat-label
+    ><input
+      matInput
+      [(ngModel)]="s.graph().name"
+      (ngModelChange)="s.changed(false)"
+      maxlength="200" /></mat-form-field
+  ><mat-form-field class="description"
+    ><mat-label>Descrição</mat-label
+    ><input
+      matInput
+      [(ngModel)]="s.graph().description"
+      (ngModelChange)="s.changed(false)"
+      maxlength="5000"
+  /></mat-form-field>
+</div>
+<div class="editor-tools">
+  <mat-accordion multi>
+    <mat-expansion-panel
+      ><mat-expansion-panel-header
+        ><mat-panel-title
+          >Adicionar vértices e vias</mat-panel-title
+        ></mat-expansion-panel-header
+      >
+      <div class="inline-form">
+        <mat-form-field
+          ><mat-label>ID do vértice</mat-label
+          ><input
+            matInput
+            [(ngModel)]="s.nodeId"
+            maxlength="100" /></mat-form-field
+        ><mat-form-field
+          ><mat-label>Nome do cruzamento</mat-label
+          ><input
+            matInput
+            [(ngModel)]="s.nodeName"
+            maxlength="200" /></mat-form-field
+        ><button mat-stroked-button (click)="s.addNode()">
+          Adicionar vértice
+        </button>
+      </div>
+      <div class="inline-form">
+        <mat-form-field
+          ><mat-label>Via: origem</mat-label
+          ><mat-select [(ngModel)]="s.edgeSource" [disabled]="s.busy()">
+            @for (n of s.graph().nodes; track n.id) {
+              <mat-option [value]="n.id">{{ n.id }} · {{ n.name }}</mat-option>
+            }
+          </mat-select></mat-form-field
+        ><mat-form-field
+          ><mat-label>Via: destino</mat-label
+          ><mat-select [(ngModel)]="s.edgeTarget" [disabled]="s.busy()">
+            @for (n of s.graph().nodes; track n.id) {
+              <mat-option [value]="n.id">{{ n.id }} · {{ n.name }}</mat-option>
+            }
+          </mat-select></mat-form-field
+        ><mat-form-field
+          ><mat-label>Capacidade (veíc./min)</mat-label
+          ><input
+            matInput
+            type="number"
+            min="0"
+            max="2147483647"
+            step="1"
+            [(ngModel)]="s.capacity" /></mat-form-field
+        ><button mat-stroked-button (click)="s.addEdge()">Adicionar via</button>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="!!s.selectedNode() || !!s.selectedEdge()"
+      ><mat-expansion-panel-header
+        ><mat-panel-title
+          >Propriedades da seleção</mat-panel-title
+        ></mat-expansion-panel-header
+      >
+      @if (s.selectedNode(); as n) {
+        <p>Vértice {{ n.id }}</p>
+        <mat-form-field
+          ><mat-label>Nome</mat-label
+          ><input matInput [(ngModel)]="s.editName" maxlength="200"
+        /></mat-form-field>
+      }
+      @if (s.selectedEdge(); as e) {
+        <p>
+          Via {{ e.source }} → {{ e.target }} <small>({{ e.id }})</small>
+        </p>
+        <mat-form-field
+          ><mat-label>Capacidade (veíc./min)</mat-label
+          ><input
+            matInput
+            type="number"
+            min="0"
+            max="2147483647"
+            step="1"
+            [(ngModel)]="s.editCapacity"
+        /></mat-form-field>
+      }
+      @if (s.selectedNode() || s.selectedEdge()) {
+        <div class="actions">
+          <button mat-flat-button (click)="s.applySelection()">
+            Aplicar alteração</button
+          ><button mat-button (click)="s.removeSelection()">
+            Remover seleção
+          </button>
+        </div>
+      } @else {
+        <p class="muted">Clique em um vértice ou em uma aresta do grafo.</p>
+      }
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

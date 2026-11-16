@@ -16,11 +16,11 @@ O script `scripts/smoke.mjs` reproduz esse cenário com os servidores locais em 
 
 Resultados brutos em [experimento.csv](experimento.csv). Cinco aquecimentos e 30 medições por instância, sem I/O no intervalo cronometrado. Esta amostra foi coletada junto da suíte de testes, portanto houve concorrência com testes HTTP; os valores não são um benchmark de máquina ociosa.
 
-| Instância | V | E | Fluxo | Caminhos | Mediana (ms) | Mínimo (ms) | Máximo (ms) |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| Pequena | 6 | 10 | 23 | 3 | 0,015150 | 0,014600 | 0,026800 |
-| Média | 20 | 68 | 32 | 8 | 0,101700 | 0,092900 | 17,809600 |
-| Grande | 100 | 401 | 32 | 13 | 0,321950 | 0,312500 | 7,954400 |
+| Instância |   V |   E | Fluxo | Caminhos | Mediana (ms) | Mínimo (ms) | Máximo (ms) |
+| --------- | --: | --: | ----: | -------: | -----------: | ----------: | ----------: |
+| Pequena   |   6 |  10 |    23 |        3 |     0,015150 |    0,014600 |    0,026800 |
+| Média     |  20 |  68 |    32 |        8 |     0,101700 |    0,092900 |   17,809600 |
+| Grande    | 100 | 401 |    32 |       13 |     0,321950 |    0,312500 |    7,954400 |
 
 Os tempos medianos aumentaram com essas entradas, mas a dispersão mostra que uma única medição seria pouco representativa. As duas malhas têm a mesma capacidade de saída da origem: 15 + 12 + 5 = 32. Ambas atingem esse limite, apesar de a grande explorar mais aumentos. O tamanho da malha, por si só, não determina o fluxo máximo. Os caminhos registrados dependem da ordem de exploração de arestas de mesma distância; o valor ótimo é invariável.
 

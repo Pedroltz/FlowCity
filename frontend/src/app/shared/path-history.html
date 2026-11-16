@@ -1,0 +1,47 @@
+@if (s.result(); as r) {
+  <section class="history panel">
+    <h2>Caminhos aumentantes</h2>
+    <p class="muted">
+      Resíduos registrados antes de cada aumento. Um trecho reverso cancela
+      fluxo da via original.
+    </p>
+    @if (!r.iterations) {
+      <p>
+        Não existe caminho com capacidade positiva entre os extremos
+        selecionados. Fluxo máximo: 0.
+      </p>
+    }
+    <mat-accordion>
+      @for (path of r.augmentingPaths; track path.iteration) {
+        <mat-expansion-panel
+          ><mat-expansion-panel-header
+            ><mat-panel-title
+              >Iteração {{ path.iteration }} · +{{
+                path.addedFlow
+              }}
+              veíc./min</mat-panel-title
+            ></mat-expansion-panel-header
+          >
+          <p class="path">{{ path.nodes.join(" → ") }}</p>
+          <p>
+            Gargalo: <strong>{{ path.bottleneck }}</strong> · Fluxo adicionado:
+            <strong>{{ path.addedFlow }}</strong>
+          </p>
+          <ul>
+            @for (e of path.edges; track $index) {
+              <li>
+                {{ e.source }} → {{ e.target }} = {{ e.residualCapacity }}
+                <small
+                  >· {{ e.edgeId }}
+                  {{
+                    e.isReverse ? "(reversa: cancelamento)" : "(direta)"
+                  }}</small
+                >
+              </li>
+            }
+          </ul>
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </section>
+}
