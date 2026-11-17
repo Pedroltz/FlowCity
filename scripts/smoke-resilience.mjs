@@ -48,23 +48,96 @@ async function analyze() {
   assert.ok(r.ok(), await r.text());
   const value = await r.json();
   await page.getByTestId("scenario-flow").waitFor();
+  const displayed = form().locator(".stats-grid .stat-card strong");
+  assert.equal(
+    Number(await displayed.nth(0).innerText()),
+    value.baseline.maxFlow,
+  );
+  assert.equal(
+    Number(await displayed.nth(1).innerText()),
+    value.scenario.maxFlow,
+  );
+  assert.equal(Number(await displayed.nth(2).innerText()), value.lostCapacity);
+  const displayedPercent = (await displayed.nth(3).innerText()).trim();
+  if (value.lossPercent === null) {
+    assert.equal(displayedPercent, "Não se aplica");
+  } else {
+    assert.ok(
+      Math.abs(
+        Number(displayedPercent.replace("%", "").replace(",", ".")) -
+          value.lossPercent,
+      ) < 0.0051,
+      `Percentual exibido ${displayedPercent} diverge de ${value.lossPercent}`,
+    );
+  }
   return value;
 }
 try {
   await page.goto(origin + "/simulacoes");
   await form()
-    .getByLabel("Estudo", { exact: true })
-    .locator("option[value=abilene]")
+    .getByLabel("Rede para analisar", { exact: true })
+    .locator('option[value="sndlib:abilene"]')
     .waitFor({ state: "attached" });
   const studies = await (
     await page.request.get(origin + "/api/case-studies")
   ).json();
   assert.equal(studies.length, 26);
-  for (const study of studies) {
-    await form().getByLabel("Estudo", { exact: true }).selectOption(study.id);
+  const savedGraphs = await (
+    await page.request.get(origin + "/api/graphs")
+  ).json();
+  const residualNetworks = savedGraphs.filter((graph) =>
+    graph.name.startsWith("Rede residual "),
+  );
+  assert.equal(residualNetworks.length, 3);
+  for (const network of residualNetworks) {
+    const graph = await (
+      await page.request.get(`${origin}/api/graphs/${network.id}`)
+    ).json();
+    await form()
+      .getByLabel("Rede para analisar", { exact: true })
+      .selectOption(`custom:${network.id}`);
+    await page.locator(".study-canvas").waitFor();
     assert.equal(
-      await form().getByLabel("Estudo", { exact: true }).inputValue(),
-      study.id,
+      await form().getByLabel("Origem", { exact: true }).inputValue(),
+      "s",
+    );
+    assert.equal(
+      await form().getByLabel("Destino", { exact: true }).inputValue(),
+      "t",
+    );
+    assert.ok(graph.nodes.every((node) => node.id === node.name));
+    const original = await analyze();
+    assert.equal(original.baseline.maxFlow, original.scenario.maxFlow);
+    assert.equal(original.lostCapacity, 0);
+    if (graph.nodes.length === 6) assert.equal(original.baseline.maxFlow, 23);
+
+    if (graph.nodes.length === 6) {
+      const links = form()
+        .locator("details")
+        .filter({ hasText: "Escolher conexões para a manutenção" });
+      await links.locator("summary").click();
+      for (const edge of graph.edges)
+        await physicalCheckbox({ ...edge, directed: true }).check();
+      const disconnected = await analyze();
+      assert.equal(disconnected.scenario.maxFlow, 0);
+      assert.equal(disconnected.scenario.iterations, 0);
+      assert.equal(disconnected.lostCapacity, disconnected.baseline.maxFlow);
+      assert.equal(disconnected.lossPercent, 100);
+      await links.locator("summary").click();
+    }
+    report.push(
+      `${network.name}: rótulos, origem/destino, fluxo e perda total exibidos corretamente`,
+    );
+  }
+  for (const study of studies) {
+    await form()
+      .getByLabel("Rede para analisar", { exact: true })
+      .selectOption(`sndlib:${study.id}`);
+    assert.equal(
+      await form()
+        .getByLabel("Rede para analisar", { exact: true })
+        .inputValue(),
+      `sndlib:${study.id}`,
     );
     await page.locator(".study-canvas").waitFor();
     const original = await analyze();
@@ -168,16 +241,19 @@ try {
       })
       .waitFor();
     await nav("/simulacoes");
-    await form().getByLabel("Estudo", { exact: true }).waitFor();
+    await form().getByLabel("Rede para analisar", { exact: true }).waitFor();
     await page.waitForFunction(
       (id) =>
-        document.querySelector('fc-resilience select[aria-label="Estudo"]')
-          ?.value === id,
+        document.querySelector(
+          'fc-resilience select[aria-label="Rede para analisar"]',
+        )?.value === `sndlib:${id}`,
       study.id,
     );
     assert.equal(
-      await form().getByLabel("Estudo", { exact: true }).inputValue(),
-      study.id,
+      await form()
+        .getByLabel("Rede para analisar", { exact: true })
+        .inputValue(),
+      `sndlib:${study.id}`,
     );
     assert.ok(await physicalCheckbox(failure).isChecked());
     report.push(
@@ -203,7 +279,9 @@ try {
       .isDisabled(),
   );
   await page.getByTestId("scenario-flow").waitFor({ state: "detached" });
-  await form().getByLabel("Estudo", { exact: true }).selectOption("abilene");
+  await form()
+    .getByLabel("Rede para analisar", { exact: true })
+    .selectOption("sndlib:abilene");
   await analyze();
   const required = form().getByLabel("Capacidade necessária", { exact: true });
   await required.fill("1");
@@ -282,6 +360,11 @@ try {
   const disconnected = await analyze();
   assert.equal(disconnected.scenario.maxFlow, 0);
   assert.equal(disconnected.scenario.iterations, 0);
+  assert.equal(disconnected.lostCapacity, disconnected.baseline.maxFlow);
+  assert.equal(
+    disconnected.lossPercent,
+    disconnected.baseline.maxFlow > 0 ? 100 : null,
+  );
   report.push(
     "Todos os enlaces indisponíveis: fluxo zero e nenhum caminho aumentante",
   );

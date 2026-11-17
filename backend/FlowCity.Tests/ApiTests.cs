@@ -1,6 +1,8 @@
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
+using FlowCity.Api.Initialization;
+using FlowCity.Application;
 using FlowCity.Domain;
 using FlowCity.Domain.Graph;
 using FlowCity.Infrastructure;
@@ -9,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Data.Sqlite;
 using Xunit;
 namespace FlowCity.Tests;
 
@@ -100,12 +103,25 @@ public class ApiTests : IClassFixture<ApiFactory>
     public async Task SeedContainsThreeDatasetsAndSwaggerIsAvailable()
     {
         var graphs = (await client.GetFromJsonAsync<JsonElement>("/api/graphs")).EnumerateArray().ToArray();
-        Assert.Contains(graphs, g => g.GetProperty("nodeCount").GetInt32() == 100);
-        Assert.Contains(graphs, g => g.GetProperty("nodeCount").GetInt32() == 100
-            && g.GetProperty("edgeCount").GetInt32() == 401
-            && !string.IsNullOrWhiteSpace(g.GetProperty("name").GetString()));
-        Assert.Contains(graphs, g => g.GetProperty("nodeCount").GetInt32() == 20);
-        Assert.Contains(graphs, g => g.GetProperty("nodeCount").GetInt32() == 6);
+        var expectedExamples = new[]
+        {
+            ("Rede residual pequena · 6 nós", 6, 10),
+            ("Rede residual média · 20 nós", 20, 68),
+            ("Rede residual grande · 100 nós", 100, 401),
+        };
+        foreach (var (name, nodeCount, edgeCount) in expectedExamples)
+        {
+            var summary = Assert.Single(graphs, graph =>
+                graph.GetProperty("name").GetString() == name
+                && graph.GetProperty("nodeCount").GetInt32() == nodeCount
+                && graph.GetProperty("edgeCount").GetInt32() == edgeCount);
+            var full = await client.GetFromJsonAsync<Graph>(
+                $"/api/graphs/{summary.GetProperty("id").GetGuid()}");
+            Assert.NotNull(full);
+            Assert.Contains(full.Nodes, node => node.Id == "s" && node.Name == "s");
+            Assert.Contains(full.Nodes, node => node.Id == "t" && node.Name == "t");
+            Assert.All(full.Nodes, node => Assert.Equal(node.Id, node.Name));
+        }
         Assert.All(graphs, graph => Assert.NotEqual(Guid.Empty, graph.GetProperty("id").GetGuid()));
         var swagger = await client.GetFromJsonAsync<JsonElement>("/swagger/v1/swagger.json");
         var schemas = swagger.GetProperty("components").GetProperty("schemas");
@@ -114,5 +130,86 @@ public class ApiTests : IClassFixture<ApiFactory>
         var graphProperties = schemas.GetProperty("GraphRequestDTO").GetProperty("properties");
         Assert.EndsWith("/GraphNodeRequestDTO", graphProperties.GetProperty("nodes").GetProperty("items").GetProperty("$ref").GetString());
         Assert.EndsWith("/GraphEdgeRequestDTO", graphProperties.GetProperty("edges").GetProperty("items").GetProperty("$ref").GetString());
+    }
+
+    [Fact]
+    public async Task ExistingPresentationExampleIsRenamedAndKeepsItsFlow()
+    {
+        await using var connection = new SqliteConnection("Data Source=:memory:");
+        await connection.OpenAsync();
+        var options = new DbContextOptionsBuilder<FlowCityDbContext>()
+            .UseSqlite(connection)
+            .Options;
+        await using var db = new FlowCityDbContext(options);
+        await db.Database.EnsureCreatedAsync();
+        var examples = new[]
+        {
+            ("Centro · 6 cruzamentos", "01-pequeno"),
+            ("Bairros · 20 cruzamentos", "02-medio"),
+            ("Malha urbana · 100 cruzamentos", "03-grande"),
+        };
+        var expectedCapacities = new Dictionary<string, Dictionary<string, int>>();
+        foreach (var (oldName, fileName) in examples)
+        {
+            var json = await File.ReadAllTextAsync(
+                Path.Combine(AppContext.BaseDirectory, "datasets", fileName + ".json"));
+            var current = JsonSerializer.Deserialize<Graph>(
+                json, new JsonSerializerOptions(JsonSerializerDefaults.Web))!;
+            var oldIds = fileName == "01-pequeno"
+                ? new Dictionary<string, string>(StringComparer.Ordinal)
+                {
+                    ["s"] = "S",
+                    ["a"] = "A",
+                    ["b"] = "B",
+                    ["c"] = "C",
+                    ["d"] = "D",
+                    ["t"] = "T",
+                }
+                : current.Nodes.Select((node, index) =>
+                        (node.Id, OldId: $"N{index + 1:000}"))
+                    .ToDictionary(pair => pair.Id, pair => pair.OldId, StringComparer.Ordinal);
+            var graph = new Graph
+            {
+                Name = oldName,
+                Description = "Antiga rede urbana",
+                Nodes = current.Nodes.Select(node => new GraphNode
+                {
+                    Id = oldIds[node.Id],
+                    Name = "Rótulo antigo",
+                    X = node.X,
+                    Y = node.Y,
+                }).ToList(),
+                Edges = current.Edges.Select(edge => new GraphEdge
+                {
+                    Id = edge.Id,
+                    Source = oldIds[edge.Source],
+                    Target = oldIds[edge.Target],
+                    Capacity = edge.Capacity,
+                }).ToList(),
+            };
+            expectedCapacities[fileName] = graph.Edges.ToDictionary(edge => edge.Id, edge => edge.Capacity);
+            db.Graphs.Add(graph);
+        }
+        await db.SaveChangesAsync();
+
+        await new DatabaseInitializer(db, new GraphValidator()).InitializeAsync();
+
+        var migrated = await db.Graphs
+            .Include(graph => graph.Nodes)
+            .Include(graph => graph.Edges)
+            .ToArrayAsync();
+        Assert.Equal(3, migrated.Length);
+        Assert.All(migrated, graph =>
+        {
+            Assert.StartsWith("Rede residual", graph.Name);
+            Assert.All(graph.Nodes, node => Assert.Equal(node.Id, node.Name));
+            Assert.Contains(graph.Nodes, node => node.Id == "s");
+            Assert.Contains(graph.Nodes, node => node.Id == "t");
+            Assert.Equal(expectedCapacities[graph.Name.Contains("pequena") ? "01-pequeno" :
+                graph.Name.Contains("média") ? "02-medio" : "03-grande"],
+                graph.Edges.ToDictionary(edge => edge.Id, edge => edge.Capacity));
+        });
+        var small = migrated.Single(graph => graph.Name.Contains("pequena"));
+        Assert.Equal(23, new FordFulkerson(new GraphValidator()).Calculate(small, "s", "t").MaxFlow);
     }
 }

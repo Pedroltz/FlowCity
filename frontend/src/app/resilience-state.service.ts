@@ -104,8 +104,7 @@ export class ResilienceState {
     this.mode.set("flow");
     this.failed.set([]);
     this.invalidate();
-    this.source = study?.graph.nodes[0]?.id ?? "";
-    this.sink = study?.graph.nodes.at(-1)?.id ?? "";
+    this.setEndpoints(study?.graph);
   }
   private chooseNetwork(id: string) {
     return this.perform(async () => {
@@ -139,8 +138,14 @@ export class ResilienceState {
     this.mode.set("flow");
     this.failed.set([]);
     this.invalidate();
-    this.source = study?.graph.nodes[0]?.id ?? "";
-    this.sink = study?.graph.nodes.at(-1)?.id ?? "";
+    this.setEndpoints(study?.graph);
+  }
+  private setEndpoints(graph: Graph | undefined) {
+    const nodes = graph?.nodes ?? [];
+    this.source =
+      nodes.find((node) => node.id === "s")?.id ?? nodes[0]?.id ?? "";
+    this.sink =
+      nodes.find((node) => node.id === "t")?.id ?? nodes.at(-1)?.id ?? "";
   }
   endpointsVersion = signal(0);
   invalidate() {

@@ -1,40 +1,40 @@
 {
-  "name": "Centro · 6 cruzamentos",
-  "description": "Simulação didática de dois corredores urbanos com conexões transversais. Capacidades em veículos/minuto; origem S, destino T. Fluxo esperado: 23.",
+  "name": "Rede residual pequena · 6 nós",
+  "description": "Instância sintética pequena para testar fluxo máximo e rede residual. Capacidades em unidades de fluxo; origem s, destino t. Fluxo máximo esperado: 23.",
   "nodes": [
     {
-      "id": "S",
-      "name": "Entrada norte",
+      "id": "s",
+      "name": "s",
       "x": 80,
       "y": 180
     },
     {
-      "id": "A",
-      "name": "Praça central",
+      "id": "a",
+      "name": "a",
       "x": 250,
       "y": 80
     },
     {
-      "id": "C",
-      "name": "Anel oeste",
-      "x": 250,
-      "y": 280
-    },
-    {
-      "id": "B",
-      "name": "Distrito comercial",
+      "id": "b",
+      "name": "b",
       "x": 420,
       "y": 80
     },
     {
-      "id": "D",
-      "name": "Terminal leste",
+      "id": "c",
+      "name": "c",
+      "x": 250,
+      "y": 280
+    },
+    {
+      "id": "d",
+      "name": "d",
       "x": 420,
       "y": 280
     },
     {
-      "id": "T",
-      "name": "Saída sul",
+      "id": "t",
+      "name": "t",
       "x": 590,
       "y": 180
     }
@@ -42,62 +42,62 @@
   "edges": [
     {
       "id": "e1",
-      "source": "S",
-      "target": "A",
+      "source": "s",
+      "target": "a",
       "capacity": 16
     },
     {
       "id": "e2",
-      "source": "S",
-      "target": "C",
+      "source": "s",
+      "target": "c",
       "capacity": 13
     },
     {
       "id": "e3",
-      "source": "A",
-      "target": "C",
+      "source": "a",
+      "target": "c",
       "capacity": 10
     },
     {
       "id": "e4",
-      "source": "C",
-      "target": "A",
+      "source": "c",
+      "target": "a",
       "capacity": 4
     },
     {
       "id": "e5",
-      "source": "A",
-      "target": "B",
+      "source": "a",
+      "target": "b",
       "capacity": 12
     },
     {
       "id": "e6",
-      "source": "B",
-      "target": "C",
+      "source": "b",
+      "target": "c",
       "capacity": 9
     },
     {
       "id": "e7",
-      "source": "C",
-      "target": "D",
+      "source": "c",
+      "target": "d",
       "capacity": 14
     },
     {
       "id": "e8",
-      "source": "D",
-      "target": "B",
+      "source": "d",
+      "target": "b",
       "capacity": 7
     },
     {
       "id": "e9",
-      "source": "B",
-      "target": "T",
+      "source": "b",
+      "target": "t",
       "capacity": 20
     },
     {
       "id": "e10",
-      "source": "D",
-      "target": "T",
+      "source": "d",
+      "target": "t",
       "capacity": 4
     }
   ]

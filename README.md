@@ -12,9 +12,9 @@
 
 # LinkPlan
 
-**Entenda quanto sua rede suporta — e o que acontece quando uma conexão fica indisponível.**
+O estudo principal analisa a resiliência de redes de computadores: em **Planejamento**, carregue os benchmarks SNDlib, escolha origem/destino e enlaces físicos indisponíveis. Compare a capacidade original e remanescente e os cortes mínimos. Consulte [procedência e hipóteses](datasets/case-studies/README.md). Três redes residuais sintéticas de tamanhos diferentes ficam em **Minhas redes** para testar fluxo máximo e capacidade perdida durante a apresentação.
 
-O LinkPlan é um laboratório interativo para explorar **fluxo máximo, cortes mínimos e resiliência de redes de telecomunicações**. Escolha uma topologia, simule enlaces em manutenção e compare a capacidade disponível antes e depois da intervenção. A implementação própria de **Ford-Fulkerson com BFS (Edmonds-Karp)** torna cada caminho aumentante e a rede residual visíveis para estudo.
+Aplicação de Teoria dos Grafos para analisar a resiliência de redes de telecomunicações: calcular a capacidade máxima entre dois pontos e quantificar sua redução após falhas de enlaces físicos. O núcleo é uma implementação própria de **Ford-Fulkerson com BFS (Edmonds-Karp)** em C#, com caminhos aumentantes, residual e corte mínimo.
 
 [Começar](#executar-com-docker) · [Ver a interface](#por-dentro-do-linkplan) · [Planejar manutenção](#planejamento-de-manutenção) · [Documentação](#documentação-do-projeto) · [Equipe](#integrantes)
 
@@ -84,14 +84,14 @@ backend/
   FlowCity.Infrastructure/  Mapeamento e persistência EF Core/SQLite
   FlowCity.Api/             Controllers, DTOs, DI, OpenAPI e carga inicial
   FlowCity.Tests/           Testes unitários, integração e experimento
-frontend/src/app/          Rotas, estado compartilhado, serviço HTTP e páginas Angular
-datasets/                  Exemplos urbanos, catálogo SNDlib e documentação
-scripts/                   Gerador reproduzível dos datasets
+frontend/src/app/           Rotas, estado compartilhado, serviço HTTP e páginas Angular
+datasets/                   Redes de teste, catálogo SNDlib e documentação
+scripts/                    Gerador reproduzível dos datasets
 ```
 
 Em `datasets/case-studies`, o catálogo selecionável contém 26 topologias
-SNDlib e seus XML de origem. Os três JSON usados na seção de exemplos urbanos
-continuam separados desse catálogo.
+SNDlib e seus XML de origem. As três redes de teste em JSON ficam separadas
+desse catálogo.
 
 Não há bibliotecas de cálculo de grafos, CQRS, MediatR ou serviços intermediários que apenas encaminham chamadas. Cytoscape é usado exclusivamente para visualização e interação.
 
@@ -130,7 +130,7 @@ Abra **http://localhost:4200**. O proxy de desenvolvimento envia `/api` e `/swag
 
 O SQLite é criado automaticamente no primeiro início com `EnsureCreatedAsync`; nenhuma ferramenta externa nem comando de migração é necessário. Por padrão, o arquivo `flowcity.db` é relativo ao diretório de execução da API. Para escolher uma localização, defina `ConnectionStrings__FlowCity`, por exemplo `Data Source=C:/dados/flowcity.db` (o diretório deve existir). No Docker, o arquivo fica em `/data/flowcity.db`.
 
-As três redes urbanas sintéticas são inseridas **somente quando o banco é criado**. Excluir todas as redes não as recria automaticamente. Para recuperá-las, importe os JSON pela interface. O catálogo SNDlib é fornecido separadamente pela API e não é gravado no banco. O banco usa tabelas relacionadas para redes, vértices e arestas, com chaves compostas por rede e ID. Exclusões de redes removem suas entidades dependentes. Uma edição é persistida em uma única operação transacional do EF Core.
+As três redes sintéticas de teste são inseridas quando o banco é criado. Excluir todas as redes não as recria automaticamente. Para recuperá-las, importe os JSON pela interface. Ao iniciar com um banco existente, a aplicação renomeia os três exemplos antigos de cidade e rotula os vértices como `s`, `a`, `b`, …, `t`, preservando capacidades e conexões editadas. O catálogo SNDlib é fornecido separadamente pela API e não é gravado no banco. O banco usa tabelas relacionadas para redes, vértices e arestas, com chaves compostas por rede e ID. Exclusões de redes removem suas entidades dependentes. Uma edição é persistida em uma única operação transacional do EF Core.
 
 Não há migrações de esquema nesta versão de demonstração. Ao alterar o modelo de persistência, exporte suas redes e use um novo arquivo SQLite, ou implemente uma migração antes de reutilizar o banco antigo.
 
@@ -186,22 +186,20 @@ Na pasta frontend: `npm run test:resilience`. Na raiz, com a API ativa: `node sc
 
 Na raiz, `python scripts/import-sndlib.py --verify` confere os dados offline; sem argumentos reconstrói os JSON usando XML locais e checksums; `--download` obtém novamente a revisão fixada. Python é necessário somente para essa manutenção dos datasets, não para executar a aplicação.
 
-## Roteiro dos exemplos urbanos secundários
+## Roteiro das redes de teste
 
-1. Em **Minhas redes**, abra **Centro · 6 cruzamentos** no editor.
-2. Selecione uma via, altere a capacidade em **Propriedades da seleção** e clique em **Aplicar alteração**.
-3. Escolha origem **S** e destino **T**, depois **Calcular fluxo máximo**. A aplicação salva alterações antes do cálculo.
-4. Em **Planejamento**, observe as arestas violetas e os rótulos `fluxo / capacidade`; selecione um caminho para destacá-lo em laranja. Em **Resultados**, examine o fluxo máximo e a utilização por aresta.
-5. Expanda as iterações em **Caminhos aumentantes** para examinar resíduos, gargalo e fluxo adicionado.
-6. Alterne para **Rede residual**. As arestas tracejadas representam possibilidades de cancelar fluxo. Resíduos zero ficam ocultos no desenho, mas estão na resposta da API.
-7. Abra **Bairros** ou **Malha urbana** e execute novamente com os extremos pré-selecionados.
-8. Para criar sua própria rede, use **Nova rede**, adicione vértices e vias, mova os vértices e salve. Use JSON para compartilhar ou restaurar uma rede.
+1. Em **Minhas redes**, abra **Rede residual pequena · 6 nós** e escolha `s` como origem e `t` como destino.
+2. Execute o fluxo máximo. O valor esperado é **23**; o corte mínimo tem capacidade 23.
+3. Abra **Resultados** e examine o fluxo, o corte e os caminhos aumentantes.
+4. Em **Planejamento**, alterne para **Residual do benchmark** para ver as arestas reversas criadas pelo algoritmo. Elas permitem cancelar fluxo e não são ligações do grafo original.
+5. Repita com **Rede residual média · 20 nós** e **Rede residual grande · 100 nós** para comparar instâncias maiores.
+6. Para testar o efeito de falhas físicas de telecomunicações, use **Explorar benchmarks** e selecione uma topologia do catálogo SNDlib.
 
 Alterar capacidades, estrutura ou extremos invalida o resultado anterior. Arrastar vértices altera apenas o posicionamento. Trocar de rede avisa sobre alterações não salvas. Importar JSON cria e salva uma nova rede e aceita o formato mínimo mostrado em `datasets/README.md`.
 
-## Modelagem dos exemplos urbanos e algoritmo
+## Modelagem das redes de teste e algoritmo
 
-Nos exemplos urbanos secundários, vértices representam cruzamentos ou regiões. Arestas direcionadas representam vias, com capacidade inteira não negativa em veículos/minuto. Vias paralelas e em sentidos opostos são independentes e possuem IDs próprios. Nos estudos SNDlib, vértices, sentidos e unidades seguem a topologia selecionada; capacidades e hipóteses de cada rede estão documentadas em `datasets/case-studies/README.md`.
+Nas redes sintéticas de teste, vértices usam rótulos simples como `s`, `a`, `b` e `t`; arestas direcionadas têm capacidades inteiras abstratas. Vias paralelas e sentidos opostos são independentes e possuem IDs próprios. Nos estudos SNDlib, vértices, sentidos e unidades seguem a topologia selecionada; capacidades e hipóteses de cada rede estão documentadas em `datasets/case-studies/README.md`.
 
 Em todos os casos, o fluxo é conservado nos vértices intermediários. Laços são aceitos, mas não ajudam a transportar fluxo entre extremos diferentes.
 
@@ -283,7 +281,7 @@ Consulte o [roteiro de entrega e apresentação](docs/ENTREGA.md). A validação
 
 ## Limitações conhecidas
 
-- Capacidades simuladas, sem previsão de trânsito, semáforos ou evolução temporal.
+- Capacidades abstratas nas redes sintéticas; os resultados não são previsões de tráfego.
 - Até 500 vértices e 5000 arestas por rede; histórico completo pode consumir memória em casos difíceis. Interface prioriza as instâncias de demonstração, sem prometer legibilidade de milhares de arestas simultâneas.
 - Resultados não são armazenados no banco; exportação JSON guarda a rede e posições, não o histórico de uma execução.
 - Edição colaborativa e controle de concorrência não estão previstos: a última gravação prevalece.

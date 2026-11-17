@@ -1,20 +1,16 @@
-# Datasets LinkPlan
+# Redes de teste LinkPlan
 
-Os três exemplos urbanos JSON desta pasta são **sintéticos**, produzidos para este projeto pelo gerador determinístico `scripts/generate-datasets.mjs`. Não foram coletados de sensores, mapas ou órgãos públicos e não correspondem a uma cidade real. Os nomes descrevem situações plausíveis para ajudar a interpretar o grafo.
+Os três JSON são instâncias sintéticas e determinísticas, produzidas por `scripts/generate-datasets.mjs` para testar fluxo máximo e visualizar a rede residual durante a apresentação. Não representam infraestrutura real. As capacidades são unidades abstratas de fluxo.
 
-As capacidades são estimativas simuladas de **veículos por minuto**, em um único intervalo estacionário. Cada aresta é uma via direcionada; duas vias em sentidos contrários têm capacidades independentes. O modelo assume conservação de fluxo nos cruzamentos intermediários.
+| Arquivo           | Nome na aplicação              | Vértices | Arestas | Origem → destino |
+| ----------------- | ------------------------------ | -------: | ------: | ---------------- |
+| `01-pequeno.json` | Rede residual pequena · 6 nós  |        6 |      10 | s → t            |
+| `02-medio.json`   | Rede residual média · 20 nós   |       20 |      68 | s → t            |
+| `03-grande.json`  | Rede residual grande · 100 nós |      100 |     401 | s → t            |
 
-O modelo é um **grafo direcionado e ponderado por capacidades**. Esses pesos limitam o fluxo; não representam distância nem custo de deslocamento.
+Os vértices usam identificadores simples (`s`, `a`, `b`, …); a instância grande continua essa convenção com `v01`, `v02`, …, `t`. A rede pequena tem fluxo máximo conhecido **23**. Um corte mínimo é `{s,a,c,d}` → `{b,t}`, com capacidades `a→b=12`, `d→b=7` e `d→t=4`, totalizando 23. A rede média oferece rotas alternativas e ciclos; a grande tem dimensões que tornam a análise manual pouco prática. O algoritmo cria a rede residual em cada execução; ela não é um segundo grafo fixo de entrada.
 
-| Arquivo           | Contexto                                                 | Vértices | Arestas | Origem → destino |
-| ----------------- | -------------------------------------------------------- | -------: | ------: | ---------------- |
-| `01-pequeno.json` | Dois corredores com conexões transversais                |        6 |      10 | S → T            |
-| `02-medio.json`   | Malha de bairros 4 × 5 com ligações diagonais            |       20 |      68 | N001 → N020      |
-| `03-grande.json`  | Malha urbana 10 × 10, vias nos dois sentidos e diagonais |      100 |     401 | N001 → N100      |
-
-A instância pequena usa uma topologia didática clássica de fluxo máximo, com nomes urbanos fictícios. Seu valor esperado é **23**. Um corte mínimo é `{S,A,C,D}` → `{B,T}`, com capacidades `A→B=12`, `D→B=7` e `D→T=4`, totalizando 23. Isso fornece um limite superior verificável manualmente; o algoritmo constrói um fluxo que o atinge.
-
-Nas malhas, as capacidades são calculadas por fórmulas inteiras sobre linha e coluna (consulte o gerador). Há corredores horizontais e verticais, ciclos, diferentes gargalos e diagonais em posições alternadas. A geração não usa aleatoriedade. Execute `node scripts/generate-datasets.mjs` na raiz para reproduzir os arquivos. A rotina sobrescreve somente os três arquivos conhecidos e não altera as redes já salvas no banco.
+Execute `node scripts/generate-datasets.mjs` na raiz para reproduzir os arquivos. A rotina sobrescreve somente os três JSON de demonstração; ela não altera redes já salvas no banco. Ao iniciar, a aplicação atualiza as três redes antigas com esses nomes, preservando seus IDs, capacidades, posições e arestas existentes, e troca os rótulos dos vértices para os identificadores simples.
 
 ## JSON
 
@@ -22,22 +18,22 @@ Campos obrigatórios: `name`, `nodes` e `edges`. Cada vértice contém `id` e `n
 
 ```json
 {
-  "name": "Corredor de demonstração",
-  "description": "Simulação em veículos/minuto",
+  "name": "Rede de demonstração",
+  "description": "Unidades abstratas de fluxo",
   "nodes": [
-    { "id": "A", "name": "Entrada" },
-    { "id": "B", "name": "Saída" }
+    { "id": "s", "name": "s" },
+    { "id": "t", "name": "t" }
   ],
-  "edges": [{ "source": "A", "target": "B", "capacity": 20 }]
+  "edges": [{ "source": "s", "target": "t", "capacity": 20 }]
 }
 ```
 
 ## Limitações e análise
 
-O modelo não inclui semáforos, tempo de viagem, filas, conversões proibidas, limites de armazenamento, demanda variável ou capacidade de vértices. Fluxo máximo é um limite da rede capacitada, **não uma previsão de trânsito nem uma simulação temporal**. Arestas residuais reversas representam cancelamento algorítmico de fluxo; não autorizam tráfego na contramão.
+O modelo não inclui demanda concorrente, tempo ou capacidade de vértices. Fluxo máximo é um limite da rede capacitada, não uma previsão de tráfego. Arestas residuais reversas representam cancelamento algorítmico de fluxo; não são conexões adicionais na rede original.
 
-Os endpoints externos dessas malhas têm grau limitado. Por isso, aumentar vértices e arestas não implica aumentar proporcionalmente o fluxo máximo, nem obter tempos monotônicos em entradas tão rápidas. Compare número de aumentos e gargalos além do tamanho. Use a rotina experimental documentada no README e relate hardware, runtime e dispersão dos tempos. Não extrapole três instâncias para uma prova empírica da complexidade assintótica.
+Os endpoints das instâncias têm grau limitado. Por isso, aumentar vértices e arestas não implica aumentar proporcionalmente o fluxo máximo, nem obter tempos monotônicos em entradas tão rápidas. Compare número de aumentos e gargalos além do tamanho. Não extrapole três instâncias para uma prova empírica da complexidade assintótica.
 
 ## Estudos principais de telecomunicações
 
-Os benchmarks históricos SNDlib ficam em [case-studies](case-studies/README.md), com arquivos originais, políticas de capacidade, revisão da fonte e checksums. Não são gerados pelo gerador de malhas urbanas.
+Os benchmarks históricos SNDlib ficam em [case-studies](case-studies/README.md), com arquivos originais, políticas de capacidade, revisão da fonte e checksums. Não são gerados pelo gerador dessas redes de teste.

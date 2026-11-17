@@ -1,5 +1,14 @@
 # Validação da implementação
 
+## Redes de teste para apresentação — 17/11/2026
+
+- As três redes editáveis foram renomeadas para **Rede residual pequena · 6 nós**, **média · 20 nós** e **grande · 100 nós**; os vértices agora usam rótulos como `s`, `a`, `b`, `t` e `v01`.
+- A inicialização atualiza os três exemplos antigos em bancos já existentes, preservando capacidades, posições e conexões. A migração foi verificada em SQLite temporário para as três dimensões; o fluxo máximo da pequena permanece 23.
+- A validação de navegador conferiu os nomes e os extremos `s`/`t`, valores de fluxo e a atualização visível da perda. Ao selecionar todas as arestas da pequena, a interface retorna fluxo zero, capacidade perdida igual ao fluxo original e perda de 100%.
+- O roteiro de navegador também percorreu as 26 topologias SNDlib, incluindo falha direcional, cortes, residual, estados e recuperação. ESLint, build Angular, Prettier/dotnet format e os **46 testes xUnit** passaram.
+
+As instâncias substituem os exemplos de malhas urbanas do registro histórico abaixo. A rede residual é construída pelo algoritmo durante cada execução; os JSON contêm as redes originais de teste.
+
 ## Versão de 16/11/2026 — resiliência de telecomunicações
 
 - **45 testes xUnit aprovados** cobrem o catálogo de 26 topologias, a preservação dos sentidos direcionados, contratos HTTP, validação de extremos e IDs, falhas físicas, desconexão, ausência de mutação e igualdade entre fluxo e corte mínimo. A perda percentual com baseline zero é verificada com um algoritmo substituto de teste, sem atribuir esse resultado a um benchmark real.

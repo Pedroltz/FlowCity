@@ -1,124 +1,124 @@
 {
-  "name": "Bairros · 20 cruzamentos",
-  "description": "Malha urbana sintética 4 × 5, com vias de mão dupla modeladas como arestas independentes e ligações diagonais. Capacidades simuladas em veículos/minuto. Origem N001, destino N020.",
+  "name": "Rede residual média · 20 nós",
+  "description": "Instância sintética média em topologia 4 × 5, com ciclos e rotas alternativas para testar caminhos aumentantes e cancelamento de fluxo. Capacidades em unidades de fluxo. Origem s, destino t. A rede residual é calculada pelo algoritmo a cada execução.",
   "nodes": [
     {
-      "id": "N001",
-      "name": "Cruzamento 1.1",
+      "id": "s",
+      "name": "s",
       "x": 80,
       "y": 70
     },
     {
-      "id": "N002",
-      "name": "Cruzamento 1.2",
+      "id": "a",
+      "name": "a",
       "x": 210,
       "y": 70
     },
     {
-      "id": "N003",
-      "name": "Cruzamento 1.3",
+      "id": "b",
+      "name": "b",
       "x": 340,
       "y": 70
     },
     {
-      "id": "N004",
-      "name": "Cruzamento 1.4",
+      "id": "c",
+      "name": "c",
       "x": 470,
       "y": 70
     },
     {
-      "id": "N005",
-      "name": "Cruzamento 1.5",
+      "id": "d",
+      "name": "d",
       "x": 600,
       "y": 70
     },
     {
-      "id": "N006",
-      "name": "Cruzamento 2.1",
+      "id": "e",
+      "name": "e",
       "x": 80,
       "y": 180
     },
     {
-      "id": "N007",
-      "name": "Cruzamento 2.2",
+      "id": "f",
+      "name": "f",
       "x": 210,
       "y": 180
     },
     {
-      "id": "N008",
-      "name": "Cruzamento 2.3",
+      "id": "g",
+      "name": "g",
       "x": 340,
       "y": 180
     },
     {
-      "id": "N009",
-      "name": "Cruzamento 2.4",
+      "id": "h",
+      "name": "h",
       "x": 470,
       "y": 180
     },
     {
-      "id": "N010",
-      "name": "Cruzamento 2.5",
+      "id": "i",
+      "name": "i",
       "x": 600,
       "y": 180
     },
     {
-      "id": "N011",
-      "name": "Cruzamento 3.1",
+      "id": "j",
+      "name": "j",
       "x": 80,
       "y": 290
     },
     {
-      "id": "N012",
-      "name": "Cruzamento 3.2",
+      "id": "k",
+      "name": "k",
       "x": 210,
       "y": 290
     },
     {
-      "id": "N013",
-      "name": "Cruzamento 3.3",
+      "id": "l",
+      "name": "l",
       "x": 340,
       "y": 290
     },
     {
-      "id": "N014",
-      "name": "Cruzamento 3.4",
+      "id": "m",
+      "name": "m",
       "x": 470,
       "y": 290
     },
     {
-      "id": "N015",
-      "name": "Cruzamento 3.5",
+      "id": "n",
+      "name": "n",
       "x": 600,
       "y": 290
     },
     {
-      "id": "N016",
-      "name": "Cruzamento 4.1",
+      "id": "o",
+      "name": "o",
       "x": 80,
       "y": 400
     },
     {
-      "id": "N017",
-      "name": "Cruzamento 4.2",
+      "id": "p",
+      "name": "p",
       "x": 210,
       "y": 400
     },
     {
-      "id": "N018",
-      "name": "Cruzamento 4.3",
+      "id": "q",
+      "name": "q",
       "x": 340,
       "y": 400
     },
     {
-      "id": "N019",
-      "name": "Cruzamento 4.4",
+      "id": "r",
+      "name": "r",
       "x": 470,
       "y": 400
     },
     {
-      "id": "N020",
-      "name": "Cruzamento 4.5",
+      "id": "t",
+      "name": "t",
       "x": 600,
       "y": 400
     }
@@ -126,410 +126,410 @@
   "edges": [
     {
       "id": "e1",
-      "source": "N001",
-      "target": "N002",
+      "source": "s",
+      "target": "a",
       "capacity": 15
     },
     {
       "id": "e2",
-      "source": "N002",
-      "target": "N001",
+      "source": "a",
+      "target": "s",
       "capacity": 8
     },
     {
       "id": "e3",
-      "source": "N001",
-      "target": "N006",
+      "source": "s",
+      "target": "e",
       "capacity": 12
     },
     {
       "id": "e4",
-      "source": "N006",
-      "target": "N001",
+      "source": "e",
+      "target": "s",
       "capacity": 6
     },
     {
       "id": "e5",
-      "source": "N001",
-      "target": "N007",
+      "source": "s",
+      "target": "f",
       "capacity": 5
     },
     {
       "id": "e6",
-      "source": "N002",
-      "target": "N003",
+      "source": "a",
+      "target": "b",
       "capacity": 26
     },
     {
       "id": "e7",
-      "source": "N003",
-      "target": "N002",
+      "source": "b",
+      "target": "a",
       "capacity": 13
     },
     {
       "id": "e8",
-      "source": "N002",
-      "target": "N007",
+      "source": "a",
+      "target": "f",
       "capacity": 19
     },
     {
       "id": "e9",
-      "source": "N007",
-      "target": "N002",
+      "source": "f",
+      "target": "a",
       "capacity": 9
     },
     {
       "id": "e10",
-      "source": "N003",
-      "target": "N004",
+      "source": "b",
+      "target": "c",
       "capacity": 37
     },
     {
       "id": "e11",
-      "source": "N004",
-      "target": "N003",
+      "source": "c",
+      "target": "b",
       "capacity": 18
     },
     {
       "id": "e12",
-      "source": "N003",
-      "target": "N008",
+      "source": "b",
+      "target": "g",
       "capacity": 26
     },
     {
       "id": "e13",
-      "source": "N008",
-      "target": "N003",
+      "source": "g",
+      "target": "b",
       "capacity": 12
     },
     {
       "id": "e14",
-      "source": "N003",
-      "target": "N009",
+      "source": "b",
+      "target": "h",
       "capacity": 7
     },
     {
       "id": "e15",
-      "source": "N004",
-      "target": "N005",
+      "source": "c",
+      "target": "d",
       "capacity": 22
     },
     {
       "id": "e16",
-      "source": "N005",
-      "target": "N004",
+      "source": "d",
+      "target": "c",
       "capacity": 23
     },
     {
       "id": "e17",
-      "source": "N004",
-      "target": "N009",
+      "source": "c",
+      "target": "h",
       "capacity": 33
     },
     {
       "id": "e18",
-      "source": "N009",
-      "target": "N004",
+      "source": "h",
+      "target": "c",
       "capacity": 15
     },
     {
       "id": "e19",
-      "source": "N005",
-      "target": "N010",
+      "source": "d",
+      "target": "i",
       "capacity": 16
     },
     {
       "id": "e20",
-      "source": "N010",
-      "target": "N005",
+      "source": "i",
+      "target": "d",
       "capacity": 18
     },
     {
       "id": "e21",
-      "source": "N006",
-      "target": "N007",
+      "source": "e",
+      "target": "f",
       "capacity": 22
     },
     {
       "id": "e22",
-      "source": "N007",
-      "target": "N006",
+      "source": "f",
+      "target": "e",
       "capacity": 11
     },
     {
       "id": "e23",
-      "source": "N006",
-      "target": "N011",
+      "source": "e",
+      "target": "j",
       "capacity": 25
     },
     {
       "id": "e24",
-      "source": "N011",
-      "target": "N006",
+      "source": "j",
+      "target": "e",
       "capacity": 11
     },
     {
       "id": "e25",
-      "source": "N007",
-      "target": "N008",
+      "source": "f",
+      "target": "g",
       "capacity": 33
     },
     {
       "id": "e26",
-      "source": "N008",
-      "target": "N007",
+      "source": "g",
+      "target": "f",
       "capacity": 16
     },
     {
       "id": "e27",
-      "source": "N007",
-      "target": "N012",
+      "source": "f",
+      "target": "k",
       "capacity": 32
     },
     {
       "id": "e28",
-      "source": "N012",
-      "target": "N007",
+      "source": "k",
+      "target": "f",
       "capacity": 14
     },
     {
       "id": "e29",
-      "source": "N007",
-      "target": "N013",
+      "source": "f",
+      "target": "l",
       "capacity": 7
     },
     {
       "id": "e30",
-      "source": "N008",
-      "target": "N009",
+      "source": "g",
+      "target": "h",
       "capacity": 18
     },
     {
       "id": "e31",
-      "source": "N009",
-      "target": "N008",
+      "source": "h",
+      "target": "g",
       "capacity": 21
     },
     {
       "id": "e32",
-      "source": "N008",
-      "target": "N013",
+      "source": "g",
+      "target": "l",
       "capacity": 15
     },
     {
       "id": "e33",
-      "source": "N013",
-      "target": "N008",
+      "source": "l",
+      "target": "g",
       "capacity": 17
     },
     {
       "id": "e34",
-      "source": "N009",
-      "target": "N010",
+      "source": "h",
+      "target": "i",
       "capacity": 29
     },
     {
       "id": "e35",
-      "source": "N010",
-      "target": "N009",
+      "source": "i",
+      "target": "h",
       "capacity": 9
     },
     {
       "id": "e36",
-      "source": "N009",
-      "target": "N014",
+      "source": "h",
+      "target": "m",
       "capacity": 22
     },
     {
       "id": "e37",
-      "source": "N014",
-      "target": "N009",
+      "source": "m",
+      "target": "h",
       "capacity": 20
     },
     {
       "id": "e38",
-      "source": "N009",
-      "target": "N015",
+      "source": "h",
+      "target": "n",
       "capacity": 9
     },
     {
       "id": "e39",
-      "source": "N010",
-      "target": "N015",
+      "source": "i",
+      "target": "n",
       "capacity": 29
     },
     {
       "id": "e40",
-      "source": "N015",
-      "target": "N010",
+      "source": "n",
+      "target": "i",
       "capacity": 23
     },
     {
       "id": "e41",
-      "source": "N011",
-      "target": "N012",
+      "source": "j",
+      "target": "k",
       "capacity": 29
     },
     {
       "id": "e42",
-      "source": "N012",
-      "target": "N011",
+      "source": "k",
+      "target": "j",
       "capacity": 14
     },
     {
       "id": "e43",
-      "source": "N011",
-      "target": "N016",
+      "source": "j",
+      "target": "o",
       "capacity": 14
     },
     {
       "id": "e44",
-      "source": "N016",
-      "target": "N011",
+      "source": "o",
+      "target": "j",
       "capacity": 16
     },
     {
       "id": "e45",
-      "source": "N011",
-      "target": "N017",
+      "source": "j",
+      "target": "p",
       "capacity": 7
     },
     {
       "id": "e46",
-      "source": "N012",
-      "target": "N013",
+      "source": "k",
+      "target": "l",
       "capacity": 40
     },
     {
       "id": "e47",
-      "source": "N013",
-      "target": "N012",
+      "source": "l",
+      "target": "k",
       "capacity": 19
     },
     {
       "id": "e48",
-      "source": "N012",
-      "target": "N017",
+      "source": "k",
+      "target": "p",
       "capacity": 21
     },
     {
       "id": "e49",
-      "source": "N017",
-      "target": "N012",
+      "source": "p",
+      "target": "k",
       "capacity": 19
     },
     {
       "id": "e50",
-      "source": "N013",
-      "target": "N014",
+      "source": "l",
+      "target": "m",
       "capacity": 25
     },
     {
       "id": "e51",
-      "source": "N014",
-      "target": "N013",
+      "source": "m",
+      "target": "l",
       "capacity": 24
     },
     {
       "id": "e52",
-      "source": "N013",
-      "target": "N018",
+      "source": "l",
+      "target": "q",
       "capacity": 28
     },
     {
       "id": "e53",
-      "source": "N018",
-      "target": "N013",
+      "source": "q",
+      "target": "l",
       "capacity": 22
     },
     {
       "id": "e54",
-      "source": "N013",
-      "target": "N019",
+      "source": "l",
+      "target": "r",
       "capacity": 9
     },
     {
       "id": "e55",
-      "source": "N014",
-      "target": "N015",
+      "source": "m",
+      "target": "n",
       "capacity": 36
     },
     {
       "id": "e56",
-      "source": "N015",
-      "target": "N014",
+      "source": "n",
+      "target": "m",
       "capacity": 12
     },
     {
       "id": "e57",
-      "source": "N014",
-      "target": "N019",
+      "source": "m",
+      "target": "r",
       "capacity": 35
     },
     {
       "id": "e58",
-      "source": "N019",
-      "target": "N014",
+      "source": "r",
+      "target": "m",
       "capacity": 6
     },
     {
       "id": "e59",
-      "source": "N015",
-      "target": "N020",
+      "source": "n",
+      "target": "t",
       "capacity": 18
     },
     {
       "id": "e60",
-      "source": "N020",
-      "target": "N015",
+      "source": "t",
+      "target": "n",
       "capacity": 9
     },
     {
       "id": "e61",
-      "source": "N016",
-      "target": "N017",
+      "source": "o",
+      "target": "p",
       "capacity": 36
     },
     {
       "id": "e62",
-      "source": "N017",
-      "target": "N016",
+      "source": "p",
+      "target": "o",
       "capacity": 17
     },
     {
       "id": "e63",
-      "source": "N017",
-      "target": "N018",
+      "source": "p",
+      "target": "q",
       "capacity": 21
     },
     {
       "id": "e64",
-      "source": "N018",
-      "target": "N017",
+      "source": "q",
+      "target": "p",
       "capacity": 22
     },
     {
       "id": "e65",
-      "source": "N018",
-      "target": "N019",
+      "source": "q",
+      "target": "r",
       "capacity": 32
     },
     {
       "id": "e66",
-      "source": "N019",
-      "target": "N018",
+      "source": "r",
+      "target": "q",
       "capacity": 10
     },
     {
       "id": "e67",
-      "source": "N019",
-      "target": "N020",
+      "source": "r",
+      "target": "t",
       "capacity": 17
     },
     {
       "id": "e68",
-      "source": "N020",
-      "target": "N019",
+      "source": "t",
+      "target": "r",
       "capacity": 15
     }
   ]

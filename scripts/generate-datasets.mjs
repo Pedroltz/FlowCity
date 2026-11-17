@@ -9,35 +9,35 @@ function write(name, graph) {
     JSON.stringify(graph, null, 2) + "\n",
   );
 }
-const names = {
-  S: "Entrada norte",
-  A: "Praça central",
-  C: "Anel oeste",
-  B: "Distrito comercial",
-  D: "Terminal leste",
-  T: "Saída sul",
-};
+const smallNodes = [
+  ["s", 80, 180],
+  ["a", 250, 80],
+  ["b", 420, 80],
+  ["c", 250, 280],
+  ["d", 420, 280],
+  ["t", 590, 180],
+];
 write("01-pequeno", {
-  name: "Centro · 6 cruzamentos",
+  name: "Rede residual pequena · 6 nós",
   description:
-    "Simulação didática de dois corredores urbanos com conexões transversais. Capacidades em veículos/minuto; origem S, destino T. Fluxo esperado: 23.",
-  nodes: Object.entries(names).map(([id, name], i) => ({
+    "Instância sintética pequena para testar fluxo máximo e rede residual. Capacidades em unidades de fluxo; origem s, destino t. Fluxo máximo esperado: 23.",
+  nodes: smallNodes.map(([id, x, y]) => ({
     id,
-    name,
-    x: 80 + Math.floor((i + 1) / 2) * 170,
-    y: i === 0 || i === 5 ? 180 : i % 2 ? 80 : 280,
+    name: id,
+    x,
+    y,
   })),
   edges: [
-    ["S", "A", 16],
-    ["S", "C", 13],
-    ["A", "C", 10],
-    ["C", "A", 4],
-    ["A", "B", 12],
-    ["B", "C", 9],
-    ["C", "D", 14],
-    ["D", "B", 7],
-    ["B", "T", 20],
-    ["D", "T", 4],
+    ["s", "a", 16],
+    ["s", "c", 13],
+    ["a", "c", 10],
+    ["c", "a", 4],
+    ["a", "b", 12],
+    ["b", "c", 9],
+    ["c", "d", 14],
+    ["d", "b", 7],
+    ["b", "t", 20],
+    ["d", "t", 4],
   ].map(([source, target, capacity], i) => ({
     id: `e${i + 1}`,
     source,
@@ -45,10 +45,17 @@ write("01-pequeno", {
     capacity,
   })),
 });
-function grid(rows, columns, filename, name) {
+function residualNetwork(rows, columns, filename, name, description) {
   const nodes = [],
     edges = [];
-  const id = (r, c) => `N${String(r * columns + c + 1).padStart(3, "0")}`;
+  const id = (r, c) => {
+    const index = r * columns + c;
+    const count = rows * columns;
+    if (index === 0) return "s";
+    if (index === count - 1) return "t";
+    if (count <= 20) return String.fromCharCode(97 + index - 1);
+    return `v${String(index).padStart(2, "0")}`;
+  };
   function edge(source, target, capacity) {
     edges.push({ id: `e${edges.length + 1}`, source, target, capacity });
   }
@@ -56,7 +63,7 @@ function grid(rows, columns, filename, name) {
     for (let c = 0; c < columns; c++)
       nodes.push({
         id: id(r, c),
-        name: `Cruzamento ${r + 1}.${c + 1}`,
+        name: id(r, c),
         x: 80 + c * 130,
         y: 70 + r * 110,
       });
@@ -75,10 +82,22 @@ function grid(rows, columns, filename, name) {
     }
   write(filename, {
     name,
-    description: `Malha urbana sintética ${rows} × ${columns}, com vias de mão dupla modeladas como arestas independentes e ligações diagonais. Capacidades simuladas em veículos/minuto. Origem ${nodes[0].id}, destino ${nodes.at(-1).id}.`,
+    description: `${description} Capacidades em unidades de fluxo. Origem s, destino t. A rede residual é calculada pelo algoritmo a cada execução.`,
     nodes,
     edges,
   });
 }
-grid(4, 5, "02-medio", "Bairros · 20 cruzamentos");
-grid(10, 10, "03-grande", "Malha urbana · 100 cruzamentos");
+residualNetwork(
+  4,
+  5,
+  "02-medio",
+  "Rede residual média · 20 nós",
+  "Instância sintética média em topologia 4 × 5, com ciclos e rotas alternativas para testar caminhos aumentantes e cancelamento de fluxo.",
+);
+residualNetwork(
+  10,
+  10,
+  "03-grande",
+  "Rede residual grande · 100 nós",
+  "Instância sintética grande em topologia 10 × 10, com 100 vértices e 401 arestas para testar o algoritmo em uma rede pouco prática de resolver manualmente.",
+);
