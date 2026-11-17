@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="title desc">
+  <title id="title">LinkPlan — Cada conexão importa.</title>
+  <desc id="desc">Laboratório de teoria dos grafos para explorar fluxo máximo, resiliência e manutenção de redes. Ilustração de uma rede com caminhos alternativos.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#17142e"/><stop offset="1" stop-color="#322561"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".035"/></pattern>
+  </defs>
+  <rect width="1280" height="400" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="400" rx="24" fill="url(#grid)"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="64" y="76" fill="#c4b5fd" font-size="13" font-weight="700" letter-spacing="3">LABORATÓRIO DE TEORIA DOS GRAFOS</text>
+    <text x="60" y="165" fill="#fff" font-size="76" font-weight="750">LinkPlan</text>
+    <text x="64" y="215" fill="#ede9fe" font-size="27">Cada conexão importa.</text>
+    <text x="64" y="260" fill="#bcb6d7" font-size="18">Explore caminhos. Simule falhas. Planeje sua rede.</text>
+    <rect x="64" y="304" width="366" height="36" rx="18" fill="#ffffff" fill-opacity=".08"/>
+    <text x="84" y="328" fill="#ddd6fe" font-size="14">FLUXO MÁXIMO · RESILIÊNCIA · SNDlib</text>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-width="3">
+    <path d="M800 200 945 90 1135 200 945 310 800 200M945 90V310" stroke="#70618f"/>
+    <path d="M800 200 945 90 1135 200" stroke="#a78bfa" stroke-width="5"/>
+    <path d="M800 200 945 310 1135 200" stroke="#5eead4" stroke-width="5"/>
+    <path d="M800 200H1135" stroke="#fb7185" stroke-dasharray="8 10"/>
+  </g>
+  <g fill="#241c43" stroke="#c4b5fd" stroke-width="3">
+    <circle cx="800" cy="200" r="27"/><circle cx="945" cy="90" r="27"/><circle cx="1135" cy="200" r="27"/><circle cx="945" cy="310" r="27"/>
+  </g>
+  <g fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" text-anchor="middle">
+    <text x="800" y="207">S</text><text x="945" y="97">A</text><text x="1135" y="207">T</text><text x="945" y="317">B</text>
+  </g>
+</svg>

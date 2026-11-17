@@ -1,12 +1,71 @@
+<p align="center">
+  <img src="docs/images/linkplan-banner.svg" alt="LinkPlan — Cada conexão importa. Laboratório de teoria dos grafos." width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/Pedroltz/LinkPlan/actions/workflows/ci-cd.yml"><img src="https://github.com/Pedroltz/LinkPlan/actions/workflows/ci-cd.yml/badge.svg" alt="Status do CI/CD" /></a>
+  <img src="https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&amp;logoColor=white" alt=".NET 10" />
+  <img src="https://img.shields.io/badge/Angular-21-DD0031?logo=angular&amp;logoColor=white" alt="Angular 21" />
+  <img src="https://img.shields.io/badge/SQLite-003B57?logo=sqlite&amp;logoColor=white" alt="SQLite" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&amp;logoColor=white" alt="Docker" />
+</p>
+
 # LinkPlan
 
-O estudo principal agora analisa resiliência de redes de computadores: em **Planejamento**, carregue os benchmarks SNDlib, escolha origem/destino e enlaces físicos indisponíveis. Compare a capacidade original e remanescente e os cortes mínimos. Consulte [procedência e hipóteses](datasets/case-studies/README.md). Os exemplos urbanos existentes continuam disponíveis.
+**Entenda quanto sua rede suporta — e o que acontece quando uma conexão fica indisponível.**
 
-Aplicação de Teoria dos Grafos para analisar a resiliência de redes de telecomunicações: calcular a capacidade máxima entre dois pontos e quantificar sua redução após falhas de enlaces físicos. O núcleo é uma implementação própria de **Ford-Fulkerson com BFS (Edmonds-Karp)** em C#, com caminhos aumentantes, residual e corte mínimo. A aplicação preserva os exemplos urbanos como apoio didático secundário.
+O LinkPlan é um laboratório interativo para explorar **fluxo máximo, cortes mínimos e resiliência de redes de telecomunicações**. Escolha uma topologia, simule enlaces em manutenção e compare a capacidade disponível antes e depois da intervenção. A implementação própria de **Ford-Fulkerson com BFS (Edmonds-Karp)** torna cada caminho aumentante e a rede residual visíveis para estudo.
 
-O seletor oferece 26 topologias da coleção SNDlib fixada no projeto. Abilene e Atlanta usam capacidades pré-instaladas; nas outras redes, a aplicação explicita a configuração hipotética de um menor módulo positivo por enlace. As capacidades não são medições das redes atuais. Fonte, sentido das arestas e política de capacidade de cada instância estão em [datasets/case-studies](datasets/case-studies/README.md). Veja a [proposta para submissão ao professor](docs/PROPOSTA.md).
+[Começar](#executar-com-docker) · [Ver a interface](#por-dentro-do-linkplan) · [Planejar manutenção](#planejamento-de-manutenção) · [Documentação](#documentação-do-projeto) · [Equipe](#integrantes)
 
-O projeto era denominado FlowCity. Nomes internos dos projetos .NET, configuração do Angular, banco SQLite, volume Docker e variáveis `FLOWCITY_*` são mantidos por compatibilidade com instalações e dados existentes. A identidade apresentada ao usuário é LinkPlan.
+## O que você pode explorar
+
+| Recurso                        | Na prática                                                                                      |
+| ------------------------------ | ----------------------------------------------------------------------------------------------- |
+| **Planejamento de manutenção** | Selecione enlaces indisponíveis e compare a capacidade original com a remanescente.             |
+| **26 topologias SNDlib**       | Explore benchmarks com fonte, unidades e hipóteses documentadas.                                |
+| **Editor visual de redes**     | Crie pontos e conexões, defina capacidades e importe ou exporte JSON.                           |
+| **Algoritmo passo a passo**    | Examine caminhos aumentantes, gargalos, fluxos, residual e corte mínimo.                        |
+| **Resultados comparáveis**     | Consulte perda de capacidade, utilização das arestas e atendimento a uma capacidade necessária. |
+| **Interface adaptável**        | Navegue em desktop ou celular com temas claro, escuro e do sistema.                             |
+
+## Por dentro do LinkPlan
+
+Capturas reais da aplicação executada localmente com os dados de demonstração.
+
+### Um ponto de partida para explorar redes
+
+![Dashboard do LinkPlan com acesso ao planejamento e às redes salvas](docs/images/dashboard.png)
+
+### Planeje uma manutenção e compare o impacto
+
+![Planejamento de manutenção na topologia Atlanta, com seleção de enlace indisponível](docs/images/planejamento.png)
+
+![Comparação da capacidade original e remanescente após a manutenção](docs/images/resultados.png)
+
+## Experimente em poucos passos
+
+1. Inicie a aplicação com Docker e abra **http://localhost:4200**.
+2. Acesse **Planejamento** e escolha uma das topologias do catálogo.
+3. Defina a origem e o destino, selecione os enlaces em manutenção e clique em **Avaliar manutenção**.
+4. Compare os cenários e explore os caminhos, a rede residual e os cortes mínimos.
+
+As capacidades representam o modelo de cada estudo, não medições das redes atuais. Abilene e Atlanta usam capacidades pré-instaladas; as demais topologias usam a hipótese documentada de um menor módulo positivo por enlace. Consulte a [procedência e as hipóteses dos benchmarks](datasets/case-studies/README.md). Os exemplos urbanos permanecem disponíveis como apoio didático.
+
+## Documentação do projeto
+
+| Material                                             | Conteúdo                                              |
+| ---------------------------------------------------- | ----------------------------------------------------- |
+| [Proposta](docs/PROPOSTA.md)                         | Problema, objetivos e escopo acadêmico.               |
+| [Benchmarks SNDlib](datasets/case-studies/README.md) | Origem, unidades, sentidos e política de capacidades. |
+| [Datasets urbanos](datasets/README.md)               | Exemplos sintéticos e formato de importação.          |
+| [Validação](docs/VALIDACAO.md)                       | Registros de testes e resultados experimentais.       |
+| [Relatório técnico](docs/RELATORIO.html)             | Modelagem, arquitetura, algoritmo e metodologia.      |
+| [Apresentação](docs/APRESENTACAO.html)               | Material em HTML para apresentação do projeto.        |
+| [Roteiro de entrega](docs/ENTREGA.md)                | Organização da demonstração e da entrega.             |
+| [Deploy no Render](deploy/render/README.md)          | Configuração de publicação e infraestrutura.          |
+
+O projeto se chamava **FlowCity**. Nomes internos .NET, banco SQLite e variáveis `FLOWCITY_*` foram preservados para manter a compatibilidade.
 
 ## Tecnologias e organização
 
