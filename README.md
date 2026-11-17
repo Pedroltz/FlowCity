@@ -199,18 +199,18 @@ A rotina usa cinco aquecimentos e 30 execuções por instância. Registra vérti
 
 ## Integrantes
 
-Disciplina: **Teoria dos Grafos**. Professor: **Patrcik Pedreira**.
+Disciplina: **Teoria dos Grafos**. Professor: **Patrick Pedreira**.
 
 Matrículas e contribuições individuais permanecem para preenchimento pelo grupo.
 
 | Nome                       | Matrícula   | Contribuição |
 | -------------------------- | ----------- | ------------ |
-| Bruno Bomfim Lima          | A preencher | A preencher  |
-| Pedro Luiz Tunin           | A preencher | A preencher  |
-| Raphael Camurri Michelassi | A preencher | A preencher  |
-| Bruno Martins              | A preencher | A preencher  |
-| Lucas Galli                | A preencher | A preencher  |
-| Christian Decloedt         | A preencher | A preencher  |
+| Bruno Bomfim Lima          |  23111399   | Desenvolvimento da API e ajustes no algoritmo |
+| Pedro Luiz Tunin           |  23110255   | Criar projeto inicial e configurar ambiente de desenvolvimento    |
+| Raphael Camurri Michelassi |  23110022   | Desenvolvimento do Frontend    |
+| Bruno Martins              |   1056086   | Levantamento de requisitos  |
+| Lucas Galli                |  23110821   | Documentação   |
+| Christian Decloedt         |  23110176   | Testes e validação |
 
 ## Relatório técnico e uso de IA
 
